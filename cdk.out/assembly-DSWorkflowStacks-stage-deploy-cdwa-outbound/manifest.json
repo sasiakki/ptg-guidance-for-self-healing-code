@@ -1,0 +1,107 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksstagedeploycdwaoutboundcdwaoutboundworkflowstack123F3652.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksstagedeploycdwaoutboundcdwaoutboundworkflowstack123F3652.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksstagedeploycdwaoutboundcdwaoutboundworkflowstack123F3652": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://571950455257/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksstagedeploycdwaoutboundcdwaoutboundworkflowstack123F3652.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-deploy-role-571950455257-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-cfn-exec-role-571950455257-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/dcdd24d847be8576abceb728cacc5d4896e88e298de230bdeca28c74a3479ae6.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksstagedeploycdwaoutboundcdwaoutboundworkflowstack123F3652.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-lookup-role-571950455257-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "stage-deploy-cdwa-outbound-cdwa-outbound-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksstagedeploycdwaoutboundcdwaoutboundworkflowstack123F3652.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploycdwaoutboundcdwaoutboundworkflowstackGlueRole574D545A/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksstagedeploycdwaoutboundcdwaoutboundworkflowstackGlueRole574D545A7E1874BC"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/lambda_cdwa_outbound_email_notification/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacdwaoutboundemailnotificationB1DCD74C"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/lambda_CDWA_traineestatus_status/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaCDWAtraineestatusstatus5D652B13"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/glue-cdwa-outbound-sftp-upload/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwaoutboundsftpuploadB9FE94E3"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/glue-cdwa-outbound-trainee-status/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwaoutboundtraineestatus9CE2039F"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/cdwa-outbound-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdwaoutboundworkflowRoleBB2BF279"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/cdwa-outbound-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdwaoutboundworkflowRoleDefaultPolicy0131DEB5"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/cdwa-outbound-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdwaoutboundworkflow90B656C4"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/stage-deploy-cdwa-outbound/cdwa-outbound-workflow-stack"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+B2BDS 1956 -- Logging: File Date Field Missing/Malformed in Logs Table (No Shows, Docebo ILT)
+Changes:
+1. change the mapping in the "dev-glue-transcript-noshow-s3-to-raw" to add the field 'filedate'
+2. add the column 'filedate' to the table logs.noshowerrors

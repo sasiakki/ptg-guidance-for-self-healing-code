@@ -1,0 +1,95 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksdevdeployquarantinequarantineworkflowstack9599F119.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksdevdeployquarantinequarantineworkflowstack9599F119.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksdevdeployquarantinequarantineworkflowstack9599F119": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://529350069891/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksdevdeployquarantinequarantineworkflowstack9599F119.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-deploy-role-529350069891-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-cfn-exec-role-529350069891-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/1b5c93f7b70777edd58c877bcf6bb043df20aa5e34272a6d9da7a00244f06bbc.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksdevdeployquarantinequarantineworkflowstack9599F119.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-lookup-role-529350069891-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "dev-deploy-quarantine-quarantine-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksdevdeployquarantinequarantineworkflowstack9599F119.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack/GlueRole/PolicyDSWorkflowStacksdevdeployquarantinequarantineworkflowstackGlueRole37D24C6E/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksdevdeployquarantinequarantineworkflowstackGlueRole37D24C6E20046E31"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack/glue-approve-personquarantine-records/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueapprovepersonquarantinerecordsF78B2BE8"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack/glue-quarantine-personmastering/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluequarantinepersonmastering8F8F913F"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack/quarantine-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "quarantineworkflowRole1A13E7AA"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack/quarantine-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "quarantineworkflowRoleDefaultPolicy05FE840E"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack/quarantine-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "quarantineworkflow0D799948"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/dev-deploy-quarantine/quarantine-workflow-stack"
+    }
+  }
+}

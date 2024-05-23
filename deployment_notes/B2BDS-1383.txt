@@ -1,0 +1,27 @@
+
+Delta Processing: S3 to Raw (CDWA & Qualtrics Agency)
+https://seiu775bg.atlassian.net/browse/B2BDS-1383
+
+Change log: 170
+
+Following are the changes
+
+1.datastore-cdk-repo\db_scripts\
+	a) sp_cdwaprovidersemploymentrelationshipprocess.sql
+	b) sp_processcdwaprovidersdatavalidation.sql
+	c) sp_processagencyproviderstoemploymentrelationship.sql
+	d) fn_getcdwaprovidersbymodifieddate.sql
+	
+2.datastore-cdk-repo\standalone_db_scripts\staging schema\procedures
+	a) sp_cdwaprovidersemploymentrelationshipprocess.sql
+	b) sp_processagencyproviderstoemploymentrelationship.sql
+	
+   datastore-cdk-repo\standalone_db_scripts\raw schema\functions
+	a) fn_getcdwaprovidersbymodifieddate.sql
+	
+   datastore-cdk-repo\standalone_db_scripts\raw schema\procedures
+	a) sp_processcdwaprovidersdatavalidation.sql
+	
+3.cdwa-workflow/glue/glue-cdwa-s3-to-raw.py
+
+4.qualtrics-workflow/glue/glue-qualtrics-s3-to-raw.py

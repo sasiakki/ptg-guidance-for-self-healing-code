@@ -1,0 +1,149 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksdevdeployb2bbusinessb2bbusinesslogicworkflow496FDD93.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksdevdeployb2bbusinessb2bbusinesslogicworkflow496FDD93.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksdevdeployb2bbusinessb2bbusinesslogicworkflow496FDD93": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://529350069891/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksdevdeployb2bbusinessb2bbusinesslogicworkflow496FDD93.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-deploy-role-529350069891-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-cfn-exec-role-529350069891-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/842035c053b47de3189a5e26029bcc8d481392a2713e8893c817a4c9ecb32d10.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksdevdeployb2bbusinessb2bbusinesslogicworkflow496FDD93.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-lookup-role-529350069891-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "dev-deploy-b2b-business-b2b-business-logic-workflow"
+      },
+      "dependencies": [
+        "DSWorkflowStacksdevdeployb2bbusinessb2bbusinesslogicworkflow496FDD93.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/GlueRole/PolicyDSWorkflowStacksdevdeployb2bbusinessb2bbusinesslogicworkflowGlueRole7FB7EEC1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksdevdeployb2bbusinessb2bbusinesslogicworkflowGlueRole7FB7EEC166AFD1D0"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-personmastering/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluepersonmastering94A45AE0"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-clean-agency-dex-sourcekey/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecleanagencydexsourcekeyC52644B7"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-clean-agency-sourcekey/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecleanagencysourcekeyF290C060"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-clean-quarantine-agency-terminated/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecleanquarantineagencyterminated195BB63F"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-clean-person-quarantine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecleanpersonquarantineF8633F56"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-person-quarantine-to-s3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluepersonquarantinetos3A53C62B6"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-update-earliest-hire-tracking-workcategory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueupdateearliesthiretrackingworkcategoryE1C35BC3"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-primarycredential-process/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueprimarycredentialprocess0416BA8B"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-update-prod-person-with-primarycredential/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueupdateprodpersonwithprimarycredential0DA941EA"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-doh-duedate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohduedateAC7E962E"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/glue-credentials-delta-to-Prodcredentials/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecredentialsdeltatoProdcredentials572D56DC"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/StateMachine_businesslogic/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinebusinesslogicRole47B38959"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/StateMachine_businesslogic/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinebusinesslogicRoleDefaultPolicy39704D8D"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/StateMachine_businesslogic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinebusinesslogic598F5566"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/dev-deploy-b2b-business/b2b-business-logic-workflow"
+    }
+  }
+}

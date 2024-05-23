@@ -1,0 +1,217 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksstagedeployquarantinequarantineworkflowstackGlueRoleF3AFD0FD5BBACAA9": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksstagedeployquarantinequarantineworkflowstackGlueRoleF3AFD0FD",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-quarantine/quarantine-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeployquarantinequarantineworkflowstackGlueRoleF3AFD0FD/Resource"
+   }
+  },
+  "glueapprovepersonquarantinerecordsF78B2BE8": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/5301e9d448217065797386d793da17a264951f16f335e0a1bd54729dff38ecee.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "1.0",
+    "Name": "stage-glue-approve-personquarantine-records"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-quarantine/quarantine-workflow-stack/glue-approve-personquarantine-records/Resource"
+   }
+  },
+  "gluequarantinepersonmastering8F8F913F": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/35f8cbc2a4c658266791f9563df0fd91e357e1e844ee54252ecdceadf1d6ca10.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "1.0",
+    "Name": "stage-glue-quarantine-personmastering"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-quarantine/quarantine-workflow-stack/glue-quarantine-personmastering/Resource"
+   }
+  },
+  "quarantineworkflowRole1A13E7AA": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-quarantine/quarantine-workflow-stack/quarantine-workflow/Role/Resource"
+   }
+  },
+  "quarantineworkflowRoleDefaultPolicy05FE840E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-approve-personquarantine-records",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-quarantine-personmastering"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "quarantineworkflowRoleDefaultPolicy05FE840E",
+    "Roles": [
+     {
+      "Ref": "quarantineworkflowRole1A13E7AA"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-quarantine/quarantine-workflow-stack/quarantine-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "quarantineworkflow0D799948": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "quarantineworkflowRole1A13E7AA",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"glue_approve_personquarantine_records\",\"States\":{\"glue_approve_personquarantine_records\":{\"Next\":\"glue_quarantine_personmastering\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-approve-personquarantine-records\"}},\"glue_quarantine_personmastering\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-quarantine-personmastering\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "stage-quarantine-workflow"
+   },
+   "DependsOn": [
+    "quarantineworkflowRoleDefaultPolicy05FE840E",
+    "quarantineworkflowRole1A13E7AA"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-quarantine/quarantine-workflow-stack/quarantine-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPwWrDMBBEv8X39cZuIOc2PRQCheB+gFHUjb21IgXvihKM/r2S60N7ehrNwMw+4eGAS1OZb6nt51Q7vuDyocZO0JGEOFuC7PULmxsu5+DYPuD16rdXFxwVWZhA9r0RIRV8Kcgaj9FOpEcjBIOLhDl7ChcQpfs1eqscvPRqZBJ8y35unjUHuuj/Z9ZRSu/GjuzXyr86JVgb89/AflgXbesTNLVx99FgUz1vV+4Ky5zNyYUJzg8dg9/tsW2xrb6EuZ6jV74Rdr/8AYlsgy4sAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-quarantine/quarantine-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

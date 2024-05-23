@@ -1,0 +1,21 @@
+-- FUNCTION: raw.validatessn(character varying)
+
+-- DROP FUNCTION IF EXISTS "raw".validatessn(character varying);
+
+CREATE OR REPLACE FUNCTION "raw".validatessn(
+	ssn character varying)
+    RETURNS integer
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+
+BEGIN
+IF LENGTH(ssn) = 9 AND (LEFT (ssn,3) != '000' AND LEFT (ssn,3) != '666' AND CAST(LEFT (ssn,3) AS INT) NOT BETWEEN 900 AND 999) AND 
+    CAST(SUBSTRING(ssn,4,2) AS INT) BETWEEN 01 AND 99 AND CAST((SUBSTRING(ssn,6,4)) AS INT) BETWEEN 0001 AND 9999 THEN RETURN 1;
+ELSEIF LENGTH(ssn) = 4 AND CAST((SUBSTRING(ssn,1,4)) AS INT) BETWEEN 0001 AND 9999 THEN RETURN 1;
+ELSE RETURN 0;
+END IF;
+END;
+$BODY$;
+

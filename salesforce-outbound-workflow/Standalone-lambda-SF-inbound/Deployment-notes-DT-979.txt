@@ -1,0 +1,15 @@
+Deployment Notes for DT-979.
+https://seiu775bg.atlassian.net/browse/DT-979
+Steps :
+1. Create a new lambda 'lambda-inbound-employment-relationship-update' with runtime as python 3.9 and Timeout as 12 seconds.
+2. Copy the code from the file 'lambda-inbound-employment-relationship-update.py' in the PR.
+3. Add the required VPC connections and also add the layers(bg-custom-layer and aws-layer).
+4. Activate the employment relationship flow in AWS Appflow>>flows.
+5. Create a new rule for employment relationship change event within the bus : 'aws.partner/appflow/salesforce.com/259367569391'
+    and add the targets similar to those having for contact change event. 
+6. Create a new FIFO queue in AWS SQS for employment relationship object simiar to that of person which is already present. 
+7. Add the triggers to the lambda 
+    a. Eventbridge rule (SF_Eventbridge_EmploymentRelationship equivalent rule created in step 5)
+    b. SQS Queue (b2b-prd-sf-inbound-ingestion.fifo)
+
+

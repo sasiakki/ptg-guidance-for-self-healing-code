@@ -1,0 +1,1543 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstackGlueRole22E780719D799323": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-529350069891-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-529350069891-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstackGlueRole22E78071",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/GlueRole/PolicyDSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstackGlueRole22E78071/Resource"
+   }
+  },
+  "lambdacheckcdwatransfersarchive01282C84": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "91c1db204ca868b9d7bb9f3420c1c69674027c54f90b23ae52943a83248113e9.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-cdwatransfers-archive",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-cdwatransfers-archive/Resource",
+    "aws:asset:path": "../asset.91c1db204ca868b9d7bb9f3420c1c69674027c54f90b23ae52943a83248113e9",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacheckcornerstone030F0AEB": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "b5153dc6f46d1b177640579fab1a4cdf4b05b97e9c3a7dcf3f70c02f8d10811c.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-cornerstone",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-cornerstone/Resource",
+    "aws:asset:path": "../asset.b5153dc6f46d1b177640579fab1a4cdf4b05b97e9c3a7dcf3f70c02f8d10811c",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacheckcornerstonearchive5ECCDCF1": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "e4c130343ab04a778979b7539fc92973219121b2a641e1c1d29601146a3b2893.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-cornerstone-archive",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-cornerstone-archive/Resource",
+    "aws:asset:path": "../asset.e4c130343ab04a778979b7539fc92973219121b2a641e1c1d29601146a3b2893",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacheckdocebo3607A110": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "a55a50e1a6ec9456c1174f7492e540254d5e6cccd173a8598264976fa24ead2b.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-docebo",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-docebo/Resource",
+    "aws:asset:path": "../asset.a55a50e1a6ec9456c1174f7492e540254d5e6cccd173a8598264976fa24ead2b",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacheckdoceboilt5AB4BF62": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "e3efc04fc432ed4ab97bac6fefe22b3d9d0b091731adec680c65565f83c06eb3.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-docebo-ilt",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-docebo-ilt/Resource",
+    "aws:asset:path": "../asset.e3efc04fc432ed4ab97bac6fefe22b3d9d0b091731adec680c65565f83c06eb3",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacheckdoceboarchive14B2C047": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "7ee2a15a3fbd88391aad1ac290b503e4fbdaf19d6edd2ac247187d645a7416cc.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-docebo-archive",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-docebo-archive/Resource",
+    "aws:asset:path": "../asset.7ee2a15a3fbd88391aad1ac290b503e4fbdaf19d6edd2ac247187d645a7416cc",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacheckdoceboiltarchive9207FD58": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "ff9a7b927500031488f8b38007d064bfaebeb41b47cb475a15bd31dcab12bcaf.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-docebo-ilt-archive",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-docebo-ilt-archive/Resource",
+    "aws:asset:path": "../asset.ff9a7b927500031488f8b38007d064bfaebeb41b47cb475a15bd31dcab12bcaf",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacheckqualtricsosarchive16200019": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "93bd4b2faaa0e5ad1704780edd55d5ffc427ac66cede66e2de0af6e3be0c7921.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-qualtricsos-archive",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-qualtricsos-archive/Resource",
+    "aws:asset:path": "../asset.93bd4b2faaa0e5ad1704780edd55d5ffc427ac66cede66e2de0af6e3be0c7921",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacheckqualtricsos66662270": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "da0a60ef03122dc154bf3aa637aea9be74c54de03f799dbbf6699ea4dc2f2af3.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-qualtricsos",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-qualtricsos/Resource",
+    "aws:asset:path": "../asset.da0a60ef03122dc154bf3aa637aea9be74c54de03f799dbbf6699ea4dc2f2af3",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdachecktranscriptcorrections18E49125": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "43ab8ae53ea7c0f14477f54aa0897faaa15814795784a1b47bacc3df7b6c8bb4.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-transcript-corrections",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-transcript-corrections/Resource",
+    "aws:asset:path": "../asset.43ab8ae53ea7c0f14477f54aa0897faaa15814795784a1b47bacc3df7b6c8bb4",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdachecktranscriptcorrectionsarchiveD9EBD954": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "f13d4a12afb0242f6d66ec77bf889449122875673a1c74913289d3778c98322a.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-transcript-corrections-archive",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-transcript-corrections-archive/Resource",
+    "aws:asset:path": "../asset.f13d4a12afb0242f6d66ec77bf889449122875673a1c74913289d3778c98322a",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "gluecdwaostransfersrawtorawtraininghistoryD3365B40": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/f217f315ecb852f19d4363a14ac3e27de80fa0c011098863d7ce23783c81f0bc.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-cdwa-os-transfers-raw-to-raw-traininghistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-cdwa-os-transfers-raw-to-raw-traininghistory/Resource"
+   }
+  },
+  "gluecornerstonecompletionsrawtorawtraininghistoryF28ADEDB": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/ee8efae2693bb556775dc2f2e6ca31d0c8315917d9378b836c5823b4efd8edea.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-cornerstone-completions-raw-to-raw-traininghistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-cornerstone-completions-raw-to-raw-traininghistory/Resource"
+   }
+  },
+  "gluecornerstonecompletionss3toraw1643C2EE": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/a0c3effbf63561915d6497a78915b7488dad358b77e2c57b5f02ce24a7aaffe2.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-cornerstone-completions-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-cornerstone-completions-s3-to-raw/Resource"
+   }
+  },
+  "gluecoursecompletionsrawtostagingtraininghistory0DB68D9B": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/308208127fc0bdef577d3b300e2c90a488679dbc8855b401c87f8cbf9fbcdaf1.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-coursecompletions-raw-to-staging-traininghistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-coursecompletions-raw-to-staging-traininghistory/Resource"
+   }
+  },
+  "gluedocebocoursecompletionsrawtorawtraininghistory49FD66CC": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/2191a00a9db0d650a0ed1f96406ef676f4b522c942a73a7b2a92ec9b63c7cde6.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-docebo-coursecompletions-raw-to-raw-traininghistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-docebo-coursecompletions-raw-to-raw-traininghistory/Resource"
+   }
+  },
+  "gluedoceboiltcoursecompletionsrawtorawtraininghistoryC645A2A7": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/65519d7a23de5914213be62645357b893cd2099ec971a5ab437cebc0368594c2.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-docebo-ilt-coursecompletions-raw-to-raw-traininghistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-docebo-ilt-coursecompletions-raw-to-raw-traininghistory/Resource"
+   }
+  },
+  "gluedocebocoursecompletionss3torawEDBA4129": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/826d2d520f9eb3fee0513ffca855101bf054c4da739274a195538a4b533298f6.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-docebo-coursecompletions-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-docebo-coursecompletions-s3-to-raw/Resource"
+   }
+  },
+  "gluedoceboiltcoursecompletionss3toraw78EBADEF": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/c2d1ca57f209b211392e5120fafbbbaa1576b0262200e78c503bfbadeb5d85b0.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-docebo-ilt-coursecompletions-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-docebo-ilt-coursecompletions-s3-to-raw/Resource"
+   }
+  },
+  "gluedshsoscompletionrawtorawtraininghistory23B39E0A": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/b21ec89c8d4a317833d9eca675b1eab9a08096991acaf6ef07c4fb98e7181ceb.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-dshs-os-completion-raw-to-raw-traininghistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-dshs-os-completion-raw-to-raw-traininghistory/Resource"
+   }
+  },
+  "gluedshsoscompletions3torawF67095BF": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/f28abaf18ad7c8d24aa1bc1bf64037f6d61730052426f528a9549f4a98c68c60.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-dshs-os-completion-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-dshs-os-completion-s3-to-raw/Resource"
+   }
+  },
+  "glueidentifyandchangeoflearningpath1FC50F04": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/190324f28036b9acb1742d9b490ce417af175982b2d855e3186efa19660cbc17.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-identify-and-change-of-learningpath"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-identify-and-change-of-learningpath/Resource"
+   }
+  },
+  "gluelearningpathupdatetotrainingrequirementEB637EA3": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/2fa8c78cd6c0a9adc8fd091783e80a2e60185057ab0f8062d7158e2d25d3f88d.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-learningpath-update-to-trainingrequirement"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-learningpath-update-to-trainingrequirement/Resource"
+   }
+  },
+  "glueojtcalculationsCE696A92": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/3eb971791219a18b48117d638229bfcfb5819a154577a2012fb4ae8fa3fbee17.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-ojtcalculations"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-ojtcalculations/Resource"
+   }
+  },
+  "gluetrainingcompletionqualtricscleandataF22AABE1": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/bc942bb72032cf868a2829071dc1d3ec25e8f393c90718645a1e0388f780d31a.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-training-completion-qualtrics-cleandata"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-training-completion-qualtrics-cleandata/Resource"
+   }
+  },
+  "gluequaltricsoscompletions3toraw5A54E66C": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/7f8893d9e17f01920a51bc7f12dd168aca012537f9ec779ef029c8e56c9d3a45.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-qualtrics-os-completion-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-qualtrics-os-completion-s3-to-raw/Resource"
+   }
+  },
+  "gluequaltricsoscompletionsrawtorawtraininghistoryA885A7FF": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/7670831fe3248f08ed79e8e8b878e9816e0a1c9605972fe1c3779ac3ccaa9c57.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-qualtrics-os-completions-raw-to-raw-traininghistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-qualtrics-os-completions-raw-to-raw-traininghistory/Resource"
+   }
+  },
+  "gluesmartsheets3torawA91B7C2A": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/5cf029ab2b73872b77167c50e13e1cd107b2ec1b7987a15262fdb3afdc2b3c75.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-smartsheet-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-smartsheet-s3-to-raw/Resource"
+   }
+  },
+  "gluesscoursecompletionsrawtorawtraininghistoryF253165F": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/de1d604a5f570c3f973c09615cd6d96d43cdacb8df0f383286884edb62f88672.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-ss-coursecompletions-raw-to-raw-traininghistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-ss-coursecompletions-raw-to-raw-traininghistory/Resource"
+   }
+  },
+  "gluecarinaprocessingF808DFB7": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/8b5ca1f1591e8432d52504fff0ae039a140d87f1dfe49ff1d146c7d1ec5aeb26.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-carina-processing"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-carina-processing/Resource"
+   }
+  },
+  "gluetruncatealltrainingsrawtablesB0D4F073": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/9750188153e57d6dbc808630578138eaec003c6974b75e5e4235b639b4c66e5f.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-truncate-all-trainings-raw-tables"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-truncate-all-trainings-raw-tables/Resource"
+   }
+  },
+  "glueupdatestaginglearner5142C120": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/a1d5a9edc5613a5f55802a186e68dc0a74fe22699adc9c5d37dd90b5324bb2a7.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-update-staging-learner"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-update-staging-learner/Resource"
+   }
+  },
+  "glueupdatetrainingsAAB387CA": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/31d076e31226ee057990214942cd4150f0dfea4b95e0cfe85d3904d196e227a1.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-update-trainings"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-update-trainings/Resource"
+   }
+  },
+  "gluetranscriptcorrectionsrawtorawtraininghistoryB0A67DFE": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/fc45422908f9774d008d6c76acc4031532e947605f3ba8ddf9a6da13171c634f.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-transcript-corrections-raw-to-raw-traininghistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-transcript-corrections-raw-to-raw-traininghistory/Resource"
+   }
+  },
+  "gluetranscriptcorrectionss3toraw2CC76A3E": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/de4e2f1d12feecf290d4fe3b76242c324057e8281b8d4eee65efdb54e0b2c6f3.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-transcript-corrections-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-transcript-corrections-s3-to-raw/Resource"
+   }
+  },
+  "glueprocesstranscriptmapping6688905E": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/c89e338d614c09c1d08ff1e0082cf04f6a34f1151b635b32d7ddd4a6390f2160.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-process-transcript-mapping"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-process-transcript-mapping/Resource"
+   }
+  },
+  "trainingcompletionsworkflowRoleEADB7BBD": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/training-completions-workflow/Role/Resource"
+   }
+  },
+  "trainingcompletionsworkflowRoleDefaultPolicy840C2690": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-carina-processing",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-cdwa-os-transfers-raw-to-raw-traininghistory",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-cornerstone-completions-raw-to-raw-traininghistory",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-cornerstone-completions-s3-to-raw",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-coursecompletions-raw-to-staging-traininghistory",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-docebo-coursecompletions-raw-to-raw-traininghistory",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-docebo-coursecompletions-s3-to-raw",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-docebo-ilt-coursecompletions-raw-to-raw-traininghistory",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-docebo-ilt-coursecompletions-s3-to-raw",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-identify-and-change-of-learningpath",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-learningpath-update-to-trainingrequirement",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-ojtcalculations",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-process-transcript-mapping",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-qualtrics-os-completion-s3-to-raw",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-qualtrics-os-completions-raw-to-raw-traininghistory",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-training-completion-qualtrics-cleandata",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-transcript-corrections-raw-to-raw-traininghistory",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-transcript-corrections-s3-to-raw",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-truncate-all-trainings-raw-tables",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-update-staging-learner",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-update-trainings"
+       ]
+      },
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "lambdacheckcdwatransfersarchive01282C84",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckcornerstone030F0AEB",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckcornerstonearchive5ECCDCF1",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckdocebo3607A110",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckdoceboarchive14B2C047",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckdoceboilt5AB4BF62",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckdoceboiltarchive9207FD58",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckqualtricsos66662270",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckqualtricsosarchive16200019",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdachecktranscriptcorrections18E49125",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdachecktranscriptcorrectionsarchiveD9EBD954",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckcdwatransfersarchive01282C84",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckcornerstone030F0AEB",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckcornerstonearchive5ECCDCF1",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckdocebo3607A110",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckdoceboarchive14B2C047",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckdoceboilt5AB4BF62",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckdoceboiltarchive9207FD58",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckqualtricsos66662270",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckqualtricsosarchive16200019",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdachecktranscriptcorrections18E49125",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdachecktranscriptcorrectionsarchiveD9EBD954",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "trainingcompletionsworkflowRoleDefaultPolicy840C2690",
+    "Roles": [
+     {
+      "Ref": "trainingcompletionsworkflowRoleEADB7BBD"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/training-completions-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "trainingcompletionsworkflow5687B472": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "trainingcompletionsworkflowRoleEADB7BBD",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"invoke-all-training-sources-parallel-jobs\",\"States\":{\"invoke-all-training-sources-parallel-jobs\":{\"Type\":\"Parallel\",\"Next\":\"glue_training_completion_qualtrics_cleandata\",\"Branches\":[{\"StartAt\":\"lambda_check_qualtricsos\",\"States\":{\"lambda_check_qualtricsos\":{\"Next\":\"has-qualtrics-os-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckqualtricsos66662270",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-qualtrics-os-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_qualtrics_os_completion_s3_to_raw\"}],\"Default\":\"end-qualtrics-os-ingestion-process\"},\"end-qualtrics-os-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_qualtrics_os_completion_s3_to_raw\":{\"Next\":\"end-qualtrics-os-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-qualtrics-os-completion-s3-to-raw\"}}}},{\"StartAt\":\"lambda_check_cornerstone\",\"States\":{\"lambda_check_cornerstone\":{\"Next\":\"has-cornerstone-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckcornerstone030F0AEB",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-cornerstone-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_cornerstone_completions_s3_to_raw\"}],\"Default\":\"end-cornerstone-ingestion-process\"},\"end-cornerstone-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_cornerstone_completions_s3_to_raw\":{\"Next\":\"end-cornerstone-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-cornerstone-completions-s3-to-raw\"}}}},{\"StartAt\":\"lambda_check_docebo_ilt\",\"States\":{\"lambda_check_docebo_ilt\":{\"Next\":\"has-docebo-ilt-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckdoceboilt5AB4BF62",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-docebo-ilt-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_docebo_ilt_coursecompletions_s3_to_raw\"}],\"Default\":\"end-docebo-ingestion-process\"},\"end-docebo-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_docebo_ilt_coursecompletions_s3_to_raw\":{\"Next\":\"end-docebo-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-docebo-ilt-coursecompletions-s3-to-raw\"}}}},{\"StartAt\":\"lambda_check_docebo\",\"States\":{\"lambda_check_docebo\":{\"Next\":\"has-docebo-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckdocebo3607A110",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-docebo-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_docebo_coursecompletions_s3_to_raw\"}],\"Default\":\"end-docebo-ilt-ingestion-process\"},\"end-docebo-ilt-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_docebo_coursecompletions_s3_to_raw\":{\"Next\":\"end-docebo-ilt-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-docebo-coursecompletions-s3-to-raw\"}}}},{\"StartAt\":\"lambda_check_transcript_corrections\",\"States\":{\"lambda_check_transcript_corrections\":{\"Next\":\"has-transcript-correction-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdachecktranscriptcorrections18E49125",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-transcript-correction-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_transcript_corrections_s3_to_raw\"}],\"Default\":\"end-transcript-correction-ingestion-process\"},\"end-transcript-correction-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_transcript_corrections_s3_to_raw\":{\"Next\":\"end-transcript-correction-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-transcript-corrections-s3-to-raw\"}}}}]},\"glue_training_completion_qualtrics_cleandata\":{\"Next\":\"glue_truncate_all_trainings_raw_tables\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-training-completion-qualtrics-cleandata\"}},\"glue_truncate_all_trainings_raw_tables\":{\"Next\":\"raw-to-raw-traininghistory-parallel-jobs\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-truncate-all-trainings-raw-tables\"}},\"raw-to-raw-traininghistory-parallel-jobs\":{\"Type\":\"Parallel\",\"Next\":\"glue_coursecompletions_raw_to_staging_traininghistory\",\"Branches\":[{\"StartAt\":\"lambda_check_qualtricsos_archive\",\"States\":{\"lambda_check_qualtricsos_archive\":{\"Next\":\"has-ingested-qualtrics-os\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckqualtricsosarchive16200019",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-ingested-qualtrics-os\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_qualtrics_os_completions_raw_to_raw_traininghistory\"}],\"Default\":\"end-qualtrics-os-raw-to-raw-ingestion-process\"},\"end-qualtrics-os-raw-to-raw-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_qualtrics_os_completions_raw_to_raw_traininghistory\":{\"Next\":\"end-qualtrics-os-raw-to-raw-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-qualtrics-os-completions-raw-to-raw-traininghistory\"}}}},{\"StartAt\":\"lambda_check_cdwatransfers_archive\",\"States\":{\"lambda_check_cdwatransfers_archive\":{\"Next\":\"has-ingested-cdwa-transfers\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckcdwatransfersarchive01282C84",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-ingested-cdwa-transfers\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_cdwa_os_transfers_raw_to_raw_traininghistory\"}],\"Default\":\"end-cdwa-os-raw-to-raw-ingestion-process\"},\"end-cdwa-os-raw-to-raw-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_cdwa_os_transfers_raw_to_raw_traininghistory\":{\"Next\":\"end-cdwa-os-raw-to-raw-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-cdwa-os-transfers-raw-to-raw-traininghistory\"}}}},{\"StartAt\":\"lambda_check_cornerstone_archive\",\"States\":{\"lambda_check_cornerstone_archive\":{\"Next\":\"has-ingested-cornerstone-completions\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckcornerstonearchive5ECCDCF1",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-ingested-cornerstone-completions\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_cornerstone_completions_raw_to_raw_traininghistory\"}],\"Default\":\"end-cornerstone-raw-to-raw-ingestion-process\"},\"end-cornerstone-raw-to-raw-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_cornerstone_completions_raw_to_raw_traininghistory\":{\"Next\":\"end-cornerstone-raw-to-raw-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-cornerstone-completions-raw-to-raw-traininghistory\"}}}},{\"StartAt\":\"lambda_check_docebo_archive\",\"States\":{\"lambda_check_docebo_archive\":{\"Next\":\"has-ingested-docebo-completions\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckdoceboarchive14B2C047",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-ingested-docebo-completions\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_docebo_coursecompletions_raw_to_raw_traininghistory\"}],\"Default\":\"end-docebo-raw-to-raw-ingestion-process\"},\"end-docebo-raw-to-raw-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_docebo_coursecompletions_raw_to_raw_traininghistory\":{\"Next\":\"end-docebo-raw-to-raw-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-docebo-coursecompletions-raw-to-raw-traininghistory\"}}}},{\"StartAt\":\"lambda_check_docebo_ilt_archive\",\"States\":{\"lambda_check_docebo_ilt_archive\":{\"Next\":\"has-ingested-docebo-ilt-completions\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckdoceboiltarchive9207FD58",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-ingested-docebo-ilt-completions\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_docebo_ilt_coursecompletions_raw_to_raw_traininghistory\"}],\"Default\":\"end-docebo-ilt-raw-to-raw-ingestion-process\"},\"end-docebo-ilt-raw-to-raw-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_docebo_ilt_coursecompletions_raw_to_raw_traininghistory\":{\"Next\":\"end-docebo-ilt-raw-to-raw-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-docebo-ilt-coursecompletions-raw-to-raw-traininghistory\"}}}},{\"StartAt\":\"lambda_check_corrections_archive\",\"States\":{\"lambda_check_corrections_archive\":{\"Next\":\"has-ingested-transcript-corrections\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdachecktranscriptcorrectionsarchiveD9EBD954",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-ingested-transcript-corrections\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_transcript_corrections_raw_to_raw_traininghistory\"}],\"Default\":\"end-transcript-corrections-raw-to-raw-ingestion-process\"},\"end-transcript-corrections-raw-to-raw-ingestion-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_transcript_corrections_raw_to_raw_traininghistory\":{\"Next\":\"end-transcript-corrections-raw-to-raw-ingestion-process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-transcript-corrections-raw-to-raw-traininghistory\"}}}}]},\"glue_coursecompletions_raw_to_staging_traininghistory\":{\"Next\":\"glue_update_trainings\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-coursecompletions-raw-to-staging-traininghistory\"}},\"glue_update_trainings\":{\"Next\":\"glue_identify_and_change_of_learningpath\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-update-trainings\"}},\"glue_identify_and_change_of_learningpath\":{\"Next\":\"glue_learningpath_update_to_trainingrequirement\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-identify-and-change-of-learningpath\"}},\"glue_learningpath_update_to_trainingrequirement\":{\"Next\":\"glue_process_transcript_mapping\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-learningpath-update-to-trainingrequirement\"}},\"glue_process_transcript_mapping\":{\"Next\":\"glue_update_staging_learner\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-process-transcript-mapping\"}},\"glue_update_staging_learner\":{\"Next\":\"glue_carina_processing\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-update-staging-learner\"}},\"glue_carina_processing\":{\"Next\":\"glue_ojtcalculations\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-carina-processing\"}},\"glue_ojtcalculations\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-ojtcalculations\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "dev-training-completions-workflow"
+   },
+   "DependsOn": [
+    "trainingcompletionsworkflowRoleDefaultPolicy840C2690",
+    "trainingcompletionsworkflowRoleEADB7BBD"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/training-completions-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01Q0WrDMAz8lrwrarJCn7cWNjY2CNkHBMVVEy+OXWJ7oxj/++wsgz6dztJJd37AwwFDVdCPLcV5KpXsMXw6EhO0bI1fBEPqdUHSjKExSoobnC56q1qjONOMERTN/ZkwPHstnDQ6d/7rCHbfkbXsLD5lSByPXkzsjmQZBuUZ0/yb6cE6vl42ne0c2clieF+Xv+pvMzG8pOnkcnFpvPV5+b0kGU2XoKGFlGIFp9HIlCMJHH+QGKVeTd/zGGF1ld4GqYc105Y/QlWSuo6EVfG4/dMuY7a8dZKNCM3NjUbv9ljXWBdfVspy8drJmbH9w1/PmeQvbgEAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,373 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksstagedeployqualtricsqualtricsworkflowstackGlueRole076A0E6827F70260": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksstagedeployqualtricsqualtricsworkflowstackGlueRole076A0E68",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeployqualtricsqualtricsworkflowstackGlueRole076A0E68/Resource"
+   }
+  },
+  "lambdacheckqualtricsA63231B6": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "15b1dc051087ac0e7442f6a9a8c03bacad8cade6c6765518d52b672e3b1a5697.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda-check-qualtrics",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 300
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/lambda_check_qualtrics/Resource",
+    "aws:asset:path": "../asset.15b1dc051087ac0e7442f6a9a8c03bacad8cade6c6765518d52b672e3b1a5697",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "gluequaltricss3toraw0E446A50": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/f4c29117781d4edb0e00b8ad1be4fbc97b1cfe2fd4cfd42eddcfde6516690384.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-qualtrics-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-qualtrics-s3-to-raw/Resource"
+   }
+  },
+  "gluequaltricscleandata723E7BAC": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/5e6aaf476598699dd0fe0e07dbdb0adbf821f36347cd1c40010a93133101d94d.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "1.0",
+    "Name": "stage-glue-qualtrics-cleandata"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-qualtrics-cleandata/Resource"
+   }
+  },
+  "gluequaltricsrawtopersonhistory027AFE5D": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/e5c86f2fc637f7a7610141472b1277561fb3a0a36eb805c3f4757636f26734ee.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-qualtrics-raw-to-person-history"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-qualtrics-raw-to-person-history/Resource"
+   }
+  },
+  "gluequaltricsrawtoemploymentrelationshiphistoryD79346B5": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/e1c9c222df031bef2262553430ea3120581828f58fc5c6ffa558f05c73fdf174.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-qualtrics-raw-to-employmentrelationshiphistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-qualtrics-raw-to-employmentrelationshiphistory/Resource"
+   }
+  },
+  "glueaptoemploymentrelationship76F4CC1D": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/9959961c72ab2a85d5e35618a64b191bad52cdfe43703f6f7baefcf29500082f.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "1.0",
+    "Name": "stage-glue-ap-to-employmentrelationship"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-ap-to-employmentrelationship/Resource"
+   }
+  },
+  "qualtricsworkflowRoleA69E5A57": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/qualtrics-workflow/Role/Resource"
+   }
+  },
+  "qualtricsworkflowRoleDefaultPolicyE95B58F3": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "lambdacheckqualtricsA63231B6",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckqualtricsA63231B6",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-ap-to-employmentrelationship",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-qualtrics-cleandata",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-qualtrics-raw-to-employmentrelationshiphistory",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-qualtrics-raw-to-person-history",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-qualtrics-s3-to-raw"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "qualtricsworkflowRoleDefaultPolicyE95B58F3",
+    "Roles": [
+     {
+      "Ref": "qualtricsworkflowRoleA69E5A57"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/qualtrics-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "qualtricsworkflow0A272397": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "qualtricsworkflowRoleA69E5A57",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"lambda-check-qualtrics\",\"States\":{\"lambda-check-qualtrics\":{\"Next\":\"has-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"ResultPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckqualtricsA63231B6",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.Payload.Payload.result\",\"BooleanEquals\":true,\"Next\":\"glue_qualtrics_s3_to_raw\"}],\"Default\":\"end-qualtrics-process\"},\"end-qualtrics-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_qualtrics_s3_to_raw\":{\"Next\":\"glue_qualtrics_cleandata\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-qualtrics-s3-to-raw\"}},\"glue_qualtrics_cleandata\":{\"Next\":\"glue_qualtrics_raw_to_person_history\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-qualtrics-cleandata\"}},\"glue_qualtrics_raw_to_person_history\":{\"Next\":\"glue_qualtrics_raw_to_employmentrelationshiphistory\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-qualtrics-raw-to-person-history\"}},\"glue_qualtrics_raw_to_employmentrelationshiphistory\":{\"Next\":\"glue_ap_to_employmentrelationship\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-qualtrics-raw-to-employmentrelationshiphistory\"}},\"glue_ap_to_employmentrelationship\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-ap-to-employmentrelationship\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "stage-qualtrics-workflow"
+   },
+   "DependsOn": [
+    "qualtricsworkflowRoleDefaultPolicyE95B58F3",
+    "qualtricsworkflowRoleA69E5A57"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/qualtrics-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01Q0WrDMAz8lrwrarJCn7cWNjY2CNkHBMdVEy+OXSJ7oxj/++wsgz6dzneSTn7AwwFDVYgfLuV5KrXqMXw6ISdoia1fJEHSuqDEjKGxWskbnC5mq1qrKdOMEbSY+7PA8OyNdMqarPzXEXjfCWZyjE8ZEsejlxO5o2CCQXvC5H+zPbCj62Xr484JnhjD+zr81XzbieAluVPKxSV76/Pw+xYMp9GqlLxJCyH5HH0IOSqzZr3nMcIaJr0NygzrKdvZEapS6OsosCoet+/ZZcxJNyVtj9Dc3GjNbo91jXXxxUqVizdOzYTtH/4CL2qofmUBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

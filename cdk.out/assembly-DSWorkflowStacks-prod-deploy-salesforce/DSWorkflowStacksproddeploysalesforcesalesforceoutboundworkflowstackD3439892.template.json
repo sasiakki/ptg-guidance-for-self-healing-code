@@ -1,0 +1,310 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksproddeploysalesforcesalesforceoutboundworkflowstackGlueRoleACFF0022A57BD293": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksproddeploysalesforcesalesforceoutboundworkflowstackGlueRoleACFF0022",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksproddeploysalesforcesalesforceoutboundworkflowstackGlueRoleACFF0022/Resource"
+   }
+  },
+  "gluesfoutboundperson5D6F7CFE": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/7be1e5ee0993558a432aacd99203e4bcf44c85253d02a940e3e7cdbe7282cc0c.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-sf-outbound-person"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-outbound-person/Resource"
+   }
+  },
+  "gluesfoutboundemploymentrelationship28B87D39": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/f7774fcce0dfd471c1eeb943455e530e33d14089d7857c454a0b3665695aa025.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-sf-outbound-employmentrelationship"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-outbound-employmentrelationship/Resource"
+   }
+  },
+  "gluesfoutboundcredentialD99D89A1": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/1c8f5adc34d37415b4bb9d7de580e9d067d7163d0e6ac9fea6e562f5bc4505db.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-sf-outbound-credential"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-outbound-credential/Resource"
+   }
+  },
+  "gluesfoutboundemployer08F358BA": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/5571d3ec5ca4dd0b47f48c12dfadc4d38e74bc952a133468e020df137146a47e.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-sf-outbound-employer"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-outbound-employer/Resource"
+   }
+  },
+  "gluesfbenefitscertificationfundE6A59168": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/3ee5bad993affb9366bcebdb9424384040742d39a86d82ebc5b91d0d8ce2eb5e.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-sf-benefits-certification-fund"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-benefits-certification-fund/Resource"
+   }
+  },
+  "salesforceoutboundworkflowRoleB7306482": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/salesforce-outbound-workflow/Role/Resource"
+   }
+  },
+  "salesforceoutboundworkflowRoleDefaultPolicy38EA11ED": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-sf-benefits-certification-fund",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-sf-outbound-credential",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-sf-outbound-employer",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-sf-outbound-employmentrelationship",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-sf-outbound-person"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "salesforceoutboundworkflowRoleDefaultPolicy38EA11ED",
+    "Roles": [
+     {
+      "Ref": "salesforceoutboundworkflowRoleB7306482"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/salesforce-outbound-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "salesforceoutboundworkflowCBEA2545": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "salesforceoutboundworkflowRoleB7306482",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"glue_sf_outbound_person\",\"States\":{\"glue_sf_outbound_person\":{\"Next\":\"glue_sf_outbound_employmentrelationship\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-sf-outbound-person\"}},\"glue_sf_outbound_employmentrelationship\":{\"Next\":\"glue_sf_outbound_credential\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-sf-outbound-employmentrelationship\"}},\"glue_sf_outbound_credential\":{\"Next\":\"glue_sf_outbound_employer\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-sf-outbound-credential\"}},\"glue_sf_outbound_employer\":{\"Next\":\"glue_sf_benefits_certification_fund\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-sf-outbound-employer\"}},\"glue_sf_benefits_certification_fund\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-sf-benefits-certification-fund\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "prod-salesforce-outbound-workflow"
+   },
+   "DependsOn": [
+    "salesforceoutboundworkflowRoleDefaultPolicy38EA11ED",
+    "salesforceoutboundworkflowRoleB7306482"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/salesforce-outbound-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPwWrDMBBEv8X39cZuIOc2PRQCheB+gFHUjb21IgXvihKM/r2S60N7ehrNwMw+4eGAS1OZb6nt51Q7vuDyocZO0JGEOFuC7PULmxsu5+DYPuD16rdXFxwVWZhA9r0RIRV8Kcgaj9FOpEcjBIOLhDl7ChcQpfs1eqscvPRqZBJ8y35unjUHuuj/Z9ZRSu/GjuzXyr86JVgb89/AflgXbesTNLVx99FgUz1vV+4Ky5zNyYUJzg8dg9/tsW2xrb6EuZ6jV74Rdr/8AYlsgy4sAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-salesforce/salesforce-outbound-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,107 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksdevdeployeligibilitycalculationworkflowEligibilityCalculationworkflowstack337FF956.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksdevdeployeligibilitycalculationworkflowEligibilityCalculationworkflowstack337FF956.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksdevdeployeligibilitycalculationworkflowEligibilityCalculationworkflowstack337FF956": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://529350069891/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksdevdeployeligibilitycalculationworkflowEligibilityCalculationworkflowstack337FF956.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-deploy-role-529350069891-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-cfn-exec-role-529350069891-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/34f7c97d6a40aa66bf9fda63dc01dcd8e10d4ee28206fc302d155a12f4e59b2a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksdevdeployeligibilitycalculationworkflowEligibilityCalculationworkflowstack337FF956.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-lookup-role-529350069891-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "dev-deploy-eligibility-calculation-workflow-Eligibility-Calculation-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksdevdeployeligibilitycalculationworkflowEligibilityCalculationworkflowstack337FF956.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/GlueRole/PolicyDSWorkflowStacksdevdeployeligibilitycalculationworkflowEligibilityCalculationworkflowstackGlueRoleBCB24E16/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksdevdeployeligibilitycalculationworkflowEligibilityCalculationworkflowstackGlueRoleBCB24E16C6FE04D3"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/glue-eligibility-data-truncate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueeligibilitydatatruncate14003A82"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/glue-eligibility-data-inbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueeligibilitydatainbound0F10192D"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/lambda-eligibility-compliance-iterator/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaeligibilitycomplianceiterator0286E0B7"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/EligibilityFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EligibilityFunction651127C4"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/StateMachine_eligibility_calculation/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineeligibilitycalculationRole14A243DF"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/StateMachine_eligibility_calculation/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineeligibilitycalculationRoleDefaultPolicy5E8621A0"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/StateMachine_eligibility_calculation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachineeligibilitycalculation437F45DF"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack"
+    }
+  }
+}

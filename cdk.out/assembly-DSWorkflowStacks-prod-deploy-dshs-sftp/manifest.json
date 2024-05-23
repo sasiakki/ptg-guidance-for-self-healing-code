@@ -1,0 +1,101 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksproddeploydshssftpdshssftpworkflowstack7098E14C.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksproddeploydshssftpdshssftpworkflowstack7098E14C.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksproddeploydshssftpdshssftpworkflowstack7098E14C": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://259367569391/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksproddeploydshssftpdshssftpworkflowstack7098E14C.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-deploy-role-259367569391-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-cfn-exec-role-259367569391-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/e4c19294d0e4e0a7190b78102bdc1162530e6ad3905c3c39fc16583c55a907df.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksproddeploydshssftpdshssftpworkflowstack7098E14C.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-lookup-role-259367569391-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "prod-deploy-dshs-sftp-dshs-sftp-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksproddeploydshssftpdshssftpworkflowstack7098E14C.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/custom-layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customlayerF4E00665"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/lambda-sftp-db-log-read-dshs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdasftpdblogreaddshs612BF785"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/lambda-sftp-dshs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdasftpdshsA96191EB"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/lambda-sftp-db-log-write-dshs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdasftpdblogwritedshs2AEED66C"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/dshs-sftp-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dshssftpworkflowRole98F210F9"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/dshs-sftp-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dshssftpworkflowRoleDefaultPolicy12954872"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/dshs-sftp-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dshssftpworkflow1E9D76F0"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/prod-deploy-dshs-sftp/dshs-sftp-workflow-stack"
+    }
+  }
+}

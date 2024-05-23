@@ -1,0 +1,1813 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "assembly-DSWorkflowStacks-dev-deploy-b2b-business": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-b2b-business",
+        "displayName": "DSWorkflowStacks/dev-deploy-b2b-business"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-benefits": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-benefits",
+        "displayName": "DSWorkflowStacks/dev-deploy-benefits"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-cdwa": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-cdwa",
+        "displayName": "DSWorkflowStacks/dev-deploy-cdwa"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-credentials": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-credentials",
+        "displayName": "DSWorkflowStacks/dev-deploy-credentials"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-ds-s3-iterator": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-ds-s3-iterator",
+        "displayName": "DSWorkflowStacks/dev-deploy-ds-s3-iterator"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-doh": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-doh",
+        "displayName": "DSWorkflowStacks/dev-deploy-doh"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-exam": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-exam",
+        "displayName": "DSWorkflowStacks/dev-deploy-exam"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-qualtrics": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-qualtrics",
+        "displayName": "DSWorkflowStacks/dev-deploy-qualtrics"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-quarantine": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-quarantine",
+        "displayName": "DSWorkflowStacks/dev-deploy-quarantine"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-api-to-s3i": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-api-to-s3i",
+        "displayName": "DSWorkflowStacks/dev-deploy-api-to-s3i"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-api-and-sftp-to-s3": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-api-and-sftp-to-s3",
+        "displayName": "DSWorkflowStacks/dev-deploy-api-and-sftp-to-s3"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-dshs-sftp": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-dshs-sftp",
+        "displayName": "DSWorkflowStacks/dev-deploy-dshs-sftp"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-salesforce": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-salesforce",
+        "displayName": "DSWorkflowStacks/dev-deploy-salesforce"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-training-completion": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-training-completion",
+        "displayName": "DSWorkflowStacks/dev-deploy-training-completion"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-training-transfers": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-training-transfers",
+        "displayName": "DSWorkflowStacks/dev-deploy-training-transfers"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-cdwa-sftp": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-cdwa-sftp",
+        "displayName": "DSWorkflowStacks/dev-deploy-cdwa-sftp"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-doh-sftp": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-doh-sftp",
+        "displayName": "DSWorkflowStacks/dev-deploy-doh-sftp"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-transcripts-retraction": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-transcripts-retraction",
+        "displayName": "DSWorkflowStacks/dev-deploy-transcripts-retraction"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-e2e-stack": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-e2e-stack",
+        "displayName": "DSWorkflowStacks/dev-e2e-stack"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-doh-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-doh-outbound",
+        "displayName": "DSWorkflowStacks/dev-deploy-doh-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-dshs-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-dshs-outbound",
+        "displayName": "DSWorkflowStacks/dev-deploy-dshs-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-cdwa-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-cdwa-outbound",
+        "displayName": "DSWorkflowStacks/dev-deploy-cdwa-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-dwh-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-dwh-outbound",
+        "displayName": "DSWorkflowStacks/dev-deploy-dwh-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-docebo-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-docebo-outbound",
+        "displayName": "DSWorkflowStacks/dev-deploy-docebo-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-eligibility-sam": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-eligibility-sam",
+        "displayName": "DSWorkflowStacks/dev-deploy-eligibility-sam"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-migration-scripts-jobs": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-migration-scripts-jobs",
+        "displayName": "DSWorkflowStacks/dev-deploy-migration-scripts-jobs"
+      }
+    },
+    "assembly-DSWorkflowStacks-dev-deploy-eligibility-calculation-workflow": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-dev-deploy-eligibility-calculation-workflow",
+        "displayName": "DSWorkflowStacks/dev-deploy-eligibility-calculation-workflow"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-b2b-business": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-b2b-business",
+        "displayName": "DSWorkflowStacks/stage-deploy-b2b-business"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-benefits": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-benefits",
+        "displayName": "DSWorkflowStacks/stage-deploy-benefits"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-cdwa": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-cdwa",
+        "displayName": "DSWorkflowStacks/stage-deploy-cdwa"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-credentials": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-credentials",
+        "displayName": "DSWorkflowStacks/stage-deploy-credentials"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-ds-s3-iterator": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-ds-s3-iterator",
+        "displayName": "DSWorkflowStacks/stage-deploy-ds-s3-iterator"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-doh": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-doh",
+        "displayName": "DSWorkflowStacks/stage-deploy-doh"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-exam": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-exam",
+        "displayName": "DSWorkflowStacks/stage-deploy-exam"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-qualtrics": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-qualtrics",
+        "displayName": "DSWorkflowStacks/stage-deploy-qualtrics"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-quarantine": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-quarantine",
+        "displayName": "DSWorkflowStacks/stage-deploy-quarantine"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-api-to-s3i": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-api-to-s3i",
+        "displayName": "DSWorkflowStacks/stage-deploy-api-to-s3i"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-api-and-sftp-to-s3": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-api-and-sftp-to-s3",
+        "displayName": "DSWorkflowStacks/stage-deploy-api-and-sftp-to-s3"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-dshs-sftp": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-dshs-sftp",
+        "displayName": "DSWorkflowStacks/stage-deploy-dshs-sftp"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-salesforce": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-salesforce",
+        "displayName": "DSWorkflowStacks/stage-deploy-salesforce"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-training-completion": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-training-completion",
+        "displayName": "DSWorkflowStacks/stage-deploy-training-completion"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-training-transfers": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-training-transfers",
+        "displayName": "DSWorkflowStacks/stage-deploy-training-transfers"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-cdwa-sftp": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-cdwa-sftp",
+        "displayName": "DSWorkflowStacks/stage-deploy-cdwa-sftp"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-doh-sftp": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-doh-sftp",
+        "displayName": "DSWorkflowStacks/stage-deploy-doh-sftp"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-transcripts-retraction": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-transcripts-retraction",
+        "displayName": "DSWorkflowStacks/stage-deploy-transcripts-retraction"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-e2e-stack": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-e2e-stack",
+        "displayName": "DSWorkflowStacks/stage-e2e-stack"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-doh-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-doh-outbound",
+        "displayName": "DSWorkflowStacks/stage-deploy-doh-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-dshs-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-dshs-outbound",
+        "displayName": "DSWorkflowStacks/stage-deploy-dshs-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-cdwa-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-cdwa-outbound",
+        "displayName": "DSWorkflowStacks/stage-deploy-cdwa-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-dwh-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-dwh-outbound",
+        "displayName": "DSWorkflowStacks/stage-deploy-dwh-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-docebo-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-docebo-outbound",
+        "displayName": "DSWorkflowStacks/stage-deploy-docebo-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-eligibility-sam": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-eligibility-sam",
+        "displayName": "DSWorkflowStacks/stage-deploy-eligibility-sam"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-migration-scripts-jobs": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-migration-scripts-jobs",
+        "displayName": "DSWorkflowStacks/stage-deploy-migration-scripts-jobs"
+      }
+    },
+    "assembly-DSWorkflowStacks-stage-deploy-eligibility-calculation-workflow": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-stage-deploy-eligibility-calculation-workflow",
+        "displayName": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-b2b-business": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-b2b-business",
+        "displayName": "DSWorkflowStacks/prod-deploy-b2b-business"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-benefits": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-benefits",
+        "displayName": "DSWorkflowStacks/prod-deploy-benefits"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-cdwa": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-cdwa",
+        "displayName": "DSWorkflowStacks/prod-deploy-cdwa"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-credentials": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-credentials",
+        "displayName": "DSWorkflowStacks/prod-deploy-credentials"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-ds-s3-iterator": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-ds-s3-iterator",
+        "displayName": "DSWorkflowStacks/prod-deploy-ds-s3-iterator"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-doh": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-doh",
+        "displayName": "DSWorkflowStacks/prod-deploy-doh"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-exam": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-exam",
+        "displayName": "DSWorkflowStacks/prod-deploy-exam"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-qualtrics": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-qualtrics",
+        "displayName": "DSWorkflowStacks/prod-deploy-qualtrics"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-quarantine": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-quarantine",
+        "displayName": "DSWorkflowStacks/prod-deploy-quarantine"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-api-to-s3i": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-api-to-s3i",
+        "displayName": "DSWorkflowStacks/prod-deploy-api-to-s3i"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-api-and-sftp-to-s3": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-api-and-sftp-to-s3",
+        "displayName": "DSWorkflowStacks/prod-deploy-api-and-sftp-to-s3"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-dshs-sftp": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-dshs-sftp",
+        "displayName": "DSWorkflowStacks/prod-deploy-dshs-sftp"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-salesforce": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-salesforce",
+        "displayName": "DSWorkflowStacks/prod-deploy-salesforce"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-training-completion": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-training-completion",
+        "displayName": "DSWorkflowStacks/prod-deploy-training-completion"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-training-transfers": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-training-transfers",
+        "displayName": "DSWorkflowStacks/prod-deploy-training-transfers"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-cdwa-sftp": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-cdwa-sftp",
+        "displayName": "DSWorkflowStacks/prod-deploy-cdwa-sftp"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-doh-sftp": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-doh-sftp",
+        "displayName": "DSWorkflowStacks/prod-deploy-doh-sftp"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-transcripts-retraction": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-transcripts-retraction",
+        "displayName": "DSWorkflowStacks/prod-deploy-transcripts-retraction"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-e2e-stack": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-e2e-stack",
+        "displayName": "DSWorkflowStacks/prod-e2e-stack"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-doh-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-doh-outbound",
+        "displayName": "DSWorkflowStacks/prod-deploy-doh-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-dshs-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-dshs-outbound",
+        "displayName": "DSWorkflowStacks/prod-deploy-dshs-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-cdwa-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-cdwa-outbound",
+        "displayName": "DSWorkflowStacks/prod-deploy-cdwa-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-dwh-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-dwh-outbound",
+        "displayName": "DSWorkflowStacks/prod-deploy-dwh-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-docebo-outbound": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-docebo-outbound",
+        "displayName": "DSWorkflowStacks/prod-deploy-docebo-outbound"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-eligibility-sam": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-eligibility-sam",
+        "displayName": "DSWorkflowStacks/prod-deploy-eligibility-sam"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-migration-scripts-jobs": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-migration-scripts-jobs",
+        "displayName": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs"
+      }
+    },
+    "assembly-DSWorkflowStacks-prod-deploy-eligibility-calculation-workflow": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-DSWorkflowStacks-prod-deploy-eligibility-calculation-workflow",
+        "displayName": "DSWorkflowStacks/prod-deploy-eligibility-calculation-workflow"
+      }
+    },
+    "DSWorkflowStacks.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacks.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacks": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://938426161301/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacks.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::938426161301:role/cdk-hnb659fds-deploy-role-938426161301-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::938426161301:role/cdk-hnb659fds-cfn-exec-role-938426161301-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-938426161301-us-west-2/bbd9b93bd951c2928c4a17b2b55d446fc04c51daf0de0ed0b7010ae4a180d72a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacks.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::938426161301:role/cdk-hnb659fds-lookup-role-938426161301-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "DSWorkflowStacks.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/datastore-cdk-repo-devops/DSWorkflowStacksPipeline654F698C-main-EventRule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "datastorecdkrepodevopsDSWorkflowStacksPipeline654F698CmainEventRuleA10E12A7"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucketEncryptionKeyF5BF0670"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/ArtifactsBucketEncryptionKeyAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucketEncryptionKeyAlias94A07392"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucketAEA9A052"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucketPolicyF53CCC52"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleB27FAA37"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleDefaultPolicy7BDC1ABB"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Pipeline9850B417"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/Source/datastore-cdk-repo-devops/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineSourcedatastorecdkrepodevopsCodePipelineActionRole0760F673"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/Source/datastore-cdk-repo-devops/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineSourcedatastorecdkrepodevopsCodePipelineActionRoleDefaultPolicyC711D537"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/EventsRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineEventsRole96280D9B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/EventsRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineEventsRoleDefaultPolicy62809D8F"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCdkBuildProjectRole231EEA2A"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCdkBuildProjectRoleDefaultPolicyFB6C941C"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCdkBuildProject6BEFA8E6"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/stage-deployment-parallel.1/promote-to-stage/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Pipelinestagedeploymentparallel1promotetostageCodePipelineActionRoleC1AE2399"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Pipeline/prod-deployment-parallel.1/promote-to-prod/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Pipelineproddeploymentparallel1promotetoprodCodePipelineActionRoleF8C568EE"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/CodeBuildActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineCodeBuildActionRole226DB0CB"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/CodeBuildActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineCodeBuildActionRoleDefaultPolicy1D62A6FE"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/CodeBuildActionRole/OverflowPolicy1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineCodeBuildActionRoleOverflowPolicy111CE74D8"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/CodeBuildActionRole/OverflowPolicy2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineCodeBuildActionRoleOverflowPolicy2466407A0"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/CodeBuildActionRole/OverflowPolicy3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineCodeBuildActionRoleOverflowPolicy34693FB19"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/CodeBuildActionRole/OverflowPolicy4/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineCodeBuildActionRoleOverflowPolicy4D6A012CF"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/UpdatePipeline/SelfMutation/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineUpdatePipelineSelfMutationRole57E559E8"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineUpdatePipelineSelfMutationRoleDefaultPolicyA225DA4E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/UpdatePipeline/SelfMutation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineUpdatePipelineSelfMutationDAA41400"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileRole59943A77"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileRoleDefaultPolicy14DB8755"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset185A67CB4"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset10/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset102484C317"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset100/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1003D3F3415"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset101/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1019AB31DFD"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset102/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1021190990E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset103/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset103B2B90F21"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset104/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset104F86D850B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset105/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1051A16C4FB"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset106/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset10614FB40C9"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset107/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset10781508DBB"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset108/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1086961119D"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset109/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1099811D384"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset11/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset11D534F05C"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset110/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1101C48640C"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset111/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset11163206047"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset112/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1123315EC7F"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset113/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1135AD15967"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset114/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset114BF699A11"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset115/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset11525F9B019"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset116/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset116AC58C0DD"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset117/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1178E57F183"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset118/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset11884055BB6"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset119/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset119DF5120AD"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset12/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset12E916E136"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset120/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset120837D7912"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset121/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset121F3019F42"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset122/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset122B3B0977B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset123/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1231A5BF67E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset124/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset124B9B9DDFD"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset125/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset125F5194DEA"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset126/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1266122E1B0"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset127/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset127A1B44E17"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset128/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1288C5112D6"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset129/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset129F74B17B7"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset13/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset13BC3E73E7"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset130/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1306BAF1553"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset131/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset131597DBDC4"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset132/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1322ECE5F44"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset133/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset133DD166AA6"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset134/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset134011C4A32"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset135/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset135029070C2"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset136/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset136038F5D77"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset137/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1379B43E014"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset138/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset138106F8B31"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset139/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset139772B4E23"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset14/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset14A3CA232F"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset140/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1400BE95947"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset141/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset141954E4B0B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset142/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset14217B33D8A"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset143/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset143E2A9C058"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset144/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset144DC8529E0"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset145/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset145EA4298A8"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset146/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset14668B8DB05"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset147/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset147CA87B27E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset148/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1488048C45A"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset149/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset149B01B0184"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset15/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset15B22B8501"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset150/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset150489F98C1"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset151/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset15161D8675D"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset152/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset152740E8C19"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset153/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset15300B12390"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset154/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset15479B38B12"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset155/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1553CC3AAEA"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset156/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset156766C4922"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset157/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset157688A82D8"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset158/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset158BA5517DD"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset159/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset159FB2B44E9"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset16/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset161A3A5D08"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset160/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset160AA4156EE"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset161/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset161D0E52B12"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset162/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset162353595DC"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset163/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset163BE2E2BD2"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset164/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1649A40B14D"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset165/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset165260B66DA"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset166/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset166056227BD"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset167/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset167B2B6709E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset168/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset1683A4739FF"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset169/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset169E4F7A5C4"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset17/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset172B1ABD63"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset18/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset188630082E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset19/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset192EB5FBA6"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset24D2D639B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset20/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset20029B3B78"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset21/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset21442424F4"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset22/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset22CDC8D936"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset23/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset23A5E4949B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset24/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset240D3F5D3D"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset25/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset25C2F636DD"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset26/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset26CD3C46ED"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset27/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset278581B380"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset28/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset28D7887C5A"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset29/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset2994CB4E12"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset3FE71B523"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset30/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset30AA2C9CCE"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset31/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset315BF305B1"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset32/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset32B2F439EA"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset33/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset331EA5BEFF"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset34/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset34304F56C6"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset35/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset359C5D1AAE"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset36/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset36A9A3262B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset37/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset37A82313CE"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset38/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset381D6E48C4"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset39/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset3939491230"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset4/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset474303B7D"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset40/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset405A6FEB45"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset41/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset4148861B0A"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset42/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset4293256298"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset43/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset43E66E3741"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset44/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset44F4DEECBF"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset45/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset457208BD23"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset46/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset46922D3267"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset47/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset47191A3E0D"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset48/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset4856493151"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset49/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset49B0C6D238"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset5/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset5184A5C2F"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset50/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset50A1412697"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset51/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset51DA623014"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset52/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset52F2F6A2F0"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset53/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset53E58DED99"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset54/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset54345C6B8B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset55/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset55A0E7915B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset56/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset56E5608528"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset57/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset57507775A2"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset58/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset580DC2C464"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset59/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset5957932EE8"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset6/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset669C72F3C"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset60/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset6025DA896E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset61/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset612BDB9430"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset62/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset62ED88C085"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset63/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset63B5AB7E13"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset64/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset64FC669154"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset65/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset65E3C56396"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset66/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset66B9FFEB80"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset67/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset675C6D5E29"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset68/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset68ED659A47"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset69/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset69F3CB7D20"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset7/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset7A51C54D0"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset70/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset70E1207E6E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset71/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset71C30C815C"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset72/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset72D5BA8D4A"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset73/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset73DB2A72B9"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset74/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset74FA229EA9"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset75/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset752A6B3DDC"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset76/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset76925864A3"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset77/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset77D5D14BE4"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset78/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset784A4F7D48"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset79/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset79E6BBD922"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset8/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset81DAB433B"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset80/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset80E74146C5"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset81/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset81B591E8CD"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset82/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset82D4FA7BC5"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset83/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset83188DCDA0"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset84/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset84A8AE03DF"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset85/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset85D1CC2200"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset86/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset86ACE4ED95"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset87/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset8717020F96"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset88/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset885CF26CEC"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset89/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset890639B52E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset9/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset9F08741A2"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset90/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset90ECF2F7D4"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset91/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset9134A05E71"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset92/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset929BE28337"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset93/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset93CDDE66E0"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset94/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset94D8123427"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset95/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset95EE4C52A3"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset96/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset96391FF111"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset97/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset9720BC035D"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset98/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset9846FDB53E"
+          }
+        ],
+        "/DSWorkflowStacks/Pipeline/Assets/FileAsset99/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineAssetsFileAsset997A91815F"
+          }
+        ],
+        "/DSWorkflowStacks/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,623 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksdevdeploycdwacdwaworkflowstackGlueRole70C204460D45DAFA": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-529350069891-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-529350069891-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksdevdeploycdwacdwaworkflowstackGlueRole70C20446",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/GlueRole/PolicyDSWorkflowStacksdevdeploycdwacdwaworkflowstackGlueRole70C20446/Resource"
+   }
+  },
+  "customlayerF4E00665": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "3ef4178bccf2a58ccb1f90c6a4938bcefe2f9d38d936d5da57ac80b9e4d9cb6d.zip"
+    },
+    "CompatibleRuntimes": [
+     "python3.9"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/custom-layer/Resource",
+    "aws:asset:path": "../asset.3ef4178bccf2a58ccb1f90c6a4938bcefe2f9d38d936d5da57ac80b9e4d9cb6d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Content"
+   }
+  },
+  "lambdas3checkcdwa59226EE3": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "0e85986ff3337487b1f68961304e061ea3ac6ed7b03e2bc34aa7d52f14e64c2b.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda_s3_check_cdwa",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 120
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/lambda-s3-check-cdwa/Resource",
+    "aws:asset:path": "../asset.0e85986ff3337487b1f68961304e061ea3ac6ed7b03e2bc34aa7d52f14e64c2b",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdagetcdwafileprocessingDD4A51A5": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "62c8b6834c54dfdbcb044a2b1531281698ae2c0a569348cf034da04eb0c56f0e.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda_get_cdwa_file_processing",
+    "Handler": "lambda_function.lambda_handler",
+    "Layers": [
+     "arn:aws:lambda:us-west-2:345057560386:layer:AWS-Parameters-and-Secrets-Lambda-Extension:4",
+     {
+      "Ref": "customlayerF4E00665"
+     }
+    ],
+    "Runtime": "python3.9",
+    "Timeout": 120
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/lambda-get-cdwa-file-processing/Resource",
+    "aws:asset:path": "../asset.62c8b6834c54dfdbcb044a2b1531281698ae2c0a569348cf034da04eb0c56f0e",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdagetcdwaemailnotificationF87FF410": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "cbdf60daa563fdd9c9bf23a919e49488d4665aed7999fd54856ff405d472801a.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda_get_cdwa_email_notification",
+    "Handler": "lambda_function.lambda_handler",
+    "Layers": [
+     "arn:aws:lambda:us-west-2:345057560386:layer:AWS-Parameters-and-Secrets-Lambda-Extension:4",
+     {
+      "Ref": "customlayerF4E00665"
+     }
+    ],
+    "Runtime": "python3.9",
+    "Timeout": 120
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/lambda-get-cdwa-email-notification/Resource",
+    "aws:asset:path": "../asset.cbdf60daa563fdd9c9bf23a919e49488d4665aed7999fd54856ff405d472801a",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "gluecdwas3toraw87285700": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/1d999b68ac5ce27d5dfcf972dae0fc05b3e5cd9986584e61d430dc41fb77097e.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--additional-python-modules": "s3://seiu-b2bds-glue-dependencies/cffi-1.15.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl,s3://seiu-b2bds-glue-dependencies/fernet-1.0.1.zip,s3://seiu-b2bds-glue-dependencies/cryptography-36.0.2-cp36-abi3-manylinux_2_24_x86_64.whl,s3://seiu-b2bds-glue-dependencies/pycparser-2.21-py2.py3-none-any.whl,s3://seiu-b2bds-glue-dependencies/pyaes-1.6.1.tar.gz",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "3.0",
+    "Name": "dev-glue-cdwa-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-s3-to-raw/Resource"
+   }
+  },
+  "gluecdwaproviderinfonotification1586F2C60": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/c13143c219175c1b281d2ee090c2af5ec6678e2ecc66dbc87afc56ed9fef2c87.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-cdwa-providerinfo-notification1"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-providerinfo-notification1/Resource"
+   }
+  },
+  "gluecdwavalidation93475C76": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/7407eed66884c861fd1165757883cb46b6f99d48e94f69ff79405067e6ebff28.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-cdwa-validation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-validation/Resource"
+   }
+  },
+  "gluecdwaerrortos32EAD792A": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/d6e2b7cc80238d7bd8c0f76d78d5a18190e187765e61302543f44a564cd6c97c.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-cdwa-error-to-s3"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-error-to-s3/Resource"
+   }
+  },
+  "gluecdwaproviderinfonotification2638F4F22": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/c13143c219175c1b281d2ee090c2af5ec6678e2ecc66dbc87afc56ed9fef2c87.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-cdwa-providerinfo-notification2"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-providerinfo-notification2/Resource"
+   }
+  },
+  "gluecdwarawtostagingpersonhistory84487A65": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/19b62ddc25873c10e6a8f3b5211f61546f8264f9a609726024ef1ebe9f3e8663.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-cdwa-raw-to-staging-personhistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-raw-to-staging-personhistory/Resource"
+   }
+  },
+  "gluecdwarawtostagingemployementrelationshiphistoryC7FF4421": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/8dbca79adaa4afeb77847cda869fcc7ab18a65ab9445bdec1c4fc69aa2855222.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-cdwa-raw-to-staging-employementrelationshiphistory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-raw-to-staging-employementrelationshiphistory/Resource"
+   }
+  },
+  "gluecdwaemploymentrelationship2DFA8CC2": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/45b22193d66de5d22dd795e10e31e9143d39812e96036f391924feca6199c414.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-cdwa-employmentrelationship"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-employmentrelationship/Resource"
+   }
+  },
+  "cdwaworkflowRoleED61B00C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/cdwa-workflow/Role/Resource"
+   }
+  },
+  "cdwaworkflowRoleDefaultPolicyCA5AC58E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "lambdagetcdwaemailnotificationF87FF410",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdagetcdwafileprocessingDD4A51A5",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdas3checkcdwa59226EE3",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdagetcdwaemailnotificationF87FF410",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdagetcdwafileprocessingDD4A51A5",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdas3checkcdwa59226EE3",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-cdwa-employmentrelationship",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-cdwa-error-to-s3",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-cdwa-raw-to-staging-employementrelationshiphistory",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-cdwa-raw-to-staging-personhistory",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-cdwa-s3-to-raw",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-cdwa-validation"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "cdwaworkflowRoleDefaultPolicyCA5AC58E",
+    "Roles": [
+     {
+      "Ref": "cdwaworkflowRoleED61B00C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/cdwa-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "cdwaworkflowAA560152": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "cdwaworkflowRoleED61B00C",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"lambda_s3_check_cdwa\",\"States\":{\"lambda_s3_check_cdwa\":{\"Next\":\"has-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdas3checkcdwa59226EE3",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.Payload.result\",\"BooleanEquals\":true,\"Next\":\"glue_cdwa_s3_to_raw\"}],\"Default\":\"end-cdwa-process\"},\"end-cdwa-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_cdwa_s3_to_raw\":{\"Next\":\"has-file-loaded\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-cdwa-s3-to-raw\"}},\"has-file-loaded\":{\"Type\":\"Choice\",\"Choices\":[{\"And\":[{\"Variable\":\"$.JobRunState\",\"StringEquals\":\"SUCCEEDED\"}],\"Next\":\"lambda_get_cdwa_file_processing\"}],\"Default\":\"glue_cdwa_validation\"},\"glue_cdwa_validation\":{\"Next\":\"has-validation-completed\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-cdwa-validation\"}},\"lambda_get_cdwa_email_notification\":{\"Next\":\"glue_cdwa_validation\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdagetcdwaemailnotificationF87FF410",
+         "Arn"
+        ]
+       },
+       "\",\"Payload\":{\"filename.$\":\"$.filename\",\"filecount.$\":\"$.filecount\",\"type\":\"Processing\"}}},\"lambda_get_cdwa_file_processing\":{\"Next\":\"lambda_get_cdwa_email_notification\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"ResultSelector\":{\"filename.$\":\"$.Payload.body.filename\",\"filecount.$\":\"$.Payload.body.filecount\"},\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdagetcdwafileprocessingDD4A51A5",
+         "Arn"
+        ]
+       },
+       "\",\"Payload\":{\"type\":\"Processing\"}}},\"has-validation-completed\":{\"Type\":\"Choice\",\"Choices\":[{\"And\":[{\"Variable\":\"$.JobRunState\",\"StringEquals\":\"SUCCEEDED\"}],\"Next\":\"lambda_get_cdwa_file_processing1\"}],\"Default\":\"glue_cdwa_error_to_s3\"},\"glue_cdwa_error_to_s3\":{\"Next\":\"glue_cdwa_raw_to_staging_personhistory\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-cdwa-error-to-s3\"}},\"lambda_get_cdwa_email_notification1\":{\"Next\":\"glue_cdwa_error_to_s3\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdagetcdwaemailnotificationF87FF410",
+         "Arn"
+        ]
+       },
+       "\",\"Payload\":{\"filename.$\":\"$.filename\",\"filecount.$\":\"$.filecount\",\"type\":\"Datavalidation\"}}},\"lambda_get_cdwa_file_processing1\":{\"Next\":\"lambda_get_cdwa_email_notification1\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"ResultSelector\":{\"filename.$\":\"$.Payload.body.filename\",\"filecount.$\":\"$.Payload.body.filecount\"},\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdagetcdwafileprocessingDD4A51A5",
+         "Arn"
+        ]
+       },
+       "\",\"Payload\":{\"type\":\"Datavalidation\"}}},\"glue_cdwa_raw_to_staging_personhistory\":{\"Next\":\"glue_cdwa_raw_to_staging_employementrelationshiphistory\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-cdwa-raw-to-staging-personhistory\"}},\"glue_cdwa_raw_to_staging_employementrelationshiphistory\":{\"Next\":\"glue_cdwa_employmentrelationship\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-cdwa-raw-to-staging-employementrelationshiphistory\"}},\"glue_cdwa_employmentrelationship\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-cdwa-employmentrelationship\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "dev-cdwa-workflow"
+   },
+   "DependsOn": [
+    "cdwaworkflowRoleDefaultPolicyCA5AC58E",
+    "cdwaworkflowRoleED61B00C"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/cdwa-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VQ0UrEMBD8lr6ne60H96x3oCgKpYKvJc3ttbFpcnQTpYT8u0mNcD7NbmY2s7N3cDiArwr+TaU4T6WSPfh3y8XEWiTjFoEscp2XfAbfGCXFyk4XnavWKExtwsAUn/szB//KV1w+cCFpdGL/9Y9OC5uJvzow2necCC3BQ4LYw9GJCe2RE7JBOYSofzE9I4vXS56jznKaKDkm52f9ZSZkT1EdIyw2yluXPr8dAX8ajYyxmmjIos7iGxej1FuQ2z4Eti0T3waphy1nvklgVcnVdeRQFff5druEadPMRPfAmtWORu/2UNdQF58kZbk4beWM0P7iD6c08kOCAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-cdwa/cdwa-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

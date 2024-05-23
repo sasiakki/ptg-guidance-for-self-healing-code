@@ -1,0 +1,8 @@
+https://seiu775bg.atlassian.net/browse/B2BDS-1318
+
+Steps
+-----
+
+1. Login to the PROD database with account having permission to modify SPs
+2. Apply the stored procedure at the DS Prod database, sp_updatewithearliest_hire_tracking_worcat.sql 
+3. Execute the glue job, 'glue-update-earliest-hire-trackingworkcategory'

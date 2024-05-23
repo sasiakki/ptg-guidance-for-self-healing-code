@@ -1,0 +1,26 @@
+Insert Initial logs.lastprocessed record for the processes
+https://seiu775bg.atlassian.net/browse/B2BDS-1318
+
+Steps
+
+1. Open the Script file alter_script_logs_lastprocesssed_B2BDS-1354.sql located in the code repo
+    datastore-cdk-repodb_scriptsInsert_Initial_Logs_LastProcessed_Records.sql
+2. Login to the PROD database with account having insert permission
+3. execute the script to insert the initial records for the required processes, 
+    into the logs.lastprocessed table. 
+4. Disable the following AWS Glue Jobs. 
+    i) glue-personmastering
+    ii) glue-clean-agency-sourcekey
+    iii) glue-clean-quarantine-agency-terminated
+    iv) glue-update-earliest-hire-trackingworkcategory
+    v) glue-update-staging-learner
+    vi) glue-carina-processing
+5. Apply the function/stored procedures
+    1) fn_gethistory.sql
+    2) sp_newmasterperson.sql
+    3) sp_agencysourcekeycleanup.sql
+    4) sp_cleaningquarantineagencyterm.sql
+    5) sp_updatecarinaeligibility.sql
+    6) sp_updatelearner.sql
+    7) sp_updatewithearliest_hire_tracking_worcat.sql
+6. Enable the disabled AWS Glue Jobs, listed above

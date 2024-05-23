@@ -1,0 +1,125 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksstagedeploydohdohworkflowstackB75EE49A.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksstagedeploydohdohworkflowstackB75EE49A.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksstagedeploydohdohworkflowstackB75EE49A": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://571950455257/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksstagedeploydohdohworkflowstackB75EE49A.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-deploy-role-571950455257-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-cfn-exec-role-571950455257-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/bb69ae4728939c00de3d2f651a01e72a70a1c7919fdd17882b340134a7063db4.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksstagedeploydohdohworkflowstackB75EE49A.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-lookup-role-571950455257-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "stage-deploy-doh-doh-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksstagedeploydohdohworkflowstackB75EE49A.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploydohdohworkflowstackGlueRole95E3F457/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksstagedeploydohdohworkflowstackGlueRole95E3F457776BB5C2"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/lambda_check_doh/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckdohE293F4B2"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/lambda_check_doh_classified/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckdohclassifiedE693382A"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/glue-doh-classified-raw-to-prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohclassifiedrawtoprod5F5E5A41"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/glue-doh-classified-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohclassifieds3toraw19F134BE"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/glue-doh-clean-data/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohcleandataB101DD1F"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/glue-doh-completed-raw-to-prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohcompletedrawtoprod1FCAA1CF"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/glue-doh-completed-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohcompleteds3toraw3BD57CC2"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/doh-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dohworkflowRole1738C5F9"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/doh-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dohworkflowRoleDefaultPolicyD666FD3F"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/doh-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dohworkflow9C5DAF5D"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/stage-deploy-doh/doh-workflow-stack"
+    }
+  }
+}

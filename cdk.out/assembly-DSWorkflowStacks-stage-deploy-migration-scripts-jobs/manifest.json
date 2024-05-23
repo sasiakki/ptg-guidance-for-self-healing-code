@@ -1,0 +1,209 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksstagedeploymigrationscriptsjobsmigrationscriptsworkflowstack17F888CB.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksstagedeploymigrationscriptsjobsmigrationscriptsworkflowstack17F888CB.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksstagedeploymigrationscriptsjobsmigrationscriptsworkflowstack17F888CB": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://571950455257/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksstagedeploymigrationscriptsjobsmigrationscriptsworkflowstack17F888CB.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-deploy-role-571950455257-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-cfn-exec-role-571950455257-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/dca74763eb392bcf92f665e047d4d62c58cae255d0cf474d6fb98e9fb8c52809.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksstagedeploymigrationscriptsjobsmigrationscriptsworkflowstack17F888CB.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-lookup-role-571950455257-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "stage-deploy-migration-scripts-jobs-migration-scripts-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksstagedeploymigrationscriptsjobsmigrationscriptsworkflowstack17F888CB.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploymigrationscriptsjobsmigrationscriptsworkflowstackGlueRole5D517438/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksstagedeploymigrationscriptsjobsmigrationscriptsworkflowstackGlueRole5D51743877449DDC"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-coursecatalog-version-update/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecoursecatalogversionupdate96901048"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-logs-traineestatuslogs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationlogstraineestatuslogs701AE9B6"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-branch/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodbranch71FF9C5D"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-course-catalog/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodcoursecatalogB03EA983"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-dohclassified/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationproddohclassified95DAAAF3"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-dohcompleted/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationproddohcompleted468119D9"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-duedateextension/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodduedateextension686BC94D"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-employer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodemployer4E52C2E6"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-employer-trust/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodemployertrust881D5E10"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-employmentrelationship/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodemploymentrelationshipA9D5FD1B"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-exam/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodexamE591C146"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-instructor/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodinstructor877259CC"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-ojteligible/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodojteligibleD1710897"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-person/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodperson77C74750"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-trainingrequirement/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodtrainingrequirement72FA9BB9"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-transcript/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationprodtranscript5F80B480"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-raw-credential-delta/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationrawcredentialdelta1D8B8E69"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-staging-idcrosswalk/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationstagingidcrosswalk9D7E6912"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-staging-personhistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationstagingpersonhistoryDA297A5E"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-logs-transcript-archived/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemigrationlogstranscriptarchivedE925C259"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-process-clean-tables/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueprocesscleantables547DE806"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/migration_scripts_workflow_stack/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "migrationscriptsworkflowstackRole1E66B43C"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/migration_scripts_workflow_stack/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "migrationscriptsworkflowstackRoleDefaultPolicy89A72B90"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/migration_scripts_workflow_stack/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "migrationscriptsworkflowstack4CFE7C7D"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/stage-deploy-migration-scripts-jobs/migration-scripts-workflow-stack"
+    }
+  }
+}

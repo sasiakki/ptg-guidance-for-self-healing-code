@@ -1,0 +1,113 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksstagedeploycredentialscredentialworkflowstack610FC8E2.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksstagedeploycredentialscredentialworkflowstack610FC8E2.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksstagedeploycredentialscredentialworkflowstack610FC8E2": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://571950455257/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksstagedeploycredentialscredentialworkflowstack610FC8E2.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-deploy-role-571950455257-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-cfn-exec-role-571950455257-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/3bbd11bbd3c41941bb236862c144ecdf61c9307923fe796610624f40eeec9391.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksstagedeploycredentialscredentialworkflowstack610FC8E2.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-lookup-role-571950455257-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "stage-deploy-credentials-credential-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksstagedeploycredentialscredentialworkflowstack610FC8E2.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploycredentialscredentialworkflowstackGlueRole286F176C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksstagedeploycredentialscredentialworkflowstackGlueRole286F176C5CFEF5F8"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/lambda_check_credential/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckcredential0B71014E"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/glue-credentials-delta-processing/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecredentialsdeltaprocessing3537C097"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/glue-credentials-delta-raw-to-staging-personhistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecredentialsdeltarawtostagingpersonhistory6424F2A8"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/glue-credentials-doh-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecredentialsdohs3torawF3F81A1C"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/glue-credentials-ospi-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecredentialsospis3toraw72D8094F"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/credential-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "credentialworkflowRoleC970F90D"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/credential-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "credentialworkflowRoleDefaultPolicy3D9F52EF"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/credential-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "credentialworkflow8EDBDBDA"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/stage-deploy-credentials/credential-workflow-stack"
+    }
+  }
+}

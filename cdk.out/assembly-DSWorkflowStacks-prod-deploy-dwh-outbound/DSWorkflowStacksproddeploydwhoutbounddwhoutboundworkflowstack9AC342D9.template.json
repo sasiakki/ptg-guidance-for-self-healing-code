@@ -1,0 +1,713 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksproddeploydwhoutbounddwhoutboundworkflowstackGlueRole3F900C6DE710C8A7": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksproddeploydwhoutbounddwhoutboundworkflowstackGlueRole3F900C6D",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksproddeploydwhoutbounddwhoutboundworkflowstackGlueRole3F900C6D/Resource"
+   }
+  },
+  "gluedwhbranchoutbound8EE584F5": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/b5582336d5a506fb858a502fec3516d34e05f010774d52825998df74244bd5a5.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-branch-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-branch-outbound/Resource"
+   }
+  },
+  "gluedwhcoursecatalogoutbound2F8B6501": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/9337a8c15d5a637f7fcc4318c945cdd454ced43b75fb376e506fd7e31cba11da.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-coursecatalog-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-coursecatalog-outbound/Resource"
+   }
+  },
+  "gluedwhcourseequivalencyoutbound1D3423EC": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/d38d9d8142239c3722ad0ab443b0e7cbeecc99fc53c79cc4a1d480cd7217b09a.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-courseequivalency-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-courseequivalency-outbound/Resource"
+   }
+  },
+  "gluedwhcredentialoutboundB49AFF98": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/10d21ff877ee295d8e6b1dfd9890162d61ab261181657ff5bfd593afd89029c2.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-credential-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-credential-outbound/Resource"
+   }
+  },
+  "gluedwhdohcompletedoutbound3EFABC52": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/bde794c439b37a330466e026e647ff223dbc1dd701895b5ae1b4c76e6edfa053.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-dohcompleted-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-dohcompleted-outbound/Resource"
+   }
+  },
+  "gluedwhdohclassifiedoutbound61BF5CE5": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/b6c14ef009d226d7df0f18beca6e69365382bcb285de022320e6d286f1b53aed.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-dohclassified-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-dohclassified-outbound/Resource"
+   }
+  },
+  "gluedwhduedateextensionoutbound333FCD45": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/7444ff7521c74b16a60b27dbf8964e7e79bb06de0a58ff1b876a64408d57a36f.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-duedateextension-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-duedateextension-outbound/Resource"
+   }
+  },
+  "gluedwhemployeroutbound9B8065DE": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/18e5aec64b227f0074baca1b474bf7e60cd726672c9a64e6754af8c423e19a3a.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-employer-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-employer-outbound/Resource"
+   }
+  },
+  "gluedwhemployertrustoutbound8723DA96": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/b48f72bd7a958d5318b576121b96bee7932defab4751503f46275661442a8a25.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-employertrust-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-employertrust-outbound/Resource"
+   }
+  },
+  "gluedwhemploymentrelationshipoutboundE2177294": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/4b7d15ca965b92e510a46e31601d7da560b9e0d4e93f8fa82037d136199eb40f.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-employmentrelationship-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-employmentrelationship-outbound/Resource"
+   }
+  },
+  "gluedwhexamoutbound93583DDC": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/2f22444dcc76dd88be618d563234eb401e7dcda699746fc0ba39835972442d57.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-exam-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-exam-outbound/Resource"
+   }
+  },
+  "gluedwhinstructoroutbound3CDD0CFD": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/b12dfde8411d5a9bdf044b393e09efd28423d209d324cf903136d77feee31796.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-instructor-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-instructor-outbound/Resource"
+   }
+  },
+  "gluedwhojteligibleoutboundCC7DF9AF": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/eec27953d381bbd3ae70350257796abc82c320a6693ad3d98b58b9017eae47fa.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-ojteligible-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-ojteligible-outbound/Resource"
+   }
+  },
+  "gluedwhpersonoutbound768FC1E4": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/714120b96b27fe6df5a7b11838f98dd12f415901f4c6ef6db66fd8f1d9b6e43c.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-person-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-person-outbound/Resource"
+   }
+  },
+  "gluedwhtrainingrequirementoutboundB625E32F": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/4df73892cb99af2a4ca6857a6f753dbd901c379722589bbc4e6359447607f1df.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-trainingrequirement-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-trainingrequirement-outbound/Resource"
+   }
+  },
+  "gluedwhtrainingtransfersoutbound825030FE": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/29094126f9e26980d7d0c36432159d27c08c648b8e7eb475f30551bdbb2fd56d.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-trainingtransfers-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-trainingtransfers-outbound/Resource"
+   }
+  },
+  "gluedwhtranscriptoutbound22BBEA19": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/615e62069432f222f1164e8bfb26f0bace6bf1273b26344bcd03c9229e2e5d95.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-transcript-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-transcript-outbound/Resource"
+   }
+  },
+  "gluedwhtransferstrainingprogramoutbound5F945F63": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/885eb869a6c3236809fd87774a4d87537b0383f3de5a69dae970a142fb64a153.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-dwh-transfers_trainingprogram-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-transfers_trainingprogram-outbound/Resource"
+   }
+  },
+  "dwhoutboundworkflowstackRoleAD2D3637": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/dwh_outbound_workflow_stack/Role/Resource"
+   }
+  },
+  "dwhoutboundworkflowstackRoleDefaultPolicy3D1A4224": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-branch-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-coursecatalog-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-courseequivalency-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-credential-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-dohclassified-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-dohcompleted-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-duedateextension-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-employer-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-employertrust-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-employmentrelationship-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-exam-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-instructor-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-ojteligible-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-person-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-trainingrequirement-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-trainingtransfers-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-transcript-outbound",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-dwh-transfers_trainingprogram-outbound"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "dwhoutboundworkflowstackRoleDefaultPolicy3D1A4224",
+    "Roles": [
+     {
+      "Ref": "dwhoutboundworkflowstackRoleAD2D3637"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/dwh_outbound_workflow_stack/Role/DefaultPolicy/Resource"
+   }
+  },
+  "dwhoutboundworkflowstack9EC6BED6": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "dwhoutboundworkflowstackRoleAD2D3637",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"invoke-all-dwh-parallel-jobs\",\"States\":{\"invoke-all-dwh-parallel-jobs\":{\"Type\":\"Parallel\",\"End\":true,\"Branches\":[{\"StartAt\":\"glue_dwh_branch_outbound\",\"States\":{\"glue_dwh_branch_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-branch-outbound\"}}}},{\"StartAt\":\"glue_dwh_transcript_outbound\",\"States\":{\"glue_dwh_transcript_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-transcript-outbound\"}}}},{\"StartAt\":\"glue_dwh_coursecatalog_outbound\",\"States\":{\"glue_dwh_coursecatalog_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-coursecatalog-outbound\"}}}},{\"StartAt\":\"glue_dwh_courseequivalency_outbound\",\"States\":{\"glue_dwh_courseequivalency_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-courseequivalency-outbound\"}}}},{\"StartAt\":\"glue_dwh_credential_outbound\",\"States\":{\"glue_dwh_credential_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-credential-outbound\"}}}},{\"StartAt\":\"glue_dwh_dohclassified_outbound\",\"States\":{\"glue_dwh_dohclassified_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-dohclassified-outbound\"}}}},{\"StartAt\":\"glue_dwh_dohcompleted_outbound\",\"States\":{\"glue_dwh_dohcompleted_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-dohcompleted-outbound\"}}}},{\"StartAt\":\"glue_dwh_duedateextension_outbound\",\"States\":{\"glue_dwh_duedateextension_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-duedateextension-outbound\"}}}},{\"StartAt\":\"glue_dwh_employer_outbound\",\"States\":{\"glue_dwh_employer_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-employer-outbound\"}}}},{\"StartAt\":\"glue_dwh_employertrust_outbound\",\"States\":{\"glue_dwh_employertrust_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-employertrust-outbound\"}}}},{\"StartAt\":\"glue_dwh_employmentrelationship_outbound\",\"States\":{\"glue_dwh_employmentrelationship_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-employmentrelationship-outbound\"}}}},{\"StartAt\":\"glue_dwh_exam_outbound\",\"States\":{\"glue_dwh_exam_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-exam-outbound\"}}}},{\"StartAt\":\"glue_dwh_instructor_outbound\",\"States\":{\"glue_dwh_instructor_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-instructor-outbound\"}}}},{\"StartAt\":\"glue_dwh_ojteligible_outbound\",\"States\":{\"glue_dwh_ojteligible_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-ojteligible-outbound\"}}}},{\"StartAt\":\"glue_dwh_person_outbound\",\"States\":{\"glue_dwh_person_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-person-outbound\"}}}},{\"StartAt\":\"glue_dwh_transfers_trainingprogram_outbound\",\"States\":{\"glue_dwh_transfers_trainingprogram_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-transfers_trainingprogram-outbound\"}}}},{\"StartAt\":\"glue_dwh_trainingrequirement_outbound\",\"States\":{\"glue_dwh_trainingrequirement_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-trainingrequirement-outbound\"}}}},{\"StartAt\":\"glue_dwh_trainingtransfers_outbound\",\"States\":{\"glue_dwh_trainingtransfers_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-dwh-trainingtransfers-outbound\"}}}}]}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "prod-dwh_outbound_workflow_stack"
+   },
+   "DependsOn": [
+    "dwhoutboundworkflowstackRoleDefaultPolicy3D1A4224",
+    "dwhoutboundworkflowstackRoleAD2D3637"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/dwh_outbound_workflow_stack/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPQWvDMAyFf0vuipqs0PPWHQaFQcl+QFA9NfHi2iWSGSX4v8/OcthOT0/vwSc94eGAS1PRt9Tmc6qdveDyoWQm6FhCnA1DzvrF0g2Xc3DWPOD16repC46LLZpA9j2JsAq+FMkej9FMrEcShsFFxtw9hQuI8v0avVEbvPRKMgm+5TyTZ82FLvr/ncymmZxjB7mj/E5mtH5l//UpwYrOu8H6YT1teyNBU5O7j4RN9by9uyta7tqSTE5wfugY/G6PbYtt9SXW1nP0am+M3a/+AEhe2f41AQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-dwh-outbound/dwh-outbound-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

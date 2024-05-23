@@ -1,0 +1,3 @@
+https://seiu775bg.atlassian.net/browse/DT-1039
+Depolyment Notes:
+1. Make changes in the glue job glue-sf-outbound-person from the provided code in pull request.

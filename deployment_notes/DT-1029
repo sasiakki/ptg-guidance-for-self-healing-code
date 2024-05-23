@@ -1,0 +1,4 @@
+Ticket #: DT-1029
+Issue: Notification Messages to Training Transfer Need to be Updated
+Action Taken: changed the "type" parameter from "Datavalidation" to "Processing" at line 321 in the "training-transfers-workflow"
+Test: the email notificaiton by "lambda-invoke-file-processed-email" is rendered as expected

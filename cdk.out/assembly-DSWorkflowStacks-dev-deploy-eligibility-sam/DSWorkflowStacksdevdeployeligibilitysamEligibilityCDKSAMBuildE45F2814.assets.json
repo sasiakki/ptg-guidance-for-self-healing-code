@@ -1,0 +1,20 @@
+{
+  "version": "30.0.0",
+  "files": {
+    "755417a67c544553e11253b4ad345d4394ce70dbfe33f88130c8cb8cc72aab7c": {
+      "source": {
+        "path": "DSWorkflowStacksdevdeployeligibilitysamEligibilityCDKSAMBuildE45F2814.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "529350069891-us-west-2": {
+          "bucketName": "cdk-hnb659fds-assets-529350069891-us-west-2",
+          "objectKey": "755417a67c544553e11253b4ad345d4394ce70dbfe33f88130c8cb8cc72aab7c.json",
+          "region": "us-west-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-file-publishing-role-529350069891-us-west-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

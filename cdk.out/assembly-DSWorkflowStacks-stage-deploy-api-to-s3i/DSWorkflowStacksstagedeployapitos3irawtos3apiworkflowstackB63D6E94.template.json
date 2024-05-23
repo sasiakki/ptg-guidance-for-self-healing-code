@@ -1,0 +1,207 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksstagedeployapitos3irawtos3apiworkflowstackGlueRoleD7D1CAC21AD3F7F2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksstagedeployapitos3irawtos3apiworkflowstackGlueRoleD7D1CAC2",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeployapitos3irawtos3apiworkflowstackGlueRoleD7D1CAC2/Resource"
+   }
+  },
+  "gluequaltricsapitos37920F73A": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/56e394b39fd011f2a6c4c919fe22b204d1af2f91f768c3280562e179d983fe02.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-qualtrics-api-to-s3"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/glue-qualtrics-api-to-s3/Resource"
+   }
+  },
+  "gluequaltricsoscompletionapitos3F649F8B6": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/c49c4a6ef4e742d20718209124e70e778ef50f8ba349d38d6cfd741491e84688.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-qualtrics-os-completion-api-to-s3"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/glue-qualtrics-os-completion-api-to-s3/Resource"
+   }
+  },
+  "apitos3workflowRole9947D869": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/api-to-s3-workflow/Role/Resource"
+   }
+  },
+  "apitos3workflowRoleDefaultPolicy760583D2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-qualtrics-api-to-s3",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-qualtrics-os-completion-api-to-s3"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "apitos3workflowRoleDefaultPolicy760583D2",
+    "Roles": [
+     {
+      "Ref": "apitos3workflowRole9947D869"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/api-to-s3-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "apitos3workflowEE057011": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "apitos3workflowRole9947D869",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"api-to-S3-parallel-jobs\",\"States\":{\"api-to-S3-parallel-jobs\":{\"Type\":\"Parallel\",\"End\":true,\"Branches\":[{\"StartAt\":\"glue_qualtrics_api_to_s3\",\"States\":{\"glue_qualtrics_api_to_s3\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-qualtrics-api-to-s3\"}}}},{\"StartAt\":\"glue_qualtrics_os_completion_api_to_s3\",\"States\":{\"glue_qualtrics_os_completion_api_to_s3\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-qualtrics-os-completion-api-to-s3\"}}}}]}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "stage-api-to-s3-workflow"
+   },
+   "DependsOn": [
+    "apitos3workflowRoleDefaultPolicy760583D2",
+    "apitos3workflowRole9947D869"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/api-to-s3-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPQWvDMAyFf0vuipqs0PPWHQaFQcl+QFA9NfHi2iWSGSX4v8/OcthOT0/vwSc94eGAS1PRt9Tmc6qdveDyoWQm6FhCnA1DzvrF0g2Xc3DWPOD16repC46LLZpA9j2JsAq+FMkej9FMrEcShsFFxtw9hQuI8v0avVEbvPRKMgm+5TyTZ82FLvr/ncymmZxjB7mj/E5mtH5l//UpwYrOu8H6YT1teyNBU5O7j4RN9by9uyta7tqSTE5wfugY/G6PbYtt9SXW1nP0am+M3a/+AEhe2f41AQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

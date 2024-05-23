@@ -1,0 +1,7 @@
+https://seiu775bg.atlassian.net/browse/DT-745
+1. Navigate to the specified three glue jobs
+(glue-cdwa-transfers-s3-to-raw,
+glue-cdwa-transfers-raw-to-staging-transfers, 
+glue-cdwa-os-transfers-raw-to-raw-traininghistory) 
+and make changes to the code respectively.
+2. Add the changes to the SP : raw.sp_processcdwatransfersdatavalidation() from the file.

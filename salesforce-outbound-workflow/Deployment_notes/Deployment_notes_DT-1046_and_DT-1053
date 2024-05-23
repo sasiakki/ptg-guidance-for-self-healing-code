@@ -1,0 +1,5 @@
+Deployment Notes : DT-1046 and DT-1053
+https://seiu775bg.atlassian.net/browse/DT-1053
+https://seiu775bg.atlassian.net/browse/DT-1046
+1. Added missing filed role to be included in glue job.
+2. Added typo issue for RelationshipID

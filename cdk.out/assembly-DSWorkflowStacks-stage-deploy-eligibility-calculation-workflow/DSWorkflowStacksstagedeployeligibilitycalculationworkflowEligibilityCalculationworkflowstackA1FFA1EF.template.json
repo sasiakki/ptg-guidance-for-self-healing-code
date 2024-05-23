@@ -1,0 +1,365 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksstagedeployeligibilitycalculationworkflowEligibilityCalculationworkflowstackGlueRoleBB89703F89C7B97C": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksstagedeployeligibilitycalculationworkflowEligibilityCalculationworkflowstackGlueRoleBB89703F",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeployeligibilitycalculationworkflowEligibilityCalculationworkflowstackGlueRoleBB89703F/Resource"
+   }
+  },
+  "glueeligibilitydatatruncate14003A82": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/033cc9f071e9fe687d604f893f275fbbbc86582bcee9de1af6dc2f1714fd58f3.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "1.0",
+    "Name": "stage-glue-eligibility-data-truncate"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/glue-eligibility-data-truncate/Resource"
+   }
+  },
+  "glueeligibilitydatainbound0F10192D": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/d1cc75b197a1767a2a9e63a5d4466ae0ee1036f5ece837d6b35838649c224942.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "1.0",
+    "Name": "stage-glue-eligibility-data-inbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/glue-eligibility-data-inbound/Resource"
+   }
+  },
+  "lambdaeligibilitycomplianceiterator0286E0B7": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "5109798da77098f7356e5a4bf47a0973885c0bbffefe7d8248a57d76d217e372.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda_eligibility_compliance_iterator",
+    "Handler": "index.processingMain",
+    "Layers": [
+     "arn:aws:lambda:us-west-2:938426161301:layer:eligibility-dependencies:1"
+    ],
+    "Runtime": "nodejs14.x",
+    "Timeout": 900,
+    "VpcConfig": {
+     "SecurityGroupIds": [
+      "sg-00dd442950b4df354"
+     ],
+     "SubnetIds": [
+      "subnet-0d68cb819d158b5b4",
+      "subnet-014ae98f8f77c0c10",
+      "subnet-027a9cb8dbed9b3cd",
+      "subnet-02530081dea732e80"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/lambda-eligibility-compliance-iterator/Resource",
+    "aws:asset:path": "../asset.5109798da77098f7356e5a4bf47a0973885c0bbffefe7d8248a57d76d217e372",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "EligibilityFunction651127C4": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "f9acfeebbaebe294ba441ce9c7ccda340ee0c0962dd39fbbc00a9348873dcf40.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda_calculate_eligibility",
+    "Handler": "index.processingMain",
+    "Layers": [
+     "arn:aws:lambda:us-west-2:938426161301:layer:eligibility-dependencies:1"
+    ],
+    "Runtime": "nodejs14.x",
+    "Timeout": 900,
+    "VpcConfig": {
+     "SecurityGroupIds": [
+      "sg-00dd442950b4df354"
+     ],
+     "SubnetIds": [
+      "subnet-0d68cb819d158b5b4",
+      "subnet-014ae98f8f77c0c10",
+      "subnet-027a9cb8dbed9b3cd",
+      "subnet-02530081dea732e80"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/EligibilityFunction/Resource",
+    "aws:asset:path": "../asset.f9acfeebbaebe294ba441ce9c7ccda340ee0c0962dd39fbbc00a9348873dcf40",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "StateMachineeligibilitycalculationRole14A243DF": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/StateMachine_eligibility_calculation/Role/Resource"
+   }
+  },
+  "StateMachineeligibilitycalculationRoleDefaultPolicy5E8621A0": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-eligibility-data-inbound",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-eligibility-data-truncate"
+       ]
+      },
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EligibilityFunction651127C4",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdaeligibilitycomplianceiterator0286E0B7",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EligibilityFunction651127C4",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdaeligibilitycomplianceiterator0286E0B7",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "StateMachineeligibilitycalculationRoleDefaultPolicy5E8621A0",
+    "Roles": [
+     {
+      "Ref": "StateMachineeligibilitycalculationRole14A243DF"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/StateMachine_eligibility_calculation/Role/DefaultPolicy/Resource"
+   }
+  },
+  "StateMachineeligibilitycalculation437F45DF": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "StateMachineeligibilitycalculationRole14A243DF",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"glue_eligibility_data_truncate\",\"States\":{\"glue_eligibility_data_truncate\":{\"Next\":\"glue_eligibility_data_inbound\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-eligibility-data-truncate\"}},\"glue_eligibility_data_inbound\":{\"Next\":\"lambda_eligibility_compliance_iterator\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-eligibility-data-inbound\"}},\"lambda_eligibility_compliance_iterator\":{\"Next\":\"IsCountReached\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"ResultPath\":\"$.iterator\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdaeligibilitycomplianceiterator0286E0B7",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"lambda_calculate_eligibility\":{\"Next\":\"lambda_eligibility_compliance_iterator\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"ResultPath\":\"$.result\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "EligibilityFunction651127C4",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"IsCountReached\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.iterator.Payload.continue\",\"BooleanEquals\":true,\"Next\":\"lambda_calculate_eligibility\"}],\"Default\":\"Success\"},\"Success\":{\"Type\":\"Succeed\"}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "stage-eligibility-calculation-workflow"
+   },
+   "DependsOn": [
+    "StateMachineeligibilitycalculationRoleDefaultPolicy5E8621A0",
+    "StateMachineeligibilitycalculationRole14A243DF"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/StateMachine_eligibility_calculation/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11Q0WrDMAz8lrwrarJCn7cWVjZaKOkHBMdREy+OXWJ7o5j8++Qsg7Gn00m+485PuNthLDLx5XLZDrlWDcarF3KAipwNkyTgWx2VGDFerFbyAYebWafKako04QxuWwvnyDt8ScAc90EO5PfCEXQ6EPLbd9uAFmPTCoyvwUivrEkevzP7eLrfVuZqL9zgMB5ZzsEmz/oqGDgtFm/m0w70T4Lx0FvFya9BSqIWWOfpLGSvzBL3L59nWNLyrlOmW9qszWcocqHvvcAie15/aJMwVVkvnGaGy8P31my2WJZYZh9OqXwKxquRsPrBb1lIJ0VoAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-eligibility-calculation-workflow/Eligibility-Calculation-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,311 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksproddeploybenefitsbenefitscontinuationworkflowGlueRoleBF2A717C9CA01437": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksproddeploybenefitsbenefitscontinuationworkflowGlueRoleBF2A717C",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-benefits/benefits-continuation-workflow/GlueRole/PolicyDSWorkflowStacksproddeploybenefitsbenefitscontinuationworkflowGlueRoleBF2A717C/Resource"
+   }
+  },
+  "lambdacheckbenefitscontinuation320EABF8": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-259367569391-us-west-2",
+     "S3Key": "0fdbc5e9ff601e2fde793ba120c53811b52e721b8821d5a889ec3aee8dc4a117.zip"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "259367569391",
+      "environment_type": "prod"
+     }
+    },
+    "FunctionName": "prod-lambda_check_benefitscontinuation",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 60
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-benefits/benefits-continuation-workflow/lambda-check-benefitscontinuation/Resource",
+    "aws:asset:path": "../asset.0fdbc5e9ff601e2fde793ba120c53811b52e721b8821d5a889ec3aee8dc4a117",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "gluebenefitscontinuations3rawE2B4F989": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/65b7314160cb385838fd303c2436f395c7ea9b1c7816c50f2f922da25b6a5294.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-benefitscontinuation-s3-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-benefits/benefits-continuation-workflow/glue-benefitscontinuation-s3-raw/Resource"
+   }
+  },
+  "gluebenefitscontinuationrawstaging5766F474": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/e95c69452d0d4cf1c6a0c39c9f07c92189829f41f2b2ee5da8430ff0259b8b1f.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-benefitscontinuation-raw-staging"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-benefits/benefits-continuation-workflow/glue-benefitscontinuation-raw-staging/Resource"
+   }
+  },
+  "glueupdatetrainingrequirementbenefitscontinuation035FA7C2": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/06919b53fc2d4661aa4ec098d87c12cc3c8bb9e43e781506842dc88c5e7b8f41.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-update-trainingrequirement-benefitscontinuation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-benefits/benefits-continuation-workflow/glue-update-trainingrequirement-benefitscontinuation/Resource"
+   }
+  },
+  "StateMachinebenefitscontinuationRole099D8E0B": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-benefits/benefits-continuation-workflow/StateMachine_benefits_continuation/Role/Resource"
+   }
+  },
+  "StateMachinebenefitscontinuationRoleDefaultPolicy95C23CFF": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "lambdacheckbenefitscontinuation320EABF8",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckbenefitscontinuation320EABF8",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-benefitscontinuation-raw-staging",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-benefitscontinuation-s3-raw",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-update-trainingrequirement-benefitscontinuation"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "StateMachinebenefitscontinuationRoleDefaultPolicy95C23CFF",
+    "Roles": [
+     {
+      "Ref": "StateMachinebenefitscontinuationRole099D8E0B"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-benefits/benefits-continuation-workflow/StateMachine_benefits_continuation/Role/DefaultPolicy/Resource"
+   }
+  },
+  "StateMachinebenefitscontinuationBF8BB6A2": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "StateMachinebenefitscontinuationRole099D8E0B",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"lambda_check_benefitscontinuation\",\"States\":{\"lambda_check_benefitscontinuation\":{\"Next\":\"has-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckbenefitscontinuation320EABF8",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_ip_benefitscontinuation_s3_raw\"}],\"Default\":\"end-benefits-continuation-process\"},\"end-benefits-continuation-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_ip_benefitscontinuation_s3_raw\":{\"Next\":\"glue_benefitscontinuation_raw_staging\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-benefitscontinuation-s3-raw\"}},\"glue_benefitscontinuation_raw_staging\":{\"Next\":\"glue_update_trainingrequirement_benefitscontinuation\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-benefitscontinuation-raw-staging\"}},\"glue_update_trainingrequirement_benefitscontinuation\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-update-trainingrequirement-benefitscontinuation\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "prod-benefits-continuation-workflow"
+   },
+   "DependsOn": [
+    "StateMachinebenefitscontinuationRoleDefaultPolicy95C23CFF",
+    "StateMachinebenefitscontinuationRole099D8E0B"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-benefits/benefits-continuation-workflow/StateMachine_benefits_continuation/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01Q0WrDMAz8lrwrarJCn7cWNjY2CNkHBMdVEy+OXSJ7oxj/++wsgz6dzneSTn7AwwFDVYgfLuV5KrXqMXw6ISdoia1fJEHSuqDEjKGxWskbnC5mq1qrKdOMEbSY+7PA8OyNdMqarPzXEXjfCWZyjE8ZEsejlxO5o2CCQXvC5H+zPbCj62Xr484JnhjD+zr81XzbieAluVPKxSV76/Pw+xYMp9GqlLxJCyH5HH0IOSqzZr3nMcIaJr0NygzrKdvZEapS6OsosCoet+/ZZcxJNyVtj9Dc3GjNbo91jXXxxUqVizdOzYTtH/4CL2qofmUBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-benefits/benefits-continuation-workflow/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

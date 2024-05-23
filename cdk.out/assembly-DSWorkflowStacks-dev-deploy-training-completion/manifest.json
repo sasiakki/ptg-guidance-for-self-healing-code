@@ -1,0 +1,299 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstack9325A520.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstack9325A520.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstack9325A520": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://529350069891/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstack9325A520.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-deploy-role-529350069891-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-cfn-exec-role-529350069891-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/a0797bf86a5464d3be6b07b2110d2686b63f59b6eec44910d14b693629a62db5.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstack9325A520.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-lookup-role-529350069891-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "dev-deploy-training-completion-training-completions-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstack9325A520.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/GlueRole/PolicyDSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstackGlueRole22E78071/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksdevdeploytrainingcompletiontrainingcompletionsworkflowstackGlueRole22E780719D799323"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-cdwatransfers-archive/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckcdwatransfersarchive01282C84"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-cornerstone/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckcornerstone030F0AEB"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-cornerstone-archive/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckcornerstonearchive5ECCDCF1"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-docebo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckdocebo3607A110"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-docebo-ilt/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckdoceboilt5AB4BF62"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-docebo-archive/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckdoceboarchive14B2C047"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-docebo-ilt-archive/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckdoceboiltarchive9207FD58"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-qualtricsos-archive/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckqualtricsosarchive16200019"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-qualtricsos/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckqualtricsos66662270"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-transcript-corrections/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdachecktranscriptcorrections18E49125"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/lambda-check-transcript-corrections-archive/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdachecktranscriptcorrectionsarchiveD9EBD954"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-cdwa-os-transfers-raw-to-raw-traininghistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwaostransfersrawtorawtraininghistoryD3365B40"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-cornerstone-completions-raw-to-raw-traininghistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecornerstonecompletionsrawtorawtraininghistoryF28ADEDB"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-cornerstone-completions-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecornerstonecompletionss3toraw1643C2EE"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-coursecompletions-raw-to-staging-traininghistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecoursecompletionsrawtostagingtraininghistory0DB68D9B"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-docebo-coursecompletions-raw-to-raw-traininghistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedocebocoursecompletionsrawtorawtraininghistory49FD66CC"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-docebo-ilt-coursecompletions-raw-to-raw-traininghistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedoceboiltcoursecompletionsrawtorawtraininghistoryC645A2A7"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-docebo-coursecompletions-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedocebocoursecompletionss3torawEDBA4129"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-docebo-ilt-coursecompletions-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedoceboiltcoursecompletionss3toraw78EBADEF"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-dshs-os-completion-raw-to-raw-traininghistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedshsoscompletionrawtorawtraininghistory23B39E0A"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-dshs-os-completion-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedshsoscompletions3torawF67095BF"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-identify-and-change-of-learningpath/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueidentifyandchangeoflearningpath1FC50F04"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-learningpath-update-to-trainingrequirement/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluelearningpathupdatetotrainingrequirementEB637EA3"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-ojtcalculations/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueojtcalculationsCE696A92"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-training-completion-qualtrics-cleandata/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetrainingcompletionqualtricscleandataF22AABE1"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-qualtrics-os-completion-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluequaltricsoscompletions3toraw5A54E66C"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-qualtrics-os-completions-raw-to-raw-traininghistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluequaltricsoscompletionsrawtorawtraininghistoryA885A7FF"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-smartsheet-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluesmartsheets3torawA91B7C2A"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-ss-coursecompletions-raw-to-raw-traininghistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluesscoursecompletionsrawtorawtraininghistoryF253165F"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-carina-processing/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecarinaprocessingF808DFB7"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-truncate-all-trainings-raw-tables/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetruncatealltrainingsrawtablesB0D4F073"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-update-staging-learner/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueupdatestaginglearner5142C120"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-update-trainings/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueupdatetrainingsAAB387CA"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-transcript-corrections-raw-to-raw-traininghistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetranscriptcorrectionsrawtorawtraininghistoryB0A67DFE"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-transcript-corrections-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetranscriptcorrectionss3toraw2CC76A3E"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/glue-process-transcript-mapping/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueprocesstranscriptmapping6688905E"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/training-completions-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "trainingcompletionsworkflowRoleEADB7BBD"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/training-completions-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "trainingcompletionsworkflowRoleDefaultPolicy840C2690"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/training-completions-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "trainingcompletionsworkflow5687B472"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/dev-deploy-training-completion/training-completions-workflow-stack"
+    }
+  }
+}

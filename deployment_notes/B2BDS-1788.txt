@@ -1,0 +1,15 @@
+Accept new Family Provider training category from CDWA file feed
+	https://seiu775bg.atlassian.net/browse/B2BDS-1788
+
+Change log: 199
+
+Following are the changes
+
+	1. datastore-cdk-repo-devops-devops\db_scripts\adhoc_script_B2BDS-1788.sql
+		Execute the ad-hoc script to insert a new worker category FAPR and to update the existing worker category PPND priority to 98
+	2. datastore-cdk-repo-devops\cdwa-workflow\glue\glue-cdwa-raw-to-staging-person-history.py
+	3. datastore-cdk-repo-devops\standalone_db_scripts\raw schema\functions\fn_getcdwaprovidersbymodifieddate.sql
+	4. datastore-cdk-repo-devops\standalone_db_scripts\raw schema\procedures\sp_processcdwaprovidersdatavalidation.sql
+	5. datastore-cdk-repo-devops\standalone_db_scripts\staging schema\views\vw_getproviderinfo.sql
+	 
+	

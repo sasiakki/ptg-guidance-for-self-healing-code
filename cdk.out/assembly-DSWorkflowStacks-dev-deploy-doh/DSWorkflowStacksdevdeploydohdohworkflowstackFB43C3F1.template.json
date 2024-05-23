@@ -1,0 +1,430 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksdevdeploydohdohworkflowstackGlueRoleD9B4C98362FEDEA7": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-529350069891-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-529350069891-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksdevdeploydohdohworkflowstackGlueRoleD9B4C983",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/GlueRole/PolicyDSWorkflowStacksdevdeploydohdohworkflowstackGlueRoleD9B4C983/Resource"
+   }
+  },
+  "lambdacheckdohE293F4B2": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "e6dd80499df3e8c1186260cdf1c66b76168f11eab149951e16ab41f02d7a4c9a.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-doh",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 300
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/lambda_check_doh/Resource",
+    "aws:asset:path": "../asset.e6dd80499df3e8c1186260cdf1c66b76168f11eab149951e16ab41f02d7a4c9a",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacheckdohclassifiedE693382A": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-529350069891-us-west-2",
+     "S3Key": "438d246cbbfcf6c6a9e62e9be67a28bc453558cb4baedc1a4b6ff1ea70a9d0af.zip"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "529350069891",
+      "environment_type": "dev"
+     }
+    },
+    "FunctionName": "dev-lambda-check-doh-classified",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 300
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/lambda_check_doh_classified/Resource",
+    "aws:asset:path": "../asset.438d246cbbfcf6c6a9e62e9be67a28bc453558cb4baedc1a4b6ff1ea70a9d0af",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "gluedohclassifiedrawtoprod5F5E5A41": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/6641ed87a0b158aa48eb4733d2728cb100105f2a8a343ffb0d65c6b9cb7eb2c2.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-doh-classified-raw-to-prod"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/glue-doh-classified-raw-to-prod/Resource"
+   }
+  },
+  "gluedohclassifieds3toraw19F134BE": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/f06cc2a8986a173abc2ac6349f5154731380d738e2d4e645bbc66a667956ec7f.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-doh-classified-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/glue-doh-classified-s3-to-raw/Resource"
+   }
+  },
+  "gluedohcleandataB101DD1F": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/5709e4dde023e50565ea5648201d74cefb52c101457206875c94367b63d36b84.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "1.0",
+    "Name": "dev-glue-doh-clean-data"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/glue-doh-clean-data/Resource"
+   }
+  },
+  "gluedohcompletedrawtoprod1FCAA1CF": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/72abd7435ffdf1aa295cec875f9a8ffbcdd24ba71449a3ee1f2e2e20a6c5c0dd.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-doh-completed-raw-to-prod"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/glue-doh-completed-raw-to-prod/Resource"
+   }
+  },
+  "gluedohcompleteds3toraw3BD57CC2": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/647d69c778656e85c641b50d1babd5f3b5eade115b44411c55115ec6172b2580.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "4.0",
+    "Name": "dev-glue-doh-completed-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/glue-doh-completed-s3-to-raw/Resource"
+   }
+  },
+  "dohworkflowRole1738C5F9": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/doh-workflow/Role/Resource"
+   }
+  },
+  "dohworkflowRoleDefaultPolicyD666FD3F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "lambdacheckdohE293F4B2",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckdohclassifiedE693382A",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckdohE293F4B2",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckdohclassifiedE693382A",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-doh-classified-raw-to-prod",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-doh-classified-s3-to-raw",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-doh-clean-data",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-doh-completed-raw-to-prod",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-doh-completed-s3-to-raw"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "dohworkflowRoleDefaultPolicyD666FD3F",
+    "Roles": [
+     {
+      "Ref": "dohworkflowRole1738C5F9"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/doh-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "dohworkflow9C5DAF5D": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "dohworkflowRole1738C5F9",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"invoke-all-doh-parallel-jobs\",\"States\":{\"invoke-all-doh-parallel-jobs\":{\"Type\":\"Parallel\",\"Next\":\"end-doh-parallel-process\",\"Branches\":[{\"StartAt\":\"lambda-check-doh\",\"States\":{\"lambda-check-doh\":{\"Next\":\"has-doh-completed-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"ResultPath\":\"$.lambda_handler\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckdohE293F4B2",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-doh-completed-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.lambda_handler.Payload.result\",\"BooleanEquals\":true,\"Next\":\"glue_doh_completed_s3_to_raw\"}],\"Default\":\"end-doh-completed\"},\"end-doh-completed\":{\"Type\":\"Pass\",\"End\":true},\"glue_doh_completed_s3_to_raw\":{\"Next\":\"Wait 120 Seconds\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-doh-completed-s3-to-raw\"}},\"Wait 120 Seconds\":{\"Type\":\"Wait\",\"Seconds\":120,\"Next\":\"glue_doh_completed_raw_to_prod\"},\"glue_doh_completed_raw_to_prod\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-doh-completed-raw-to-prod\"}}}},{\"StartAt\":\"lambda-check-doh-classified\",\"States\":{\"lambda-check-doh-classified\":{\"Next\":\"has-doh-classified-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"ResultPath\":\"$.lambda_handler\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckdohclassifiedE693382A",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-doh-classified-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.lambda_handler.Payload.result\",\"BooleanEquals\":true,\"Next\":\"glue_doh_classified_s3_to_raw\"}],\"Default\":\"end-doh-classified-process\"},\"end-doh-classified-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_doh_classified_s3_to_raw\":{\"Next\":\"glue_doh_clean_data\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-doh-classified-s3-to-raw\"}},\"glue_doh_clean_data\":{\"Next\":\"glue_doh_classified_raw_to_prod\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-doh-clean-data\"}},\"glue_doh_classified_raw_to_prod\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-doh-classified-raw-to-prod\"}}}}]},\"end-doh-parallel-process\":{\"Type\":\"Pass\",\"End\":true}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "dev-doh-workflow"
+   },
+   "DependsOn": [
+    "dohworkflowRoleDefaultPolicyD666FD3F",
+    "dohworkflowRole1738C5F9"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/doh-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01QwWrDMAz9lt4VNVmh562FlY0NQnbYMSium3hx7BLZG8X432dnGfT09Pye5Cc94H6PodzQDxfiPBZadRg+HIkRGsnWz0JC0tqgaMJQW63EDY4Xs1aN1TLTjBE0Td2ZMDx7I5yyJiv/dQTetcQsHeNThsTx4MUo3YFYQq+9xOR/tR2wk9fL2setIx4Zw9sy/MV821HCKblTytkle+Pz8PsWDJ+kHNQ0k9ZSw3GwKu1Rp+8hdTn5TmJQZkl+z2OEJVp665Xpl8XWI0QoC9LXgbDcPK7H2mbMuVclZYlQ39xgzXaHVYXV5ouVKmZvnJokNn/4C4oBn0RzAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-doh/doh-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

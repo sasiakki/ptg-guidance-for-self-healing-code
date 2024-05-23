@@ -1,0 +1,58 @@
+{
+ "Resources": {
+  "E2EStateMachine": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": "arn:aws:iam::571950455257:role/cdk-hnb659fds-cfn-exec-role-571950455257-us-west-2",
+    "DefinitionString": "{\"Comment\": \"The State machine Orchestrated the execution of the E2E Integration \", \"StartAt\": \"Approve for person quarantine\", \"States\": {\"Approve for person quarantine\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::glue:startJobRun.sync\", \"Parameters\": {\"JobName\": \"stage-glue-approve-personquarantine-records\"}, \"Next\": \"Post Approval for person quarantine\"}, \"Post Approval for person quarantine\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::glue:startJobRun.sync\", \"Parameters\": {\"JobName\": \"stage-glue-quarantine-personmastering\"}, \"Next\": \"API and SFTP to S3\"}, \"API and SFTP to S3\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-api-and-sftp-to-s3-workflow\"}, \"Next\": \"Datastore S3 Check\", \"Catch\": [{\"ErrorEquals\": [\"States.ALL\"], \"Next\": \"Datastore S3 Check\"}]}, \"Datastore S3 Check\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:lambda:us-west-2:571950455257:function:stage-lambda_check_files\", \"ResultPath\": \"$.lambda_handler_all\", \"Next\": \"Has SFTP Files\", \"Retry\": [{\"ErrorEquals\": [\"States.ALL\"], \"BackoffRate\": 1, \"IntervalSeconds\": 30, \"MaxAttempts\": 3, \"Comment\": \"Retry lambda on error\"}]}, \"End E2E Process\": {\"Type\": \"Pass\", \"End\": true}, \"Has SFTP Files\": {\"Type\": \"Choice\", \"Choices\": [{\"Variable\": \"$.lambda_handler_all.objects\", \"BooleanEquals\": true, \"Next\": \"CDWA-Workflow\"}], \"Default\": \"End E2E Process\"}, \"CDWA-Workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-cdwa-workflow\"}, \"Next\": \"Qualtrics-Workflow\", \"Catch\": [{\"ErrorEquals\": [\"States.ALL\"], \"Next\": \"Qualtrics-Workflow\"}]}, \"Qualtrics-Workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-qualtrics-workflow\"}, \"Next\": \"Credential-Workflow\", \"Catch\": [{\"ErrorEquals\": [\"States.ALL\"], \"Next\": \"Credential-Workflow\"}]}, \"Credential-Workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-credential-workflow\"}, \"Next\": \"DOH- Workflow\", \"Catch\": [{\"ErrorEquals\": [\"States.ALL\"], \"Next\": \"DOH- Workflow\"}]}, \"DOH- Workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-doh-workflow\"}, \"Next\": \"EXAM - Workflow\", \"Catch\": [{\"ErrorEquals\": [\"States.ALL\"], \"Next\": \"EXAM - Workflow\"}]}, \"EXAM - Workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-exam-workflow\"}, \"Next\": \"B2B-BusinessLogic-Workflow\", \"Catch\": [{\"ErrorEquals\": [\"States.ALL\"], \"Next\": \"B2B-BusinessLogic-Workflow\"}]}, \"B2B-BusinessLogic-Workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-b2b-business-logic-workflow\"}, \"Next\": \"Eligibility-Calculation-Workflow-State-1\"}, \"Eligibility-Calculation-Workflow-State-1\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-eligibility-calculation-workflow\"}, \"Next\": \"Benefits Continuation workflow\"}, \"Benefits Continuation workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-benefits-continuation-workflow\"}, \"Next\": \"Trainingtransfers Workflow\"}, \"Trainingtransfers Workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-training-transfers-workflow\"}, \"Next\": \"Training Completions Workflow\"}, \"Training Completions Workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-training-completions-workflow\"}, \"Next\": \"Eligibility-Calculation-Workflow-State-2\"}, \"Eligibility-Calculation-Workflow-State-2\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-eligibility-calculation-workflow\"}, \"Next\": \"SalesForce Outbound Workflow\"}, \"SalesForce Outbound Workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync:2\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:571950455257:stateMachine:stage-salesforce-outbound-workflow\"}, \"Next\": \"Datastore S3 Check 2\"}, \"Datastore S3 Check 2\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:lambda:us-west-2:571950455257:function:stage-lambda_check_files\", \"ResultPath\": \"$.lambda_handler_all2\", \"Next\": \"Has SFTP Files 2\", \"Retry\": [{\"ErrorEquals\": [\"States.ALL\"], \"BackoffRate\": 1, \"IntervalSeconds\": 30, \"MaxAttempts\": 3, \"Comment\": \"Retry lambda on error\"}]}, \"Has SFTP Files 2\": {\"Type\": \"Choice\", \"Choices\": [{\"Variable\": \"$.lambda_handler_all2.objects\", \"BooleanEquals\": true, \"Next\": \"CDWA-Workflow\"}], \"Default\": \"End E2E Process\"}}}",
+    "StateMachineName": "stage-E2EStateMachine"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-e2e-stack/e2e-workflow-stack/E2EStateMachine"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzPTM1BMLC/WTU7J1s3JTNKrDi5JTM7WAQrFF5ekFqSV5iWXZObnFes5p+UBpUpSfROTMzLzUnWA/KDU4vzSouTUWp2AypKM/Dx9Yz1DQz1DxazizEzdotK8kszcVL0gCA0AUh7XBWsAAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-e2e-stack/e2e-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "Resources": {
+  "apiandsftptos3workflow": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": "arn:aws:iam::529350069891:role/cdk-hnb659fds-cfn-exec-role-529350069891-us-west-2",
+    "DefinitionString": "{\"Comment\": \"api and sftp to s3 workflow\", \"StartAt\": \"ParallelState\", \"States\": {\"ParallelState\": {\"Type\": \"Parallel\", \"Branches\": [{\"StartAt\": \"doh-sftp-workflow\", \"States\": {\"doh-sftp-workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:529350069891:stateMachine:dev-doh-sftp-workflow\"}, \"End\": true}}}, {\"StartAt\": \"cdwa-sftp-workflow\", \"States\": {\"cdwa-sftp-workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:529350069891:stateMachine:dev-cdwa-sftp-workflow\"}, \"End\": true}}}, {\"StartAt\": \"dshs-sftp-workflow\", \"States\": {\"dshs-sftp-workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:529350069891:stateMachine:dev-dshs-sftp-workflow\"}, \"End\": true}}}, {\"StartAt\": \"api-to-s3-workflow\", \"States\": {\"api-to-s3-workflow\": {\"Type\": \"Task\", \"Resource\": \"arn:aws:states:::states:startExecution.sync\", \"Parameters\": {\"StateMachineArn\": \"arn:aws:states:us-west-2:529350069891:stateMachine:dev-api-to-s3-workflow\"}, \"End\": true}}}], \"End\": true}}}",
+    "StateMachineName": "dev-api-and-sftp-to-s3-workflow"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-api-and-sftp-to-s3/raw-to-s3-sftp-api-workflow-stack/api-and-sftp-to-s3-workflow"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzPTM1BMLC/WTU7J1s3JTNKrDi5JTM7WAQrFF5ekFqSV5iWXZObnFes5p+UBpUpSfROTMzLzUnWA/KDU4vzSouTUWp2AypKM/Dx9Yz1DQz1DxazizEzdotK8kszcVL0gCA0AUh7XBWsAAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-api-and-sftp-to-s3/raw-to-s3-sftp-api-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

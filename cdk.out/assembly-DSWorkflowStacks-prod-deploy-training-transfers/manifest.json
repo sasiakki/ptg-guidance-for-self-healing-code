@@ -1,0 +1,161 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksproddeploytrainingtransferstrainingtransfersworkflowstack86BE9183.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksproddeploytrainingtransferstrainingtransfersworkflowstack86BE9183.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksproddeploytrainingtransferstrainingtransfersworkflowstack86BE9183": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://259367569391/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksproddeploytrainingtransferstrainingtransfersworkflowstack86BE9183.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-deploy-role-259367569391-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-cfn-exec-role-259367569391-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/e4c1e942c25772d667239ff681b9c3efcd3b6e527053df832de48f543ebec4e0.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksproddeploytrainingtransferstrainingtransfersworkflowstack86BE9183.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-lookup-role-259367569391-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "prod-deploy-training-transfers-training-transfers-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksproddeploytrainingtransferstrainingtransfersworkflowstack86BE9183.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/GlueRole/PolicyDSWorkflowStacksproddeploytrainingtransferstrainingtransfersworkflowstackGlueRole3A5A3E1F/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksproddeploytrainingtransferstrainingtransfersworkflowstackGlueRole3A5A3E1F14C56FDF"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/lambda-check-cdwa-trainingtransfer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckcdwatrainingtransfer51D1F39C"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/lambda-check-trainingtransfer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdachecktrainingtransferDBBEC8DC"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/custom-layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customlayerF4E00665"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/lambda-check-file-processed-status/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckfileprocessedstatusC56872E4"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/lambda-invoke-file-processed-email/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdainvokefileprocessedemailAD02466A"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/lambda-cdwa-file-validation-status/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacdwafilevalidationstatus7F9701FD"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/lambda-invoke-file-validation-email/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdainvokefilevalidationemail9ECFD1FC"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/glue-cdwa-transfers-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwatransferss3toraw4730841F"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/glue-cdwa-transfers-validation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwatransfersvalidation582D9203"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/glue-cdwa-transfers-raw-to-staging-transfers/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwatransfersrawtostagingtransfersCD505984"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/glue-manual-qualtrics-training-transferhours-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemanualqualtricstrainingtransferhourss3toraw3CD2426A"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/glue-manual-qualtrics-training-transferhours-raw-to-staging/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluemanualqualtricstrainingtransferhoursrawtostaging5B545E5D"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/glue-process-training-transfers/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueprocesstrainingtransfers63D55BAD"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/training-transfers-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "trainingtransfersworkflowRoleB6B2F279"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/training-transfers-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "trainingtransfersworkflowRoleDefaultPolicyCAF55986"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/training-transfers-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "trainingtransfersworkflow19E22A43"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/prod-deploy-training-transfers/training-transfers-workflow-stack"
+    }
+  }
+}

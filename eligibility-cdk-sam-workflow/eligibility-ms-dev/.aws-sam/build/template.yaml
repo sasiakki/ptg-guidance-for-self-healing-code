@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'eligibility service for data store
+
+  '
+Globals:
+  Function:
+    Timeout: 899
+Resources:
+  EligibilityFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: Eligibility-Calculation-Test-Dev
+      CodeUri: EligibilityFunction
+      Handler: index.processingMain
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Eligibility:
+          Type: Api
+          Properties:
+            Path: /evaluate
+            Method: get
+    Metadata:
+      SamResourceId: EligibilityFunction
+Outputs:
+  EligibilityApi:
+    Description: API Gateway endpoint URL for Prod stage for Eligibility service
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/eligibility/evaluate/
+  EligibilityFunction:
+    Description: Eligibility Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - EligibilityFunction
+      - Arn

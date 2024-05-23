@@ -1,0 +1,95 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksproddeployapitos3irawtos3apiworkflowstackB9B6E041.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksproddeployapitos3irawtos3apiworkflowstackB9B6E041.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksproddeployapitos3irawtos3apiworkflowstackB9B6E041": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://259367569391/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksproddeployapitos3irawtos3apiworkflowstackB9B6E041.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-deploy-role-259367569391-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-cfn-exec-role-259367569391-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/550568ef6f76656345efbd7976216bf53dc6c5df91eea73b03357a68ce49a92c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksproddeployapitos3irawtos3apiworkflowstackB9B6E041.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-lookup-role-259367569391-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "prod-deploy-api-to-s3i-raw-to-s3-api-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksproddeployapitos3irawtos3apiworkflowstackB9B6E041.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/GlueRole/PolicyDSWorkflowStacksproddeployapitos3irawtos3apiworkflowstackGlueRoleCEE819F4/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksproddeployapitos3irawtos3apiworkflowstackGlueRoleCEE819F46EA44B5D"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/glue-qualtrics-api-to-s3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluequaltricsapitos37920F73A"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/glue-qualtrics-os-completion-api-to-s3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluequaltricsoscompletionapitos3F649F8B6"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/api-to-s3-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apitos3workflowRole9947D869"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/api-to-s3-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apitos3workflowRoleDefaultPolicy760583D2"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/api-to-s3-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apitos3workflowEE057011"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/prod-deploy-api-to-s3i/raw-to-s3-api-workflow-stack"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksstagedeployqualtricsqualtricsworkflowstack0784C6B3.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksstagedeployqualtricsqualtricsworkflowstack0784C6B3.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksstagedeployqualtricsqualtricsworkflowstack0784C6B3": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://571950455257/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksstagedeployqualtricsqualtricsworkflowstack0784C6B3.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-deploy-role-571950455257-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-cfn-exec-role-571950455257-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/de65444b75536233afd9895a83338694ea3d0d14d0c4afe06506668d6eebf466.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksstagedeployqualtricsqualtricsworkflowstack0784C6B3.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-lookup-role-571950455257-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "stage-deploy-qualtrics-qualtrics-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksstagedeployqualtricsqualtricsworkflowstack0784C6B3.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeployqualtricsqualtricsworkflowstackGlueRole076A0E68/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksstagedeployqualtricsqualtricsworkflowstackGlueRole076A0E6827F70260"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/lambda_check_qualtrics/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckqualtricsA63231B6"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-qualtrics-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluequaltricss3toraw0E446A50"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-qualtrics-cleandata/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluequaltricscleandata723E7BAC"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-qualtrics-raw-to-person-history/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluequaltricsrawtopersonhistory027AFE5D"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-qualtrics-raw-to-employmentrelationshiphistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluequaltricsrawtoemploymentrelationshiphistoryD79346B5"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/glue-ap-to-employmentrelationship/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueaptoemploymentrelationship76F4CC1D"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/qualtrics-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "qualtricsworkflowRoleA69E5A57"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/qualtrics-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "qualtricsworkflowRoleDefaultPolicyE95B58F3"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/qualtrics-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "qualtricsworkflow0A272397"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/stage-deploy-qualtrics/qualtrics-workflow-stack"
+    }
+  }
+}

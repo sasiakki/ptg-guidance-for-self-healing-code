@@ -1,0 +1,336 @@
+{
+ "Resources": {
+  "LambdaRolePolicyDSWorkflowStacksstagedeploytranscriptsretractiontranscriptsretractionworkflowstackLambdaRole1519862850B566F4": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "states:StartExecution",
+       "Effect": "Allow",
+       "Resource": "arn:aws:states:us-west-2:571950455257:stateMachine:stage-eligibility-calculation-workflow"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksstagedeploytranscriptsretractiontranscriptsretractionworkflowstackLambdaRole15198628",
+    "Roles": [
+     "role-d-lambda-execute"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/LambdaRole/PolicyDSWorkflowStacksstagedeploytranscriptsretractiontranscriptsretractionworkflowstackLambdaRole15198628/Resource"
+   }
+  },
+  "GlueRolePolicyDSWorkflowStacksstagedeploytranscriptsretractiontranscriptsretractionworkflowstackGlueRoleFBC5EF7BDDFE04EC": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksstagedeploytranscriptsretractiontranscriptsretractionworkflowstackGlueRoleFBC5EF7B",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploytranscriptsretractiontranscriptsretractionworkflowstackGlueRoleFBC5EF7B/Resource"
+   }
+  },
+  "gluetranscriptnoshows3toraw68589CAB": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/296b253534ad3ae41ebab727a2d7b78b288a7b0d8dac9befe963a0a4b37e9fa5.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-transcript-noshow-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/glue-transcript-noshow-s3-to-raw/Resource"
+   }
+  },
+  "gluetranscriptnoshowrawtostagingF621D08F": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/a431c6318bcf74a6cc155fcc27e963c5cb5dc38a6a5a0d5b17527f811fb238d8.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-transcript-noshow-raw-to-staging"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/glue-transcript-noshow-raw-to-staging/Resource"
+   }
+  },
+  "glueprocesstranscriptretraction7F03B32F": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/35dcf1d90940d2989e05e133cc39eb61facc621ca63d7af1f85a20ed9a5a441b.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "1.0",
+    "Name": "stage-glue-process-transcript-retraction"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/glue-process-transcript-retraction/Resource"
+   }
+  },
+  "lambdainvokeeligibility0FC49580": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "7e7eca9c92109eb386fa1527a2226c9e66cffb182b95c15ff5dd8f0d22b41e85.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda_invoke_eligibility-calculation-statemachine",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 300
+   },
+   "DependsOn": [
+    "LambdaRolePolicyDSWorkflowStacksstagedeploytranscriptsretractiontranscriptsretractionworkflowstackLambdaRole1519862850B566F4"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/lambda-invoke-eligibility/Resource",
+    "aws:asset:path": "../asset.7e7eca9c92109eb386fa1527a2226c9e66cffb182b95c15ff5dd8f0d22b41e85",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "transcriptsretractionworkflowRole5021959A": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/transcripts-retraction-workflow/Role/Resource"
+   }
+  },
+  "transcriptsretractionworkflowRoleDefaultPolicy36267B53": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-process-transcript-retraction",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-transcript-noshow-raw-to-staging",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-transcript-noshow-s3-to-raw"
+       ]
+      },
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "lambdainvokeeligibility0FC49580",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdainvokeeligibility0FC49580",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "transcriptsretractionworkflowRoleDefaultPolicy36267B53",
+    "Roles": [
+     {
+      "Ref": "transcriptsretractionworkflowRole5021959A"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/transcripts-retraction-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "transcriptsretractionworkflow53B837ED": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "transcriptsretractionworkflowRole5021959A",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"glue_transcript_noshow_s3_to_raw\",\"States\":{\"glue_transcript_noshow_s3_to_raw\":{\"Next\":\"glue_transcript_noshow_raw_to_staging\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-transcript-noshow-s3-to-raw\"}},\"glue_transcript_noshow_raw_to_staging\":{\"Next\":\"glue_process_transcript_retraction\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-transcript-noshow-raw-to-staging\"}},\"glue_process_transcript_retraction\":{\"Next\":\"lambda_invoke_eligibility\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-process-transcript-retraction\"}},\"lambda_invoke_eligibility\":{\"End\":true,\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdainvokeeligibility0FC49580",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "stage-transcripts-retraction-workflow"
+   },
+   "DependsOn": [
+    "transcriptsretractionworkflowRoleDefaultPolicy36267B53",
+    "transcriptsretractionworkflowRole5021959A"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/transcripts-retraction-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11Q0WrDMAz8lrw7arJCn7cOVjZaKNkHBMVVE8+OXSJ7o5j8++wsg7Gn01m680kPsNtBrAr84lJedGlUB/Hdo9SiIXZhkiRSr40KR4hnZ5S8i+erXavGGco04yx42yIzeYanDInDPkhNfo9MojeBIM2+uU4YHLsLQnwJVnrlbPb4rZOPp9t1Zdx6ZM0QD0megk0+6ZtgxXGxeLWfTtM/ybKBpxPKQdkl318+z2KJl956Zfsl/rrqLKoSzW1AqIrH9SSbjDn72knfz+J894Ozmy3UNdTFBytVTsF6NRI0P/gNp99741kBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

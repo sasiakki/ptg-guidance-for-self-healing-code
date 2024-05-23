@@ -1,0 +1,6 @@
+Fix for the bug B2BDS-1734 E2E Fail: Biz Logic Workflow Eligibility Inbound (2023-06-09)
+========================================================================================
+
+Steps:
+1) Apply the script datastore-cdk-repo\db_scripts\sp_updatewithearliest_hire_tracking_worcat.sql at the DS Prod Database.
+The script will replace the procedure staging.sp_updatewithearliest_hire_tracking_worcat

@@ -1,0 +1,3 @@
+Credential → "An error occurred while calling o580.jdbc. ERROR: value too long for type character varying(32)", 
+[DSHS Name column]
+=> Execute the alter_raw.credential.sql script 

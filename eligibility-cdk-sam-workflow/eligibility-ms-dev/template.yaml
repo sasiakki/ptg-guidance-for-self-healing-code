@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  eligibility service for data store
+
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 899
+
+Resources:
+  EligibilityFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      FunctionName: Eligibility-Calculation-Test-Dev
+      CodeUri: eligibility-ms/dist
+      Handler: index.processingMain
+      Runtime: nodejs14.x
+      Architectures:
+        - x86_64
+      Events:
+        Eligibility:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /evaluate
+            Method: get
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  EligibilityApi:
+    Description: "API Gateway endpoint URL for Prod stage for Eligibility service"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/eligibility/evaluate/"
+  EligibilityFunction:
+    Description: "Eligibility Lambda Function ARN"
+    Value: !GetAtt EligibilityFunction.Arn

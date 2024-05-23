@@ -1,0 +1,7 @@
+Fix for the DT-620:
+1. Code modifications were performed in the glue job "glue-qualtrics-os-completions-raw-to-raw-traininghistory" to switch the training source from "QUAL" to "YouTube" 
+2. Updated the db_scripts/adhoc_dt_620.sql with the following scripts:  
+update prod.transcript set  trainingsource =  'YouTube' , recordmodifieddate = localtimestamp where trainingsource = 'QUAL';
+
+June 21,2023- Changed the naming convention from YouTube to YOUTUBE in the glue job and adhoc_dt_620.sql
+update prod.transcript set  trainingsource =  'YOUTUBE' , recordmodifieddate = localtimestamp where trainingsource = 'QUAL';

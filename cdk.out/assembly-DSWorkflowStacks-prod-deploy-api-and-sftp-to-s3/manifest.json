@@ -1,0 +1,65 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksproddeployapiandsftptos3rawtos3sftpapiworkflowstackB3E1CA49.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksproddeployapiandsftptos3rawtos3sftpapiworkflowstackB3E1CA49.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksproddeployapiandsftptos3rawtos3sftpapiworkflowstackB3E1CA49": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://259367569391/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksproddeployapiandsftptos3rawtos3sftpapiworkflowstackB3E1CA49.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-deploy-role-259367569391-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-cfn-exec-role-259367569391-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/6f9459f8d895e08cbb5c9281e22a3b2128c4609313ea97938313c6f97cbb574d.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksproddeployapiandsftptos3rawtos3sftpapiworkflowstackB3E1CA49.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-lookup-role-259367569391-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "prod-deploy-api-and-sftp-to-s3-raw-to-s3-sftp-api-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksproddeployapiandsftptos3rawtos3sftpapiworkflowstackB3E1CA49.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/prod-deploy-api-and-sftp-to-s3/raw-to-s3-sftp-api-workflow-stack/api-and-sftp-to-s3-workflow": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiandsftptos3workflow"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-and-sftp-to-s3/raw-to-s3-sftp-api-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-and-sftp-to-s3/raw-to-s3-sftp-api-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-api-and-sftp-to-s3/raw-to-s3-sftp-api-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/prod-deploy-api-and-sftp-to-s3/raw-to-s3-sftp-api-workflow-stack"
+    }
+  }
+}

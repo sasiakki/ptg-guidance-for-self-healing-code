@@ -1,0 +1,23 @@
+https://seiu775bg.atlassian.net/browse/B2BDS-1777
+Alteration to outbound S3 folders
+
+Steps to execute:
+
+1) Please replace the scripts of the glue job as below
+
+Glue Job Name: glue-docebo-new-useraccount-outbound
+Script Path: \datastore-cdk-repo\docebo-outbound\glue\glue-docebo-new-useraccount-outbound.py
+
+Glue Job Name: glue-docebo-new-trainingfile-outbound
+Script Path: \datastore-cdk-repo\docebo-outbound\glue\glue-docebo-new-trainingfile-outbound.py
+
+Glue Job Name: glue-docebo-update-useraccount-outbound
+Script Path: \datastore-cdk-repo\docebo-outbound\glue\glue-docebo-update-useraccount-outbound.py
+
+
+2) In the AWS Secrets Manager, search for the Secret with Name: prod/b2bds/s3_docebo and edit the secret key value.
+Add a row to the secret key value, as below and save. 
+Secret Key: Outbound
+Secret Value: seiubg-b2bds-prod-feeds-fp7mk
+
+

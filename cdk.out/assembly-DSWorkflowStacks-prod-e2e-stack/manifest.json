@@ -1,0 +1,65 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksprode2estacke2eworkflowstackE4F3F387.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksprode2estacke2eworkflowstackE4F3F387.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksprode2estacke2eworkflowstackE4F3F387": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://259367569391/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksprode2estacke2eworkflowstackE4F3F387.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-deploy-role-259367569391-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-cfn-exec-role-259367569391-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/fc5f6d3073f9a5d4de74c817999fe3d44d5623e1ae284ee3ee149b746c1b024a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksprode2estacke2eworkflowstackE4F3F387.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-lookup-role-259367569391-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "prod-e2e-stack-e2e-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksprode2estacke2eworkflowstackE4F3F387.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/prod-e2e-stack/e2e-workflow-stack/E2EStateMachine": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "E2EStateMachine"
+          }
+        ],
+        "/DSWorkflowStacks/prod-e2e-stack/e2e-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/prod-e2e-stack/e2e-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/prod-e2e-stack/e2e-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/prod-e2e-stack/e2e-workflow-stack"
+    }
+  }
+}

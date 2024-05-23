@@ -1,0 +1,12 @@
+B2BDS-1385 -- Delta Processing: S3 to Raw Qualtrics Course Completions
+=> Subtask: Code Development and Unit Testing (B2BDS-1536)
+
+Code Development:
+-	For S3 to Raw Qualtrics OS transfers (Glue: “glue-qualtrics-os-completion-s3-to-raw“)
+1.	Developed the code for referring the log table “log.lastprocessed” 
+2.  Created the log entry to keep track of the last processed information
+
+-	For S3 to Raw Qualtrics Manual Training transfers (Glue: "glue-manual-qualtrics-training-transferhours-s3-to-raw")
+1.	Changed the mode from “overwrite” to “append” and removed the “truncate = True” option in the jdbc writing syntax
+2.	Developed the code for referring the log table “log.lastprocessed” and created the log entry to keep track of the last processed information
+3. ("glue-manual-qualtrics-training-transferhours-raw-to-staging") Connected to the log table to obtain the filedate and only captured the same-day data

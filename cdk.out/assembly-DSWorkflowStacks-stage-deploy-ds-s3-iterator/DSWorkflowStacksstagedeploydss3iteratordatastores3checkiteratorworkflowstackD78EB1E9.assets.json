@@ -1,0 +1,34 @@
+{
+  "version": "30.0.0",
+  "files": {
+    "6a738fa9fd89271c9643b7935065bad2fa6f73f2c424f4e39c6729885573e735": {
+      "source": {
+        "path": "../asset.6a738fa9fd89271c9643b7935065bad2fa6f73f2c424f4e39c6729885573e735",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "571950455257-us-west-2": {
+          "bucketName": "cdk-hnb659fds-assets-571950455257-us-west-2",
+          "objectKey": "6a738fa9fd89271c9643b7935065bad2fa6f73f2c424f4e39c6729885573e735.zip",
+          "region": "us-west-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-file-publishing-role-571950455257-us-west-2"
+        }
+      }
+    },
+    "0145e4b7257ab946b384e8522cc7c2dd1048d4d6ab188b3ec41030a6ed5ff24c": {
+      "source": {
+        "path": "DSWorkflowStacksstagedeploydss3iteratordatastores3checkiteratorworkflowstackD78EB1E9.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "571950455257-us-west-2": {
+          "bucketName": "cdk-hnb659fds-assets-571950455257-us-west-2",
+          "objectKey": "0145e4b7257ab946b384e8522cc7c2dd1048d4d6ab188b3ec41030a6ed5ff24c.json",
+          "region": "us-west-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-file-publishing-role-571950455257-us-west-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

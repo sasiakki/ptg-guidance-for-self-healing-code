@@ -1,0 +1,113 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackFB5795A5.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackFB5795A5.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackFB5795A5": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://259367569391/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackFB5795A5.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-deploy-role-259367569391-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-cfn-exec-role-259367569391-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/c2976bcfbb2bd9a13cbb88c57a53b9c33f8313c8636b7f7f3bf7ebedeba776e5.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackFB5795A5.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-lookup-role-259367569391-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "prod-deploy-transcripts-retraction-transcripts-retraction-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackFB5795A5.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/LambdaRole/PolicyDSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackLambdaRoleD7F90B07/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRolePolicyDSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackLambdaRoleD7F90B0768A54935"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/GlueRole/PolicyDSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackGlueRole88771898/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksproddeploytranscriptsretractiontranscriptsretractionworkflowstackGlueRole88771898FEE8ED68"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/glue-transcript-noshow-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetranscriptnoshows3toraw68589CAB"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/glue-transcript-noshow-raw-to-staging/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetranscriptnoshowrawtostagingF621D08F"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/glue-process-transcript-retraction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueprocesstranscriptretraction7F03B32F"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/lambda-invoke-eligibility/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdainvokeeligibility0FC49580"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/transcripts-retraction-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "transcriptsretractionworkflowRole5021959A"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/transcripts-retraction-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "transcriptsretractionworkflowRoleDefaultPolicy36267B53"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/transcripts-retraction-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "transcriptsretractionworkflow53B837ED"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/prod-deploy-transcripts-retraction/transcripts-retraction-workflow-stack"
+    }
+  }
+}

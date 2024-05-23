@@ -1,0 +1,107 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksproddeploydohoutbounddohoutboundworkflowstackA6D1042C.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksproddeploydohoutbounddohoutboundworkflowstackA6D1042C.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksproddeploydohoutbounddohoutboundworkflowstackA6D1042C": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://259367569391/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksproddeploydohoutbounddohoutboundworkflowstackA6D1042C.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-deploy-role-259367569391-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-cfn-exec-role-259367569391-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/585b4da75ccd3e0b9d2e5b7c13ca4cec0e55a4a112c987564450804f28c7d47f.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksproddeploydohoutbounddohoutboundworkflowstackA6D1042C.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-lookup-role-259367569391-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "prod-deploy-doh-outbound-doh-outbound-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksproddeploydohoutbounddohoutboundworkflowstackA6D1042C.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksproddeploydohoutbounddohoutboundworkflowstackGlueRole02DFCD58/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksproddeploydohoutbounddohoutboundworkflowstackGlueRole02DFCD581E149373"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/glue-doh-completed-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohcompletedoutbound02EE3200"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/glue-dohcompleted-sftp-upload/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohcompletedsftpupload12854227"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/glue-doh-classified-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohclassifiedoutbound62199A8E"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/glue-dohclassified-sftp-upload/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedohclassifiedsftpupload982E993E"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/doh-outbound-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dohoutboundworkflowRole6828C5D5"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/doh-outbound-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dohoutboundworkflowRoleDefaultPolicy9A571E41"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/doh-outbound-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dohoutboundworkflow510DCFE8"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/prod-deploy-doh-outbound/doh-outbound-workflow-stack"
+    }
+  }
+}

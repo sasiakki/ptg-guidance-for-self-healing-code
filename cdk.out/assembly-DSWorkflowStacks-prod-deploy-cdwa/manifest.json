@@ -1,0 +1,155 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksproddeploycdwacdwaworkflowstack5EA0E3A0.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksproddeploycdwacdwaworkflowstack5EA0E3A0.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksproddeploycdwacdwaworkflowstack5EA0E3A0": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://259367569391/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksproddeploycdwacdwaworkflowstack5EA0E3A0.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-deploy-role-259367569391-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-cfn-exec-role-259367569391-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/5586c65eaf94d268644d90119e55c0589fa315f95eb8849638eeb014e3af36c1.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksproddeploycdwacdwaworkflowstack5EA0E3A0.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-lookup-role-259367569391-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "prod-deploy-cdwa-cdwa-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksproddeploycdwacdwaworkflowstack5EA0E3A0.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/GlueRole/PolicyDSWorkflowStacksproddeploycdwacdwaworkflowstackGlueRoleBC49EBCB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksproddeploycdwacdwaworkflowstackGlueRoleBC49EBCBBFA3B190"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/custom-layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customlayerF4E00665"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/lambda-s3-check-cdwa/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdas3checkcdwa59226EE3"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/lambda-get-cdwa-file-processing/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdagetcdwafileprocessingDD4A51A5"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/lambda-get-cdwa-email-notification/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdagetcdwaemailnotificationF87FF410"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwas3toraw87285700"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-providerinfo-notification1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwaproviderinfonotification1586F2C60"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-validation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwavalidation93475C76"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-error-to-s3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwaerrortos32EAD792A"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-providerinfo-notification2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwaproviderinfonotification2638F4F22"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-raw-to-staging-personhistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwarawtostagingpersonhistory84487A65"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-raw-to-staging-employementrelationshiphistory/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwarawtostagingemployementrelationshiphistoryC7FF4421"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/glue-cdwa-employmentrelationship/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecdwaemploymentrelationship2DFA8CC2"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/cdwa-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdwaworkflowRoleED61B00C"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/cdwa-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdwaworkflowRoleDefaultPolicyCA5AC58E"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/cdwa-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdwaworkflowAA560152"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/prod-deploy-cdwa/cdwa-workflow-stack"
+    }
+  }
+}

@@ -1,0 +1,276 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksdevdeploydshsoutbounddshsoutboundworkflowstackGlueRole745D8B16E7AD776B": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-529350069891-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-529350069891-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksdevdeploydshsoutbounddshsoutboundworkflowstackGlueRole745D8B16",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-dshs-outbound/dshs-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksdevdeploydshsoutbounddshsoutboundworkflowstackGlueRole745D8B16/Resource"
+   }
+  },
+  "glueapssndecryptoutbound5A3BD6DA": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/ed63de74ec1b68e65599e8eae705774e53f13142e800c34b66dffdd54969a3c0.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--additional-python-modules": "s3://seiu-b2bds-glue-dependencies/cffi-1.15.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl,s3://seiu-b2bds-glue-dependencies/fernet-1.0.1.zip,s3://seiu-b2bds-glue-dependencies/cryptography-36.0.2-cp36-abi3-manylinux_2_24_x86_64.whl,s3://seiu-b2bds-glue-dependencies/pycparser-2.21-py2.py3-none-any.whl,s3://seiu-b2bds-glue-dependencies/pyaes-1.6.1.tar.gz",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "3.0",
+    "Name": "dev-glue-apssn-decrypt-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-dshs-outbound/dshs-outbound-workflow-stack/glue-apssn-decrypt-outbound/Resource"
+   }
+  },
+  "glueapssnsftpuploadC58C2494": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/681fd4d2513759f7f12743a9484e2493d84438a91cdddfe94ec90d03348aa9c0.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--additional-python-modules": "s3://seiu-b2bds-glue-dependencies/paramiko-3.1.0-py3-none-any.whl",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "3.0",
+    "Name": "dev-glue-apssn-sftp-upload",
+    "NumberOfWorkers": 2,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-dshs-outbound/dshs-outbound-workflow-stack/glue-apssn-sftp-upload/Resource"
+   }
+  },
+  "gluedshsprovideroutbound952B4DD7": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/ce4c97941b00fc4a0a3debe91b7816d0f1d69ad56ecd8895a83c4c0ed70c81da.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "rdsconnect"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "3.0",
+    "Name": "dev-glue-dshsprovider-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-dshs-outbound/dshs-outbound-workflow-stack/glue-dshsprovider-outbound/Resource"
+   }
+  },
+  "gluedshsprovidersftpupload2EBD7196": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/6a623830345dbb5a9b8092b2fc39cf34ce9a46abe6d934b26e7b35c7042e3b94.py"
+    },
+    "Role": "arn:aws:iam::529350069891:role/role-p-glue-data-pipelines",
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "529350069891",
+     "--additional-python-modules": "s3://seiu-b2bds-glue-dependencies/paramiko-3.1.0-py3-none-any.whl",
+     "--environment_type": "dev"
+    },
+    "GlueVersion": "3.0",
+    "Name": "dev-glue-dshsprovider-sftp-upload",
+    "NumberOfWorkers": 2,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-dshs-outbound/dshs-outbound-workflow-stack/glue-dshsprovider-sftp-upload/Resource"
+   }
+  },
+  "dshsoutboundworkflowstackRole8C9D0751": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-dshs-outbound/dshs-outbound-workflow-stack/dshs_outbound_workflow_stack/Role/Resource"
+   }
+  },
+  "dshsoutboundworkflowstackRoleDefaultPolicy67CFE940": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-apssn-decrypt-outbound",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-apssn-sftp-upload",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-dshsprovider-outbound",
+        "arn:aws:glue:us-west-2:529350069891:job/dev-glue-dshsprovider-sftp-upload"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "dshsoutboundworkflowstackRoleDefaultPolicy67CFE940",
+    "Roles": [
+     {
+      "Ref": "dshsoutboundworkflowstackRole8C9D0751"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-dshs-outbound/dshs-outbound-workflow-stack/dshs_outbound_workflow_stack/Role/DefaultPolicy/Resource"
+   }
+  },
+  "dshsoutboundworkflowstack3A1F017C": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "dshsoutboundworkflowstackRole8C9D0751",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"invoke-all-dshs-parallel-jobs\",\"States\":{\"invoke-all-dshs-parallel-jobs\":{\"Type\":\"Parallel\",\"Next\":\"end-dshs-parallel-process\",\"Branches\":[{\"StartAt\":\"glue_dshsprovider_outbound\",\"States\":{\"glue_dshsprovider_outbound\":{\"Next\":\"glue_dshsprovider_sftp_upload\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-dshsprovider-outbound\"}},\"glue_dshsprovider_sftp_upload\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-dshsprovider-sftp-upload\"}}}},{\"StartAt\":\"glue_apssn_decrypt_outbound\",\"States\":{\"glue_apssn_decrypt_outbound\":{\"Next\":\"glue_apssn_sftp_upload\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-apssn-decrypt-outbound\"}},\"glue_apssn_sftp_upload\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"dev-glue-apssn-sftp-upload\"}}}}]},\"end-dshs-parallel-process\":{\"Type\":\"Pass\",\"End\":true}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "dev-dshs_outbound_workflow_stack"
+   },
+   "DependsOn": [
+    "dshsoutboundworkflowstackRoleDefaultPolicy67CFE940",
+    "dshsoutboundworkflowstackRole8C9D0751"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-dshs-outbound/dshs-outbound-workflow-stack/dshs_outbound_workflow_stack/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPwWrDMBBEv8X39cZuIOc2PRQCBeN8gNmoG1u1IgWvRAjG/96V60N7Go1m4M2+4OGAc1XQQ0rzNZbOXnA+RzIjtCwhTYZBs262dMO5Cc6aJ7xf/fZqg+Nssy4g+45EOAq+ZVGPx2RGjkcSht4lRu2ewgUk8v2avIk2eOkiySj4obmSp6iFNvn/HWXTRM6xg0YZoMXIn2QG69cBf/2ywMrXv976ft233bJAVZK7D4RV8brdvMuax22J4hdonnEIfrfHusa6+BZryyn5aG+M7a/+AHGgZDE6AQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/dev-deploy-dshs-outbound/dshs-outbound-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

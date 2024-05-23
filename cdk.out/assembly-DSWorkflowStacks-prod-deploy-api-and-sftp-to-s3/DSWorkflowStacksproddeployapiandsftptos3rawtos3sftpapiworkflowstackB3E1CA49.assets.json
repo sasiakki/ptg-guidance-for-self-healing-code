@@ -1,0 +1,20 @@
+{
+  "version": "30.0.0",
+  "files": {
+    "6f9459f8d895e08cbb5c9281e22a3b2128c4609313ea97938313c6f97cbb574d": {
+      "source": {
+        "path": "DSWorkflowStacksproddeployapiandsftptos3rawtos3sftpapiworkflowstackB3E1CA49.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "259367569391-us-west-2": {
+          "bucketName": "cdk-hnb659fds-assets-259367569391-us-west-2",
+          "objectKey": "6f9459f8d895e08cbb5c9281e22a3b2128c4609313ea97938313c6f97cbb574d.json",
+          "region": "us-west-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::259367569391:role/cdk-hnb659fds-file-publishing-role-259367569391-us-west-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

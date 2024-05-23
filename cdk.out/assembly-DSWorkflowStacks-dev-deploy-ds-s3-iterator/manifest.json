@@ -1,0 +1,83 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksdevdeploydss3iteratordatastores3checkiteratorworkflowstack6977A099.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksdevdeploydss3iteratordatastores3checkiteratorworkflowstack6977A099.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksdevdeploydss3iteratordatastores3checkiteratorworkflowstack6977A099": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://529350069891/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksdevdeploydss3iteratordatastores3checkiteratorworkflowstack6977A099.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-deploy-role-529350069891-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-cfn-exec-role-529350069891-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/88ad5b192d99c80faca7df1b09386c32686b57966e3744fec52aaded17e6780f.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksdevdeploydss3iteratordatastores3checkiteratorworkflowstack6977A099.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-lookup-role-529350069891-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "dev-deploy-ds-s3-iterator-datastore-s3-check-iterator-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksdevdeploydss3iteratordatastores3checkiteratorworkflowstack6977A099.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/dev-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/lambda_check_files/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckfiles333D07C5"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/datastore-s3-check-iterator/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "datastores3checkiteratorRoleC5DB6EC7"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/datastore-s3-check-iterator/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "datastores3checkiteratorRoleDefaultPolicyA5FCC42D"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/datastore-s3-check-iterator/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "datastores3checkiteratorD852A902"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/dev-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack"
+    }
+  }
+}

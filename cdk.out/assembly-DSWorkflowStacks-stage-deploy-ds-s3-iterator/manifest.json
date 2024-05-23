@@ -1,0 +1,83 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksstagedeploydss3iteratordatastores3checkiteratorworkflowstackD78EB1E9.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksstagedeploydss3iteratordatastores3checkiteratorworkflowstackD78EB1E9.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksstagedeploydss3iteratordatastores3checkiteratorworkflowstackD78EB1E9": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://571950455257/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksstagedeploydss3iteratordatastores3checkiteratorworkflowstackD78EB1E9.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-deploy-role-571950455257-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-cfn-exec-role-571950455257-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/0145e4b7257ab946b384e8522cc7c2dd1048d4d6ab188b3ec41030a6ed5ff24c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksstagedeploydss3iteratordatastores3checkiteratorworkflowstackD78EB1E9.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-lookup-role-571950455257-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "stage-deploy-ds-s3-iterator-datastore-s3-check-iterator-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksstagedeploydss3iteratordatastores3checkiteratorworkflowstackD78EB1E9.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/stage-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/lambda_check_files/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckfiles333D07C5"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/datastore-s3-check-iterator/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "datastores3checkiteratorRoleC5DB6EC7"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/datastore-s3-check-iterator/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "datastores3checkiteratorRoleDefaultPolicyA5FCC42D"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/datastore-s3-check-iterator/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "datastores3checkiteratorD852A902"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/stage-deploy-ds-s3-iterator/datastore-s3-check-iterator-workflow-stack"
+    }
+  }
+}

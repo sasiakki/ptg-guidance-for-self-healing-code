@@ -1,0 +1,107 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksdevdeploybenefitsbenefitscontinuationworkflow4DEE2E02.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksdevdeploybenefitsbenefitscontinuationworkflow4DEE2E02.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksdevdeploybenefitsbenefitscontinuationworkflow4DEE2E02": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://529350069891/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksdevdeploybenefitsbenefitscontinuationworkflow4DEE2E02.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-deploy-role-529350069891-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-cfn-exec-role-529350069891-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/1c4508d08a93e905d283ce845ad4088cccb1252208ba67a324b0a1f66aaf4350.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksdevdeploybenefitsbenefitscontinuationworkflow4DEE2E02.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-lookup-role-529350069891-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "dev-deploy-benefits-benefits-continuation-workflow"
+      },
+      "dependencies": [
+        "DSWorkflowStacksdevdeploybenefitsbenefitscontinuationworkflow4DEE2E02.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/GlueRole/PolicyDSWorkflowStacksdevdeploybenefitsbenefitscontinuationworkflowGlueRole18AEAA0C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksdevdeploybenefitsbenefitscontinuationworkflowGlueRole18AEAA0C9226B1A4"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/lambda-check-benefitscontinuation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckbenefitscontinuation320EABF8"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/glue-benefitscontinuation-s3-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluebenefitscontinuations3rawE2B4F989"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/glue-benefitscontinuation-raw-staging/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluebenefitscontinuationrawstaging5766F474"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/glue-update-trainingrequirement-benefitscontinuation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueupdatetrainingrequirementbenefitscontinuation035FA7C2"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/StateMachine_benefits_continuation/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinebenefitscontinuationRole099D8E0B"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/StateMachine_benefits_continuation/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinebenefitscontinuationRoleDefaultPolicy95C23CFF"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/StateMachine_benefits_continuation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StateMachinebenefitscontinuationBF8BB6A2"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/dev-deploy-benefits/benefits-continuation-workflow"
+    }
+  }
+}

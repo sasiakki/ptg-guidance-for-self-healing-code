@@ -1,0 +1,3 @@
+Deployment Notes - Dt-953
+1. Open the file lambda-inbound-person-ingestion and place the contents in lambda : seiubg_datastore_inbound-person-ingestion-PROD
+We are manually placing the lambda code as the lambda is not available in CDK repo.

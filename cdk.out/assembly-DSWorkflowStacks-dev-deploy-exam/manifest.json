@@ -1,0 +1,101 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksdevdeployexamexamworkflowstack8AF81CBF.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksdevdeployexamexamworkflowstack8AF81CBF.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksdevdeployexamexamworkflowstack8AF81CBF": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://529350069891/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksdevdeployexamexamworkflowstack8AF81CBF.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-deploy-role-529350069891-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-cfn-exec-role-529350069891-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/7cdf7c688740632a64d910b1b1133249ff2d250497ceacc0e045358b53a85561.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksdevdeployexamexamworkflowstack8AF81CBF.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-lookup-role-529350069891-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "dev-deploy-exam-exam-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksdevdeployexamexamworkflowstack8AF81CBF.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/GlueRole/PolicyDSWorkflowStacksdevdeployexamexamworkflowstackGlueRole5DB6FC16/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksdevdeployexamexamworkflowstackGlueRole5DB6FC16E757B7D0"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/lambda-check-exam/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacheckexam39DD5ACE"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/'glue-exam-raw-to-prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueexamrawtoprod36FCBE99"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/glue-exam-s3-to-raw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueexams3torawA1F99BBD"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/exam-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "examworkflowRole5EC3DB29"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/exam-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "examworkflowRoleDefaultPolicyC4A06B33"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/exam-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "examworkflowFD8C2B14"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/dev-deploy-exam/exam-workflow-stack"
+    }
+  }
+}

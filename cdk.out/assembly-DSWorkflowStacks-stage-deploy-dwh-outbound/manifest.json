@@ -1,0 +1,191 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksstagedeploydwhoutbounddwhoutboundworkflowstack391F0F03.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksstagedeploydwhoutbounddwhoutboundworkflowstack391F0F03.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksstagedeploydwhoutbounddwhoutboundworkflowstack391F0F03": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://571950455257/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksstagedeploydwhoutbounddwhoutboundworkflowstack391F0F03.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-deploy-role-571950455257-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-cfn-exec-role-571950455257-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/4fa474c93dbdea888cd719d6d41f69c21e9b8d206443bbcc8093cfdd9715d95f.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksstagedeploydwhoutbounddwhoutboundworkflowstack391F0F03.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-lookup-role-571950455257-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "stage-deploy-dwh-outbound-dwh-outbound-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksstagedeploydwhoutbounddwhoutboundworkflowstack391F0F03.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploydwhoutbounddwhoutboundworkflowstackGlueRole8B14379E/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksstagedeploydwhoutbounddwhoutboundworkflowstackGlueRole8B14379EAA6E12AD"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-branch-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhbranchoutbound8EE584F5"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-coursecatalog-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhcoursecatalogoutbound2F8B6501"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-courseequivalency-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhcourseequivalencyoutbound1D3423EC"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-credential-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhcredentialoutboundB49AFF98"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-dohcompleted-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhdohcompletedoutbound3EFABC52"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-dohclassified-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhdohclassifiedoutbound61BF5CE5"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-duedateextension-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhduedateextensionoutbound333FCD45"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-employer-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhemployeroutbound9B8065DE"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-employertrust-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhemployertrustoutbound8723DA96"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-employmentrelationship-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhemploymentrelationshipoutboundE2177294"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-exam-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhexamoutbound93583DDC"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-instructor-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhinstructoroutbound3CDD0CFD"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-ojteligible-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhojteligibleoutboundCC7DF9AF"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-person-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhpersonoutbound768FC1E4"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-trainingrequirement-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhtrainingrequirementoutboundB625E32F"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-trainingtransfers-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhtrainingtransfersoutbound825030FE"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-transcript-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhtranscriptoutbound22BBEA19"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/glue-dwh-transfers_trainingprogram-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedwhtransferstrainingprogramoutbound5F945F63"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/dwh_outbound_workflow_stack/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dwhoutboundworkflowstackRoleAD2D3637"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/dwh_outbound_workflow_stack/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dwhoutboundworkflowstackRoleDefaultPolicy3D1A4224"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/dwh_outbound_workflow_stack/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dwhoutboundworkflowstack9EC6BED6"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/stage-deploy-dwh-outbound/dwh-outbound-workflow-stack"
+    }
+  }
+}

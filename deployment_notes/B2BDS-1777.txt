@@ -1,0 +1,15 @@
+https://seiu775bg.atlassian.net/browse/B2BDS-1777
+
+Steps:
+1) Disable the below old glue jobs(These are not tagged with any state machine)
+	pipeline-p-docebo-new-trainingfile-outbound
+	pipeline-p-docebo-new-and-update-useraccount-outbound
+2) Replace and save the script of the relevant glue jobs, as below. 
+	a) Glue Job Name: glue-docebo-new-trainingfile-outbound
+	   Script Path: datastore-cdk-repo\docebo-outbound\glue\glue-docebo-new-trainingfile-outbound.py
+	b) Glue Job Name: glue-docebo-new-useraccount-outbound
+	   Script Path: datastore-cdk-repo\docebo-outbound\glue\glue-docebo-new-useraccount-outbound.py
+	c) Glue Job Name: glue-docebo-update-useraccount-outbound
+	   Script Path: datastore-cdk-repo\docebo-outbound\glue\glue-docebo-update-useraccount-outbound.py
+3) The glue jobs will executed in the following E2E run. 
+

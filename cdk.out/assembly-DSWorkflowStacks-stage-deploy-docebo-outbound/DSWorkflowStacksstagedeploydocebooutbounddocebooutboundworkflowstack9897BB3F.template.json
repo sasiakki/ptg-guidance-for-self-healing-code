@@ -1,0 +1,257 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksstagedeploydocebooutbounddocebooutboundworkflowstackGlueRoleA3F0EDCA390608F8": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksstagedeploydocebooutbounddocebooutboundworkflowstackGlueRoleA3F0EDCA",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-docebo-outbound/docebo-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploydocebooutbounddocebooutboundworkflowstackGlueRoleA3F0EDCA/Resource"
+   }
+  },
+  "gluedocebonewuseraccountoutbound1232EF17": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/f9a0f1abd5e52480c74b1db1064ca634de24a6e7c8725b9f84b76ecf3f9d0961.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--class": "GlueApp",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "3.0",
+    "Name": "stage-glue-docebo-new-useraccount-outbound",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-docebo-outbound/docebo-outbound-workflow-stack/glue-docebo-new-useraccount-outbound/Resource"
+   }
+  },
+  "gluedocebonewtrainingfileoutboundF208E991": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/492b22b293250b4f6f4f7d54e837d3cbd1d234c29a625851e176b54094336771.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--class": "GlueApp",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "3.0",
+    "Name": "stage-glue-docebo-new-trainingfile-outbound",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-docebo-outbound/docebo-outbound-workflow-stack/glue-docebo-new-trainingfile-outbound/Resource"
+   }
+  },
+  "gluedoceboupdateuseraccountoutboundF76C1A1F": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/1bd42c6e6cb7ef69e844f0d2ae4ee85f59ca926acff7e7e091ef51071f27a728.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--class": "GlueApp",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "3.0",
+    "Name": "stage-glue-docebo-update-useraccount-outbound",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-docebo-outbound/docebo-outbound-workflow-stack/glue-docebo-update-useraccount-outbound/Resource"
+   }
+  },
+  "docebooutboundworkflowRoleF86B7B59": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-docebo-outbound/docebo-outbound-workflow-stack/docebo-outbound-workflow/Role/Resource"
+   }
+  },
+  "docebooutboundworkflowRoleDefaultPolicyC96B7B85": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-docebo-new-trainingfile-outbound",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-docebo-new-useraccount-outbound",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-docebo-update-useraccount-outbound"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "docebooutboundworkflowRoleDefaultPolicyC96B7B85",
+    "Roles": [
+     {
+      "Ref": "docebooutboundworkflowRoleF86B7B59"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-docebo-outbound/docebo-outbound-workflow-stack/docebo-outbound-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "docebooutboundworkflow25CECF02": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "docebooutboundworkflowRoleF86B7B59",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"glue_docebo_new_useraccount_outbound\",\"States\":{\"glue_docebo_new_useraccount_outbound\":{\"Next\":\"glue_docebo_new_trainingfile_outbound\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-docebo-new-useraccount-outbound\"}},\"glue_docebo_new_trainingfile_outbound\":{\"Next\":\"glue_docebo_update_useraccount_outbound\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-docebo-new-trainingfile-outbound\"}},\"glue_docebo_update_useraccount_outbound\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-docebo-update-useraccount-outbound\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "stage-docebo-outbound-workflow"
+   },
+   "DependsOn": [
+    "docebooutboundworkflowRoleDefaultPolicyC96B7B85",
+    "docebooutboundworkflowRoleF86B7B59"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-docebo-outbound/docebo-outbound-workflow-stack/docebo-outbound-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPwWrDMBBEv8X39cZuIOc2PRQCheB+gFHUjb21IgXvihKM/r2S60N7ehrNwMw+4eGAS1OZb6nt51Q7vuDyocZO0JGEOFuC7PULmxsu5+DYPuD16rdXFxwVWZhA9r0RIRV8Kcgaj9FOpEcjBIOLhDl7ChcQpfs1eqscvPRqZBJ8y35unjUHuuj/Z9ZRSu/GjuzXyr86JVgb89/AflgXbesTNLVx99FgUz1vV+4Ky5zNyYUJzg8dg9/tsW2xrb6EuZ6jV74Rdr/8AYlsgy4sAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-docebo-outbound/docebo-outbound-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

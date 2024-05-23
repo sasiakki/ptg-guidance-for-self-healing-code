@@ -1,0 +1,7 @@
+Deployment notes for DT-883,DT-884,DT-526 & DT_1012
+ 1. Changes made in existing glue jobs "glue-doh-completed-outbound.py" & "glue-doh-classified-outbound.py"
+ 2. For DT-883 in glue job glue-doh-classified-outbound.py removed hardcoded catalog tables, database name,s3 bucket and made changes to BT70 & OandS conditions
+ 3. For DT-884 in glue job glue-doh-completed-outbound.py removed hardcoded catalog tables, database name, s3 bucket and made changes to BT70 & OandS conditions
+ 4. For DT-526 in glue job glue-doh-completed-outbound.py to elimanate records gap between DEX and DS removed condition (tr.completeddate <= tr.duedate)
+ 5. For DT-1012 in glue job glue-doh-classified Change made to send DOH Classfied Data to SF as a Trigger for SF to Create the DOH Certification Benefit Program Participant
+ 6. As part of this workflow changes made to doh sftp glue jobs glue-dohclassified-sftp-upload.py and glue-dohcompleted-sftp-upload.py

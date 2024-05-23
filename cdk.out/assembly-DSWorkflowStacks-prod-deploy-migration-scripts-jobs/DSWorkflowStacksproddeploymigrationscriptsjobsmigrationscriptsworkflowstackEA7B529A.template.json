@@ -1,0 +1,852 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksproddeploymigrationscriptsjobsmigrationscriptsworkflowstackGlueRole4CF068F9A13FDDE5": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksproddeploymigrationscriptsjobsmigrationscriptsworkflowstackGlueRole4CF068F9",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/GlueRole/PolicyDSWorkflowStacksproddeploymigrationscriptsjobsmigrationscriptsworkflowstackGlueRole4CF068F9/Resource"
+   }
+  },
+  "gluecoursecatalogversionupdate96901048": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/80018746f5ddc241429f1d789be3cd3e69fe7716c28bd440979a8d895c5efeaf.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-coursecatalog-version-update",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-coursecatalog-version-update/Resource"
+   }
+  },
+  "gluemigrationlogstraineestatuslogs701AE9B6": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/39cc3243da4017295fb5442e1e93fae484a0fee3fb5aad116b190ec218a758c1.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-logs-traineestatuslogs",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-logs-traineestatuslogs/Resource"
+   }
+  },
+  "gluemigrationprodbranch71FF9C5D": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/5b5b4bc39915a4f701a551e86bcdfad244cdb979f20692d89f6d1711d30820de.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-branch",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-branch/Resource"
+   }
+  },
+  "gluemigrationprodcoursecatalogB03EA983": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/68809e7a263f70e6f10da11e6f18535d46a0d34de323d07dfd98c216672484ce.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-course-catalog",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-course-catalog/Resource"
+   }
+  },
+  "gluemigrationproddohclassified95DAAAF3": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/55dd5767585659e50d2ab6ff6841fc7a86d70e476abd88e9bbcec20e60498ab1.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-dohclassified",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-dohclassified/Resource"
+   }
+  },
+  "gluemigrationproddohcompleted468119D9": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/b3074339144f41f8de523c46f8e3126cb62e59487d66dd29d8eedecec4677f2c.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-dohcompleted",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-dohcompleted/Resource"
+   }
+  },
+  "gluemigrationprodduedateextension686BC94D": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/c1451c5b70a28467b4f881346b42e77e6db8c93999fdcb3b5d084018ceecd9e9.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-duedateextension",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-duedateextension/Resource"
+   }
+  },
+  "gluemigrationprodemployer4E52C2E6": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/5ce862d8a90338eb7dc86bdeb0cfa108d23379c4b6c469faffd82483db12a82e.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-employer",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-employer/Resource"
+   }
+  },
+  "gluemigrationprodemployertrust881D5E10": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/57b86abdfa87246a93aebaed692332263a6d5306ce3c550a6e5153f464606572.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-employer-trust",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-employer-trust/Resource"
+   }
+  },
+  "gluemigrationprodemploymentrelationshipA9D5FD1B": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/ae008ab60ddf4d082207d2e89e64cf5ea26f83ae5fc83d66a73ab9945ff23ac8.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-employmentrelationship",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-employmentrelationship/Resource"
+   }
+  },
+  "gluemigrationprodexamE591C146": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/df40438dd5713702d8bbd61d86cdf39cd4af7b6d56ab392e7448f0eb3057accb.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-exam",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-exam/Resource"
+   }
+  },
+  "gluemigrationprodinstructor877259CC": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/fb0aca4f5b5b452fe614663ae39e6706d951484c68e9828982365d468c1c5aeb.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-instructor",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-instructor/Resource"
+   }
+  },
+  "gluemigrationprodojteligibleD1710897": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/6e82ff176ad22757bc71ca7f1148fe33892b6be8e800986742f4f714916b6ee9.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-ojteligible",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-ojteligible/Resource"
+   }
+  },
+  "gluemigrationprodperson77C74750": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/a0ab0d3eae70b4d37c0886ec258515280562cc733cc03c5a7ba54d4b3012948f.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-person",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-person/Resource"
+   }
+  },
+  "gluemigrationprodtrainingrequirement72FA9BB9": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/9f466deaf2424107098edfd03859966a917f9169576a02ec7a1fe1fb0feccf45.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-trainingrequirement",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-trainingrequirement/Resource"
+   }
+  },
+  "gluemigrationprodtranscript5F80B480": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/4bfbd8afd64eac99b4050b4b5957765a5edaa1336f7d382f24e43d3f1bef1b78.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-prod-transcript",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-prod-transcript/Resource"
+   }
+  },
+  "gluemigrationrawcredentialdelta1D8B8E69": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/176506338aca0aa822171e3e4099a9b5968fa083ecb58b41039af40823ba1227.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-raw-credential-delta",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-raw-credential-delta/Resource"
+   }
+  },
+  "gluemigrationstagingidcrosswalk9D7E6912": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/02307a3cc2e4bbc3d0b0602a8506d029bab3480cb46e235d6d2ee5251d36c03c.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--additional-python-modules": "s3://seiubg-b2bds-prod-glue-etl-scripts-b0p3e/dependencies/cryptography_dependencies/cffi-1.15.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl,s3://seiubg-b2bds-prod-glue-etl-scripts-b0p3e/dependencies/fernet-1.0.1.zip,s3://seiubg-b2bds-prod-glue-etl-scripts-b0p3e/dependencies/cryptography_dependencies/cryptography-36.0.2-cp36-abi3-manylinux_2_24_x86_64.whl,s3://seiubg-b2bds-prod-glue-etl-scripts-b0p3e/dependencies/cryptography_dependencies/pycparser-2.21-py2.py3-none-any.whl,s3://seiubg-b2bds-prod-glue-etl-scripts-b0p3e/dependencies/cryptography_dependencies/pyaes-1.6.1.tar.gz",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "3.0",
+    "Name": "prod-glue-migration-staging-idcrosswalk",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-staging-idcrosswalk/Resource"
+   }
+  },
+  "gluemigrationstagingpersonhistoryDA297A5E": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/510d6f22336f64f1833dfa7fc5def4ddedb271625f0ac98b697b2e2f8035134c.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-staging-personhistory",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-staging-personhistory/Resource"
+   }
+  },
+  "gluemigrationlogstranscriptarchivedE925C259": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/df76a5e362a4dcbfea8809985e1e01f62b12f0eb311306ea46e0abf9bed4b7cf.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--class": "GlueApp",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-migration-logs-transcript-archived",
+    "NumberOfWorkers": 10,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-migration-logs-transcript-archived/Resource"
+   }
+  },
+  "glueprocesscleantables547DE806": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/7a223d387c2204c515b896dedf746c2db71860433e03b0362c16ff8ac9578558.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-process-clean-tables"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/glue-process-clean-tables/Resource"
+   }
+  },
+  "migrationscriptsworkflowstackRole1E66B43C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/migration_scripts_workflow_stack/Role/Resource"
+   }
+  },
+  "migrationscriptsworkflowstackRoleDefaultPolicy89A72B90": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "glue:StartJobRun",
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-logs-traineestatuslogs",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-logs-transcript-archived",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-branch",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-course-catalog",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-dohclassified",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-dohcompleted",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-duedateextension",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-employer",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-employer-trust",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-employmentrelationship",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-exam",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-instructor",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-ojteligible",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-person",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-trainingrequirement",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-prod-transcript",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-raw-credential-delta",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-staging-idcrosswalk",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-migration-staging-personhistory"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "migrationscriptsworkflowstackRoleDefaultPolicy89A72B90",
+    "Roles": [
+     {
+      "Ref": "migrationscriptsworkflowstackRole1E66B43C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/migration_scripts_workflow_stack/Role/DefaultPolicy/Resource"
+   }
+  },
+  "migrationscriptsworkflowstack4CFE7C7D": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "migrationscriptsworkflowstackRole1E66B43C",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"invoke-all-migration-parallel-jobs\",\"States\":{\"invoke-all-migration-parallel-jobs\":{\"Type\":\"Parallel\",\"End\":true,\"Branches\":[{\"StartAt\":\"glue_migration_logs_traineestatuslogs\",\"States\":{\"glue_migration_logs_traineestatuslogs\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-logs-traineestatuslogs\"}}}},{\"StartAt\":\"glue_migration_prod_branch\",\"States\":{\"glue_migration_prod_branch\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-branch\"}}}},{\"StartAt\":\"glue_migration_prod_course_catalog\",\"States\":{\"glue_migration_prod_course_catalog\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-course-catalog\"}}}},{\"StartAt\":\"glue_migration_prod_dohclassified\",\"States\":{\"glue_migration_prod_dohclassified\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-dohclassified\"}}}},{\"StartAt\":\"glue_migration_prod_dohcompleted\",\"States\":{\"glue_migration_prod_dohcompleted\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-dohcompleted\"}}}},{\"StartAt\":\"glue_migration_prod_duedateextension\",\"States\":{\"glue_migration_prod_duedateextension\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-duedateextension\"}}}},{\"StartAt\":\"glue_migration_prod_employer\",\"States\":{\"glue_migration_prod_employer\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-employer\"}}}},{\"StartAt\":\"glue_migration_prod_employer_trust\",\"States\":{\"glue_migration_prod_employer_trust\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-employer-trust\"}}}},{\"StartAt\":\"glue_migration_prod_employmentrelationship\",\"States\":{\"glue_migration_prod_employmentrelationship\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-employmentrelationship\"}}}},{\"StartAt\":\"glue_migration_prod_exam\",\"States\":{\"glue_migration_prod_exam\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-exam\"}}}},{\"StartAt\":\"glue_migration_prod_instructor\",\"States\":{\"glue_migration_prod_instructor\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-instructor\"}}}},{\"StartAt\":\"glue_migration_prod_ojteligible\",\"States\":{\"glue_migration_prod_ojteligible\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-ojteligible\"}}}},{\"StartAt\":\"glue_migration_prod_person\",\"States\":{\"glue_migration_prod_person\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-person\"}}}},{\"StartAt\":\"glue_migration_logs_transcript_archived\",\"States\":{\"glue_migration_logs_transcript_archived\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-logs-transcript-archived\"}}}},{\"StartAt\":\"glue_migration_prod_trainingrequirement\",\"States\":{\"glue_migration_prod_trainingrequirement\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-trainingrequirement\"}}}},{\"StartAt\":\"glue_migration_prod_transcript\",\"States\":{\"glue_migration_prod_transcript\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-prod-transcript\"}}}},{\"StartAt\":\"glue_migration_raw_credential_delta\",\"States\":{\"glue_migration_raw_credential_delta\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-raw-credential-delta\"}}}},{\"StartAt\":\"glue_migration_staging_idcrosswalk\",\"States\":{\"glue_migration_staging_idcrosswalk\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-staging-idcrosswalk\"}}}},{\"StartAt\":\"glue_migration_staging_personhistory\",\"States\":{\"glue_migration_staging_personhistory\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun\",\"Parameters\":{\"JobName\":\"prod-glue-migration-staging-personhistory\"}}}}]}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "prod-migration_scripts_workflow_stack"
+   },
+   "DependsOn": [
+    "migrationscriptsworkflowstackRoleDefaultPolicy89A72B90",
+    "migrationscriptsworkflowstackRole1E66B43C"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/migration_scripts_workflow_stack/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPQWvDMAyFf0vuipqs0PPWHQaFQcl+QFA9NfHi2iWSGSX4v8/OcthOT0/vwSc94eGAS1PRt9Tmc6qdveDyoWQm6FhCnA1DzvrF0g2Xc3DWPOD16repC46LLZpA9j2JsAq+FMkej9FMrEcShsFFxtw9hQuI8v0avVEbvPRKMgm+5TyTZ82FLvr/ncymmZxjB7mj/E5mtH5l//UpwYrOu8H6YT1teyNBU5O7j4RN9by9uyta7tqSTE5wfugY/G6PbYtt9SXW1nP0am+M3a/+AEhe2f41AQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-migration-scripts-jobs/migration-scripts-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

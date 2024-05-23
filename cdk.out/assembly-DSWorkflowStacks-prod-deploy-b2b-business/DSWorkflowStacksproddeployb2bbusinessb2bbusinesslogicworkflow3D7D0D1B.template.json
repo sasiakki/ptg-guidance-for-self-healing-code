@@ -1,0 +1,496 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksproddeployb2bbusinessb2bbusinesslogicworkflowGlueRole5D6E369154B3C79D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-259367569391-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksproddeployb2bbusinessb2bbusinesslogicworkflowGlueRole5D6E3691",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/GlueRole/PolicyDSWorkflowStacksproddeployb2bbusinessb2bbusinesslogicworkflowGlueRole5D6E3691/Resource"
+   }
+  },
+  "gluepersonmastering94A45AE0": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/b261836c3a758329a59ecdae09c296b5cf01fe2cf0d0bbb7f793539f91f86960.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-personmastering"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-personmastering/Resource"
+   }
+  },
+  "gluecleanagencydexsourcekeyC52644B7": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/0cb4633858b923bd1e7b26b12a28f95d7b5d1d47da63e2acfcf566331532fa7c.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-clean-agency-dex-sourcekey"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-clean-agency-dex-sourcekey/Resource"
+   }
+  },
+  "gluecleanagencysourcekeyF290C060": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/339e5052d44aaee96fd1fad8d1e8688068f3a89b324b59f0e8000418f561f654.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-clean-agency-sourcekey"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-clean-agency-sourcekey/Resource"
+   }
+  },
+  "gluecleanquarantineagencyterminated195BB63F": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/a7e53a610a61e865ddde87097c71530c7ab378fa06b000defc0104391e08276a.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-clean-quarantine-agency-terminated"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-clean-quarantine-agency-terminated/Resource"
+   }
+  },
+  "gluecleanpersonquarantineF8633F56": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/c71f45d7518daa948b9f9d936eed137d8dcefe649ff601282177142b13884296.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-clean-person-quarantine"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-clean-person-quarantine/Resource"
+   }
+  },
+  "gluepersonquarantinetos3A53C62B6": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/6f5d90dceed39fd0564167efdf261f15f85d1c29c10c7fcd5f9ca38349b50cf4.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-person-quarantine-to-s3"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-person-quarantine-to-s3/Resource"
+   }
+  },
+  "glueupdateearliesthiretrackingworkcategoryE1C35BC3": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/05006fa42c7982a8fb52197bd290a5200393fcbdf4862ec92dea54d7979400fd.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-update-earliest-hire-tracking-workcategory"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-update-earliest-hire-tracking-workcategory/Resource"
+   }
+  },
+  "glueprimarycredentialprocess0416BA8B": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/8d21f86cb4de4ce33cf17799ae0afee59245e853cac904502dfc5ad407f6af1c.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-primarycredential-process"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-primarycredential-process/Resource"
+   }
+  },
+  "glueupdateprodpersonwithprimarycredential0DA941EA": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/d4a35b3b0093ebc51161201b1f0972477414b8b905b3f170928db56d0d9f6be3.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-update-prod-person-with-primarycredential"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-update-prod-person-with-primarycredential/Resource"
+   }
+  },
+  "gluedohduedateAC7E962E": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/5abed99c520a6c988b99819a35fd1011be4d5c8d9932f9ca9aca54aa0c485e6f.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "1.0",
+    "Name": "prod-glue-doh-duedate"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-doh-duedate/Resource"
+   }
+  },
+  "gluecredentialsdeltatoProdcredentials572D56DC": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-259367569391-us-west-2/fee405f2d9a0809ea2bcc8a373eb5ee758a54af1bb5e80d59babdc647e8c0251.py"
+    },
+    "Role": "arn:aws:iam::259367569391:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "259367569391",
+     "--environment_type": "prod"
+    },
+    "GlueVersion": "4.0",
+    "Name": "prod-glue-credentials-delta-to-Prodcredentials"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/glue-credentials-delta-to-Prodcredentials/Resource"
+   }
+  },
+  "StateMachinebusinesslogicRole47B38959": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/StateMachine_businesslogic/Role/Resource"
+   }
+  },
+  "StateMachinebusinesslogicRoleDefaultPolicy39704D8D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-clean-agency-dex-sourcekey",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-clean-agency-sourcekey",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-clean-person-quarantine",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-clean-quarantine-agency-terminated",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-credentials-delta-to-Prodcredentials",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-doh-duedate",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-person-quarantine-to-s3",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-personmastering",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-primarycredential-process",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-update-earliest-hire-tracking-workcategory",
+        "arn:aws:glue:us-west-2:259367569391:job/prod-glue-update-prod-person-with-primarycredential"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "StateMachinebusinesslogicRoleDefaultPolicy39704D8D",
+    "Roles": [
+     {
+      "Ref": "StateMachinebusinesslogicRole47B38959"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/StateMachine_businesslogic/Role/DefaultPolicy/Resource"
+   }
+  },
+  "StateMachinebusinesslogic598F5566": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "StateMachinebusinesslogicRole47B38959",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"glue_personmastering\",\"States\":{\"glue_personmastering\":{\"Next\":\"glue_clean_agency_dex_sourcekey\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-personmastering\"}},\"glue_clean_agency_dex_sourcekey\":{\"Next\":\"glue_clean_agency_sourcekey\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-clean-agency-dex-sourcekey\"}},\"glue_clean_agency_sourcekey\":{\"Next\":\"glue_cleaningquarantineagencyterm\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-clean-agency-sourcekey\"}},\"glue_cleaningquarantineagencyterm\":{\"Next\":\"glue_clean_person_quarantine\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-clean-quarantine-agency-terminated\"}},\"glue_clean_person_quarantine\":{\"Next\":\"glue_personquarantine_to_s3\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-clean-person-quarantine\"}},\"glue_personquarantine_to_s3\":{\"Next\":\"glue_updateearliest_hire_tracking_workcategory\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-person-quarantine-to-s3\"}},\"glue_updateearliest_hire_tracking_workcategory\":{\"Next\":\"glue_primarycredential_process\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-update-earliest-hire-tracking-workcategory\"}},\"glue_primarycredential_process\":{\"Next\":\"glue_update_prod_person_withprimarycredential\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-primarycredential-process\"}},\"glue_update_prod_person_withprimarycredential\":{\"Next\":\"glue_credentials_delta_to_Prodcredentials\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-update-prod-person-with-primarycredential\"}},\"glue_credentials_delta_to_Prodcredentials\":{\"Next\":\"glue_doh_duedate\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-credentials-delta-to-Prodcredentials\"}},\"glue_doh_duedate\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"prod-glue-doh-duedate\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "prod-b2b-business-logic-workflow"
+   },
+   "DependsOn": [
+    "StateMachinebusinesslogicRoleDefaultPolicy39704D8D",
+    "StateMachinebusinesslogicRole47B38959"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/StateMachine_businesslogic/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPwWrDMBBEv8X39cZuIOc2PRQCheB+gFHUjb21IgXvihKM/r2S60N7ehrNwMw+4eGAS1OZb6nt51Q7vuDyocZO0JGEOFuC7PULmxsu5+DYPuD16rdXFxwVWZhA9r0RIRV8Kcgaj9FOpEcjBIOLhDl7ChcQpfs1eqscvPRqZBJ8y35unjUHuuj/Z9ZRSu/GjuzXyr86JVgb89/AflgXbesTNLVx99FgUz1vV+4Ky5zNyYUJzg8dg9/tsW2xrb6EuZ6jV74Rdr/8AYlsgy4sAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/prod-deploy-b2b-business/b2b-business-logic-workflow/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

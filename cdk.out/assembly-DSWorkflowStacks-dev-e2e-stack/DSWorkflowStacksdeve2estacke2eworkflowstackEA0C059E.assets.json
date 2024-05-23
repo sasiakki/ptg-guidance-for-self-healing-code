@@ -1,0 +1,20 @@
+{
+  "version": "30.0.0",
+  "files": {
+    "f84ed92d953b4aab98f20dee62911d48822ceb167534847fdcb97292d1eea445": {
+      "source": {
+        "path": "DSWorkflowStacksdeve2estacke2eworkflowstackEA0C059E.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "529350069891-us-west-2": {
+          "bucketName": "cdk-hnb659fds-assets-529350069891-us-west-2",
+          "objectKey": "f84ed92d953b4aab98f20dee62911d48822ceb167534847fdcb97292d1eea445.json",
+          "region": "us-west-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-file-publishing-role-529350069891-us-west-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

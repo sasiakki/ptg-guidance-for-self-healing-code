@@ -1,0 +1,21 @@
+
+Delta Processing: Staging to Prod.employmentrelationship table
+https://seiu775bg.atlassian.net/browse/B2BDS-1326
+
+Change log: 144
+
+Following are the changes
+
+1. datastore-cdk-repo\db_scripts\
+	a) vw_getagencyclassification.sql
+	b) vw_getproviderinfo.sql
+	c) sp_cdwaprovidersemploymentrelationshipprocess.sql
+	d) sp_processagencyproviderstoemploymentrelationship.sql
+	
+2. datastore-cdk-repo\standalone_db_scripts\staging schema\procedures
+	a) sp_cdwaprovidersemploymentrelationshipprocess.sql
+	b) sp_processagencyproviderstoemploymentrelationship.sql
+	
+3. 	datastore-cdk-repo\standalone_db_scripts\staging schema\views
+	a) vw_getagencyclassification.sql
+	b) vw_getproviderinfo.sql

@@ -1,0 +1,101 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksdevdeploydocebooutbounddocebooutboundworkflowstackBB450DEB.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksdevdeploydocebooutbounddocebooutboundworkflowstackBB450DEB.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksdevdeploydocebooutbounddocebooutboundworkflowstackBB450DEB": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://529350069891/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksdevdeploydocebooutbounddocebooutboundworkflowstackBB450DEB.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-deploy-role-529350069891-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-cfn-exec-role-529350069891-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-529350069891-us-west-2/e0ae6d9637460d922437d5a113f92ab3ca7ed25119d0365101f58636c225f1f4.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksdevdeploydocebooutbounddocebooutboundworkflowstackBB450DEB.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::529350069891:role/cdk-hnb659fds-lookup-role-529350069891-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "dev-deploy-docebo-outbound-docebo-outbound-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksdevdeploydocebooutbounddocebooutboundworkflowstackBB450DEB.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksdevdeploydocebooutbounddocebooutboundworkflowstackGlueRole407527E9/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksdevdeploydocebooutbounddocebooutboundworkflowstackGlueRole407527E9B4358311"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/glue-docebo-new-useraccount-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedocebonewuseraccountoutbound1232EF17"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/glue-docebo-new-trainingfile-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedocebonewtrainingfileoutboundF208E991"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/glue-docebo-update-useraccount-outbound/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluedoceboupdateuseraccountoutboundF76C1A1F"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/docebo-outbound-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "docebooutboundworkflowRoleF86B7B59"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/docebo-outbound-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "docebooutboundworkflowRoleDefaultPolicyC96B7B85"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/docebo-outbound-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "docebooutboundworkflow25CECF02"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/dev-deploy-docebo-outbound/docebo-outbound-workflow-stack"
+    }
+  }
+}

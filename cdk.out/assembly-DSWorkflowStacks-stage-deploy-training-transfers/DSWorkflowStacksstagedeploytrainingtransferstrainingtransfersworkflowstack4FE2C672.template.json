@@ -1,0 +1,747 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksstagedeploytrainingtransferstrainingtransfersworkflowstackGlueRoleABDBA1E4ABF56D43": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksstagedeploytrainingtransferstrainingtransfersworkflowstackGlueRoleABDBA1E4",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploytrainingtransferstrainingtransfersworkflowstackGlueRoleABDBA1E4/Resource"
+   }
+  },
+  "lambdacheckcdwatrainingtransfer51D1F39C": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "84ee4ea981778d90bea366d643ee7f5f2b5bbf1d123b70a82e826db1ac0665a6.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda-check-cdwa-trainingtransfer",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 120
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/lambda-check-cdwa-trainingtransfer/Resource",
+    "aws:asset:path": "../asset.84ee4ea981778d90bea366d643ee7f5f2b5bbf1d123b70a82e826db1ac0665a6",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdachecktrainingtransferDBBEC8DC": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "5436fbf6b25c650e2b941e714d9bef17bb868c8013a6401428e7988f5e3b2a71.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda-check-trainingtransfer",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 120
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/lambda-check-trainingtransfer/Resource",
+    "aws:asset:path": "../asset.5436fbf6b25c650e2b941e714d9bef17bb868c8013a6401428e7988f5e3b2a71",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "customlayerF4E00665": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "3ef4178bccf2a58ccb1f90c6a4938bcefe2f9d38d936d5da57ac80b9e4d9cb6d.zip"
+    },
+    "CompatibleRuntimes": [
+     "python3.9"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/custom-layer/Resource",
+    "aws:asset:path": "../asset.3ef4178bccf2a58ccb1f90c6a4938bcefe2f9d38d936d5da57ac80b9e4d9cb6d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Content"
+   }
+  },
+  "lambdacheckfileprocessedstatusC56872E4": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "5170833cc2e8a56094d0acafa23948fa9eeb6ab89e2a73a1bf60b510c558317a.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda-check-file-processed-status",
+    "Handler": "lambda_function.lambda_handler",
+    "Layers": [
+     "arn:aws:lambda:us-west-2:345057560386:layer:AWS-Parameters-and-Secrets-Lambda-Extension:4",
+     {
+      "Ref": "customlayerF4E00665"
+     }
+    ],
+    "Runtime": "python3.9",
+    "Timeout": 120,
+    "VpcConfig": {
+     "SecurityGroupIds": [
+      "sg-00dd442950b4df354"
+     ],
+     "SubnetIds": [
+      "subnet-0d68cb819d158b5b4",
+      "subnet-014ae98f8f77c0c10",
+      "subnet-027a9cb8dbed9b3cd",
+      "subnet-02530081dea732e80"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/lambda-check-file-processed-status/Resource",
+    "aws:asset:path": "../asset.5170833cc2e8a56094d0acafa23948fa9eeb6ab89e2a73a1bf60b510c558317a",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdainvokefileprocessedemailAD02466A": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "cbdf60daa563fdd9c9bf23a919e49488d4665aed7999fd54856ff405d472801a.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda-invoke-file-processed-email",
+    "Handler": "lambda_function.lambda_handler",
+    "Runtime": "python3.9",
+    "Timeout": 120
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/lambda-invoke-file-processed-email/Resource",
+    "aws:asset:path": "../asset.cbdf60daa563fdd9c9bf23a919e49488d4665aed7999fd54856ff405d472801a",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdacdwafilevalidationstatus7F9701FD": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "ad358ef83b4d81c730885098b6349ce05c7e02c6d1d51e9436fb62014ff26dd0.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda-cdwa-file-validation-status",
+    "Handler": "lambda_function.lambda_handler",
+    "Layers": [
+     "arn:aws:lambda:us-west-2:345057560386:layer:AWS-Parameters-and-Secrets-Lambda-Extension:4",
+     {
+      "Ref": "customlayerF4E00665"
+     }
+    ],
+    "Runtime": "python3.9",
+    "Timeout": 120,
+    "VpcConfig": {
+     "SecurityGroupIds": [
+      "sg-00dd442950b4df354"
+     ],
+     "SubnetIds": [
+      "subnet-0d68cb819d158b5b4",
+      "subnet-014ae98f8f77c0c10",
+      "subnet-027a9cb8dbed9b3cd",
+      "subnet-02530081dea732e80"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/lambda-cdwa-file-validation-status/Resource",
+    "aws:asset:path": "../asset.ad358ef83b4d81c730885098b6349ce05c7e02c6d1d51e9436fb62014ff26dd0",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "lambdainvokefilevalidationemail9ECFD1FC": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-571950455257-us-west-2",
+     "S3Key": "a443205471116f086d7a8cc3e47177b0952111c52c9db106963f6e82bb600311.zip"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-d-lambda-execute",
+    "Environment": {
+     "Variables": {
+      "account_number": "571950455257",
+      "environment_type": "stage"
+     }
+    },
+    "FunctionName": "stage-lambda-invoke-file-validation-email",
+    "Handler": "lambda_function.lambda_handler",
+    "Layers": [
+     "arn:aws:lambda:us-west-2:345057560386:layer:AWS-Parameters-and-Secrets-Lambda-Extension:4",
+     {
+      "Ref": "customlayerF4E00665"
+     }
+    ],
+    "Runtime": "python3.9",
+    "Timeout": 120
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/lambda-invoke-file-validation-email/Resource",
+    "aws:asset:path": "../asset.a443205471116f086d7a8cc3e47177b0952111c52c9db106963f6e82bb600311",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "gluecdwatransferss3toraw4730841F": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/8cde4e0e6c11909e7d672015b24b6f271dfc99e7df91429e1dad5f5e0b47e496.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-cdwa-transfers-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/glue-cdwa-transfers-s3-to-raw/Resource"
+   }
+  },
+  "gluecdwatransfersvalidation582D9203": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/6b07aea304ce7f32c75fbbabcf9745cbfdbdd7d3d6b5f4790ca0cab5224ccb63.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "1.0",
+    "Name": "stage-glue-cdwa-transfers-validation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/glue-cdwa-transfers-validation/Resource"
+   }
+  },
+  "gluecdwatransfersrawtostagingtransfersCD505984": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/18036244239ad634f4778965fe6bf37964fb9d6a9ebb3035f5adbb5cb81e087f.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-cdwa-transfers-raw-to-staging-transfers"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/glue-cdwa-transfers-raw-to-staging-transfers/Resource"
+   }
+  },
+  "gluemanualqualtricstrainingtransferhourss3toraw3CD2426A": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/53b401ce0bb7b43b20290a385ed81bb1987edaa6207c5e2cd24acec53949a8e0.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-manual-qualtrics-training-transferhours-s3-to-raw"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/glue-manual-qualtrics-training-transferhours-s3-to-raw/Resource"
+   }
+  },
+  "gluemanualqualtricstrainingtransferhoursrawtostaging5B545E5D": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/f386ef9f9e4016abe26b1f507b76dcb4bdc088695933d57a8a45a891f20d6ebe.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "4.0",
+    "Name": "stage-glue-manual-qualtrics-training-transferhours-raw-to-staging"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/glue-manual-qualtrics-training-transferhours-raw-to-staging/Resource"
+   }
+  },
+  "glueprocesstrainingtransfers63D55BAD": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "pythonshell",
+     "PythonVersion": "3.9",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/262fe46fb0a62c67c60955d542351c009e833899b89a90eb3521a338071c0219.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "1.0",
+    "Name": "stage-glue-process-training-transfers"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/glue-process-training-transfers/Resource"
+   }
+  },
+  "trainingtransfersworkflowRoleB6B2F279": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/training-transfers-workflow/Role/Resource"
+   }
+  },
+  "trainingtransfersworkflowRoleDefaultPolicyCAF55986": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-cdwa-transfers-raw-to-staging-transfers",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-cdwa-transfers-s3-to-raw",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-cdwa-transfers-validation",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-manual-qualtrics-training-transferhours-raw-to-staging",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-manual-qualtrics-training-transferhours-s3-to-raw",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-process-training-transfers"
+       ]
+      },
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "lambdacdwafilevalidationstatus7F9701FD",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckcdwatrainingtransfer51D1F39C",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdacheckfileprocessedstatusC56872E4",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdachecktrainingtransferDBBEC8DC",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdainvokefileprocessedemailAD02466A",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::GetAtt": [
+          "lambdainvokefilevalidationemail9ECFD1FC",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacdwafilevalidationstatus7F9701FD",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckcdwatrainingtransfer51D1F39C",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdacheckfileprocessedstatusC56872E4",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdachecktrainingtransferDBBEC8DC",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdainvokefileprocessedemailAD02466A",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "lambdainvokefilevalidationemail9ECFD1FC",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "trainingtransfersworkflowRoleDefaultPolicyCAF55986",
+    "Roles": [
+     {
+      "Ref": "trainingtransfersworkflowRoleB6B2F279"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/training-transfers-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "trainingtransfersworkflow19E22A43": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "trainingtransfersworkflowRoleB6B2F279",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"invoke-all-training-sources-parallel-jobs\",\"States\":{\"invoke-all-training-sources-parallel-jobs\":{\"Type\":\"Parallel\",\"Next\":\"glue_process_training_transfers\",\"Branches\":[{\"StartAt\":\"lambda_check_cdwa_trainingtransfer\",\"States\":{\"lambda_check_cdwa_trainingtransfer\":{\"Next\":\"has-cdwa-training-transfer-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckcdwatrainingtransfer51D1F39C",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-cdwa-training-transfer-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.Payload.result\",\"BooleanEquals\":true,\"Next\":\"glue_cdwa_transfers_s3_to_raw\"}],\"Default\":\"end-cdwa-transfers-process\"},\"end-cdwa-transfers-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_cdwa_transfers_s3_to_raw\":{\"Next\":\"has-loaded-files\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-cdwa-transfers-s3-to-raw\"}},\"has-loaded-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.JobRunState\",\"StringEquals\":\"SUCCEEDED\",\"Next\":\"lambda_check_file_processed_status\"}],\"Default\":\"glue_cdwa_transfers_validation\"},\"glue_cdwa_transfers_validation\":{\"Next\":\"has-validation-completed\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-cdwa-transfers-validation\"}},\"lambda_invoke_file_processed_email\":{\"Next\":\"glue_cdwa_transfers_validation\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdainvokefileprocessedemailAD02466A",
+         "Arn"
+        ]
+       },
+       "\",\"Payload\":{\"filename.$\":\"$.filename\",\"filecount.$\":\"$.filecount\",\"type\":\"Processing\"}}},\"lambda_check_file_processed_status\":{\"Next\":\"lambda_invoke_file_processed_email\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"ResultSelector\":{\"filename.$\":\"$.Payload.body.filename\",\"filecount.$\":\"$.Payload.body.filecount\"},\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacheckfileprocessedstatusC56872E4",
+         "Arn"
+        ]
+       },
+       "\",\"Payload\":{\"type\":\"Processing\"}}},\"has-validation-completed\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.JobRunState\",\"StringEquals\":\"SUCCEEDED\",\"Next\":\"lambda_cdwa_file_validation_status\"}],\"Default\":\"glue_cdwa_transfers_raw_to_staging_transfers\"},\"glue_cdwa_transfers_raw_to_staging_transfers\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-cdwa-transfers-raw-to-staging-transfers\"}},\"lambda_invoke_file_validation_email\":{\"Next\":\"glue_cdwa_transfers_raw_to_staging_transfers\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdainvokefilevalidationemail9ECFD1FC",
+         "Arn"
+        ]
+       },
+       "\",\"Payload\":{\"filename.$\":\"$.filename\",\"filecount.$\":\"$.filecount\",\"type\":\"Datavalidation\"}}},\"lambda_cdwa_file_validation_status\":{\"Next\":\"lambda_invoke_file_validation_email\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"ResultSelector\":{\"filename.$\":\"$.Payload.body.filename\",\"filecount.$\":\"$.Payload.body.filecount\"},\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdacdwafilevalidationstatus7F9701FD",
+         "Arn"
+        ]
+       },
+       "\",\"Payload\":{\"type\":\"Datavalidation\"}}}}},{\"StartAt\":\"lambda_check_trainingtransfer\",\"States\":{\"lambda_check_trainingtransfer\":{\"Next\":\"has-qualtrics-training-transfer-files\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"OutputPath\":\"$.Payload\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+       {
+        "Fn::GetAtt": [
+         "lambdachecktrainingtransferDBBEC8DC",
+         "Arn"
+        ]
+       },
+       "\",\"Payload.$\":\"$\"}},\"has-qualtrics-training-transfer-files\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.result\",\"BooleanEquals\":true,\"Next\":\"glue_manual_qualtrics_training_transferhours_s3_to_raw\"}],\"Default\":\"end-qualrics-transfers-process\"},\"end-qualrics-transfers-process\":{\"Type\":\"Pass\",\"End\":true},\"glue_manual_qualtrics_training_transferhours_s3_to_raw\":{\"Next\":\"glue_manual_qualtrics_training_transferhours_raw_to_staging\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-manual-qualtrics-training-transferhours-s3-to-raw\"}},\"glue_manual_qualtrics_training_transferhours_raw_to_staging\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-manual-qualtrics-training-transferhours-raw-to-staging\"}}}}]},\"glue_process_training_transfers\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-process-training-transfers\"}}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "stage-training-transfers-workflow"
+   },
+   "DependsOn": [
+    "trainingtransfersworkflowRoleDefaultPolicyCAF55986",
+    "trainingtransfersworkflowRoleB6B2F279"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/training-transfers-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01Q0WrDMAz8lr47arJCn7cWNjY6CBnsNSiumnhx7BI5G8Hk32dnZuTp7nySrNMDHI/g8x3+cCavfaZVA/7DoexFRWynUZIIXu0VDuBLq5WcxflmEquspigjLkLj0FwR/PNkpFPWROefX3Cm8ZNGTsZWL4IPNTKTY3iKEDScJtmTOyGTaPVEEHrebCPY0f2WhnLtkHsGf1l/fjXftifxEqpDhNGF8mqKw7ct4M+dVSFWiSNqTToQZhEaHL2j7JRZE231soh1q/DWKtOugdNxFpFnqO8dQr57TEfcR4wrJyessYhydp01+wMUBRS7L1YqGyfj1EBQ/eEvm9tp6YsBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-training-transfers/training-transfers-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

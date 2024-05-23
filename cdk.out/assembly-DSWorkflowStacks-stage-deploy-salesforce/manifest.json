@@ -1,0 +1,113 @@
+{
+  "version": "30.0.0",
+  "artifacts": {
+    "DSWorkflowStacksstagedeploysalesforcesalesforceoutboundworkflowstack86D14D30.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DSWorkflowStacksstagedeploysalesforcesalesforceoutboundworkflowstack86D14D30.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DSWorkflowStacksstagedeploysalesforcesalesforceoutboundworkflowstack86D14D30": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://571950455257/us-west-2",
+      "properties": {
+        "templateFile": "DSWorkflowStacksstagedeploysalesforcesalesforceoutboundworkflowstack86D14D30.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-deploy-role-571950455257-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-cfn-exec-role-571950455257-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/54cac3f397ecf49a542f2b1e3b3a366754a62e8ed6724e218bf7bc54d2c1fc80.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DSWorkflowStacksstagedeploysalesforcesalesforceoutboundworkflowstack86D14D30.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::571950455257:role/cdk-hnb659fds-lookup-role-571950455257-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "stage-deploy-salesforce-salesforce-outbound-workflow-stack"
+      },
+      "dependencies": [
+        "DSWorkflowStacksstagedeploysalesforcesalesforceoutboundworkflowstack86D14D30.assets"
+      ],
+      "metadata": {
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploysalesforcesalesforceoutboundworkflowstackGlueRole905CA98E/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GlueRolePolicyDSWorkflowStacksstagedeploysalesforcesalesforceoutboundworkflowstackGlueRole905CA98E93975B5C"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-outbound-person/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluesfoutboundperson5D6F7CFE"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-outbound-employmentrelationship/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluesfoutboundemploymentrelationship28B87D39"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-outbound-credential/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluesfoutboundcredentialD99D89A1"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-outbound-employer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluesfoutboundemployer08F358BA"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/glue-sf-benefits-certification-fund/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluesfbenefitscertificationfundE6A59168"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/salesforce-outbound-workflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "salesforceoutboundworkflowRoleB7306482"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/salesforce-outbound-workflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "salesforceoutboundworkflowRoleDefaultPolicy38EA11ED"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/salesforce-outbound-workflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "salesforceoutboundworkflowCBEA2545"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DSWorkflowStacks/stage-deploy-salesforce/salesforce-outbound-workflow-stack"
+    }
+  }
+}

@@ -1,0 +1,275 @@
+{
+ "Resources": {
+  "GlueRolePolicyDSWorkflowStacksstagedeploydohoutbounddohoutboundworkflowstackGlueRoleEDFF404A3F8A2B2D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2",
+        "arn:aws:s3:::cdk-hnb659fds-assets-571950455257-us-west-2/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PolicyDSWorkflowStacksstagedeploydohoutbounddohoutboundworkflowstackGlueRoleEDFF404A",
+    "Roles": [
+     "role-p-glue-data-pipelines"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-doh-outbound/doh-outbound-workflow-stack/GlueRole/PolicyDSWorkflowStacksstagedeploydohoutbounddohoutboundworkflowstackGlueRoleEDFF404A/Resource"
+   }
+  },
+  "gluedohcompletedoutbound02EE3200": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/b1cf87deb716ac00a36884956d0934412c773563b1a9f038963be3ef3e84f2f1.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "3.0",
+    "Name": "stage-glue-doh-completed-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-doh-outbound/doh-outbound-workflow-stack/glue-doh-completed-outbound/Resource"
+   }
+  },
+  "gluedohcompletedsftpupload12854227": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/7984ae2438e14a2d9c46b2e358c5f2bab65f3d1c7c25b7104ebf9e5d6c1db1a8.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--additional-python-modules": "s3://seiu-b2bds-glue-dependencies/paramiko-3.1.0-py3-none-any.whl",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "3.0",
+    "Name": "stage-glue-dohcompleted-sftp-upload",
+    "NumberOfWorkers": 2,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-doh-outbound/doh-outbound-workflow-stack/glue-dohcompleted-sftp-upload/Resource"
+   }
+  },
+  "gluedohclassifiedoutbound62199A8E": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/912591630eb54f566c48fd0fc65eefc8c6d0cf64ec9c888f9d7eb84b0f471097.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "Connections": {
+     "Connections": [
+      "connection-uw2-p-seiubg-prod-b2bds"
+     ]
+    },
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "3.0",
+    "Name": "stage-glue-doh-classified-outbound"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-doh-outbound/doh-outbound-workflow-stack/glue-doh-classified-outbound/Resource"
+   }
+  },
+  "gluedohclassifiedsftpupload982E993E": {
+   "Type": "AWS::Glue::Job",
+   "Properties": {
+    "Command": {
+     "Name": "glueetl",
+     "PythonVersion": "3",
+     "ScriptLocation": "s3://cdk-hnb659fds-assets-571950455257-us-west-2/9c21a15ecede855d2a01a6f88c7aa106536898ebe5ad90119c97e4a9bd01ca54.py"
+    },
+    "Role": "arn:aws:iam::571950455257:role/role-p-glue-data-pipelines",
+    "DefaultArguments": {
+     "--job-language": "python",
+     "--account_number": "571950455257",
+     "--additional-python-modules": "s3://seiu-b2bds-glue-dependencies/paramiko-3.1.0-py3-none-any.whl",
+     "--environment_type": "stage"
+    },
+    "GlueVersion": "3.0",
+    "Name": "stage-glue-dohclassified-sftp-upload",
+    "NumberOfWorkers": 2,
+    "WorkerType": "G.1X"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-doh-outbound/doh-outbound-workflow-stack/glue-dohclassified-sftp-upload/Resource"
+   }
+  },
+  "dohoutboundworkflowRole6828C5D5": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-doh-outbound/doh-outbound-workflow-stack/doh-outbound-workflow/Role/Resource"
+   }
+  },
+  "dohoutboundworkflowRoleDefaultPolicy9A571E41": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "glue:BatchStopJobRun",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:StartJobRun"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-doh-classified-outbound",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-doh-completed-outbound",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-dohclassified-sftp-upload",
+        "arn:aws:glue:us-west-2:571950455257:job/stage-glue-dohcompleted-sftp-upload"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "dohoutboundworkflowRoleDefaultPolicy9A571E41",
+    "Roles": [
+     {
+      "Ref": "dohoutboundworkflowRole6828C5D5"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-doh-outbound/doh-outbound-workflow-stack/doh-outbound-workflow/Role/DefaultPolicy/Resource"
+   }
+  },
+  "dohoutboundworkflow510DCFE8": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "dohoutboundworkflowRole6828C5D5",
+      "Arn"
+     ]
+    },
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"invoke-all-doh-parallel-jobs\",\"States\":{\"invoke-all-doh-parallel-jobs\":{\"Type\":\"Parallel\",\"Next\":\"end-doh-parallel-process\",\"Branches\":[{\"StartAt\":\"glue_doh_completed_outbound\",\"States\":{\"glue_doh_completed_outbound\":{\"Next\":\"glue_dohcompleted_sftp_upload\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-doh-completed-outbound\"}},\"glue_dohcompleted_sftp_upload\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-dohcompleted-sftp-upload\"}}}},{\"StartAt\":\"glue_doh-classified-outbound\",\"States\":{\"glue_doh-classified-outbound\":{\"Next\":\"glue_dohclassified_sftp_upload\",\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-doh-classified-outbound\"}},\"glue_dohclassified_sftp_upload\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::glue:startJobRun.sync\",\"Parameters\":{\"JobName\":\"stage-glue-dohclassified-sftp-upload\"}}}}]},\"end-doh-parallel-process\":{\"Type\":\"Pass\",\"End\":true}}}"
+      ]
+     ]
+    },
+    "StateMachineName": "stage-doh-outbound-workflow"
+   },
+   "DependsOn": [
+    "dohoutboundworkflowRoleDefaultPolicy9A571E41",
+    "dohoutboundworkflowRole6828C5D5"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-doh-outbound/doh-outbound-workflow-stack/doh-outbound-workflow/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WPwWrDMBBEv8X39cZuIOc2PRQCBeN8gNmoG1u1IgWvRAjG/96V60N7Go1m4M2+4OGAc1XQQ0rzNZbOXnA+RzIjtCwhTYZBs262dMO5Cc6aJ7xf/fZqg+Nssy4g+45EOAq+ZVGPx2RGjkcSht4lRu2ewgUk8v2avIk2eOkiySj4obmSp6iFNvn/HWXTRM6xg0YZoMXIn2QG69cBf/2ywMrXv976ft233bJAVZK7D4RV8brdvMuax22J4hdonnEIfrfHusa6+BZryyn5aG+M7a/+AHGgZDE6AQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "DSWorkflowStacks/stage-deploy-doh-outbound/doh-outbound-workflow-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

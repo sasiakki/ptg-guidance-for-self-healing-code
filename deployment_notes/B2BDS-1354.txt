@@ -1,0 +1,16 @@
+
+Adjust Logging Table (ID & ProcessName fields)
+https://seiu775bg.atlassian.net/browse/B2BDS-1354
+
+change log: 138
+
+Steps
+
+1. Open the Script file alter_script_logs_lastprocesssed_B2BDS-1354.sql located in the code repo
+	datastore-cdk-repo\db_scripts\adhoc
+2. Login to the PROD database with admin privileges
+3. execute the script to alter logs.lastprocessed table 
+4. Navigate to the DS-PROD AWS acoount 	https://us-west-2.console.aws.amazon.com/glue/home?region=us-west-2#/v2/data-catalog/crawlers
+5. Select the database crawler "crawler-rds-b2bds" and click the button "Run" to sync the AWS catalog  
+
+

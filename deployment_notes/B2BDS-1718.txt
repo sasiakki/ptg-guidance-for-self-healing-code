@@ -1,0 +1,10 @@
+https://seiu775bg.atlassian.net/browse/B2BDS-1718
+
+Steps:
+Replace and save the script of the relevant glue jobs, as below. 
+a) Glue Job Name: glue-sf-outbound-credential
+Script Path: \datastore-cdk-repo\salesforce-outbound-workflow\glue\glue-sf-outbound-credential.py
+b) Glue Job Name: glue-sf-outbound-employmentrelationship
+Script Path: \datastore-cdk-repo\salesforce-outbound-workflow\glue\glue-sf-outbound-employmentrelationship.py
+
+
